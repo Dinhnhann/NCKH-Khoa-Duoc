@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -109,11 +112,6 @@
     <Reference Include="Antlr3.Runtime">
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -206,6 +204,7 @@
     <Content Include="assets\img\gallery\visit_bg.jpg" />
     <Content Include="assets\img\hero\about.jpg" />
     <Content Include="assets\img\hero\contact_hero.jpg" />
+    <Content Include="assets\img\hero\h1_hero.jpg" />
     <Content Include="assets\img\hero\gallery.jpg" />
     <Content Include="assets\img\icon\aleart_icon.png" />
     <Content Include="assets\img\icon\arrow_icon.png" />
@@ -225,17 +224,16 @@
     <Content Include="assets\img\NCKH img\header-logo\logo khoa duoc.jpg" />
     <Content Include="assets\img\NCKH img\header-logo\logo vanlang.jpg" />
     <Content Include="assets\img\NCKH img\header-logo\panner vlu.png" />
-    <Content Include="assets\img\hero\h1_hero.jpg" />
     <Content Include="assets\img\NCKH img\home-img-slider\home-img-slider-1.jpg" />
     <Content Include="assets\img\NCKH img\home-img-slider\home-img-slider-2.jpg" />
     <Content Include="assets\img\NCKH img\home-img-slider\home-img-slider-3.jpg" />
     <Content Include="assets\img\NCKH img\home-img-slider\home-img-slider-4.jpg" />
     <Content Include="assets\img\NCKH img\home-img-slider\home-img-slider-5.jpg" />
     <Content Include="assets\img\NCKH img\home-img-slider\home-img-slider-6.jpg" />
+    <Content Include="assets\img\NCKH img\img-body\img-body-5.jpg" />
+    <Content Include="assets\img\NCKH img\img-body\loveVL.jpg" />
+    <Content Include="assets\img\NCKH img\img-body\dh-van-lang.jpg" />
     <Content Include="assets\img\NCKH img\img-body\img-body-1.jpg" />
-    <Content Include="assets\img\NCKH img\img-body\img-body-2.jpg" />
-    <Content Include="assets\img\NCKH img\img-body\img-body-3.jpg" />
-    <Content Include="assets\img\NCKH img\img-body\img-body-4.jpg" />
     <Content Include="assets\img\NCKH img\img-intro\img-intro-1.jpg" />
     <Content Include="assets\img\NCKH img\img-intro\img-intro-2.jpg" />
     <Content Include="assets\img\NCKH img\img-intro\img-intro-3.jpg" />
