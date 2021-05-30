@@ -2525,14 +2525,13 @@ hr {
 }
 
 .section-tittle02 h2 {
-    font-size: 165px;
-    font-weight: 600;
+    font-size: 100px;
     text-transform: uppercase;
-    -webkit-text-stroke: 1px #28241d;
-    -webkit-text-fill-color: transparent;
-    margin: 0;
+    -webkit-text-stroke: 1px #c6a16e;
+    -webkit-text-fill-color: #c6a16e;
+    margin: 40px;
     line-height: 1;
-    font-family: "Montserrat",sans-serif
+    font-family: "Montserrat",sans-serif;
 }
 
 @media (max-width: 767px) {
@@ -3879,8 +3878,8 @@ hr {
     -ms-flex-align: end;
     -webkit-box-pack: end;
     -ms-flex-pack: end;
-    background-image: url(../img/gallery/footer_bg.jpg);
-    background-size: 50%;
+    background-image: url('../img/NCKH img/img-body/img-body-6.jpg');
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: left bottom
 }
