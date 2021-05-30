@@ -220,6 +220,7 @@
     <Content Include="assets\img\logo\logo2_footer.png" />
     <Content Include="assets\img\logo\select-items-icon.jpg" />
     <Content Include="assets\img\logo\testimonial.png" />
+    <Content Include="assets\img\NCKH img\header-logo\Email.png" />
     <Content Include="assets\img\NCKH img\header-logo\img-logo.png" />
     <Content Include="assets\img\NCKH img\header-logo\logo khoa duoc.jpg" />
     <Content Include="assets\img\NCKH img\header-logo\logo vanlang.jpg" />
@@ -230,10 +231,11 @@
     <Content Include="assets\img\NCKH img\home-img-slider\home-img-slider-4.jpg" />
     <Content Include="assets\img\NCKH img\home-img-slider\home-img-slider-5.jpg" />
     <Content Include="assets\img\NCKH img\home-img-slider\home-img-slider-6.jpg" />
+    <Content Include="assets\img\hero\h2_hero.jpg" />
     <Content Include="assets\img\NCKH img\img-body\img-body-5.jpg" />
+    <Content Include="assets\img\NCKH img\img-body\img-body-6.jpg" />
     <Content Include="assets\img\NCKH img\img-body\loveVL.jpg" />
-    <Content Include="assets\img\NCKH img\img-body\dh-van-lang.jpg" />
-    <Content Include="assets\img\NCKH img\img-body\img-body-1.jpg" />
+    <Content Include="assets\img\hero\h3_hero.jpg" />
     <Content Include="assets\img\NCKH img\img-intro\img-intro-1.jpg" />
     <Content Include="assets\img\NCKH img\img-intro\img-intro-2.jpg" />
     <Content Include="assets\img\NCKH img\img-intro\img-intro-3.jpg" />
@@ -294,6 +296,7 @@
     <Content Include="assets\js\plugins.js" />
     <Content Include="assets\js\popper.min.js" />
     <Content Include="assets\js\slick.min.js" />
+    <Content Include="assets\js\timeout.js" />
     <Content Include="assets\js\vendor\jquery-1.12.4.min.js" />
     <Content Include="assets\js\vendor\modernizr-3.5.0.min.js" />
     <Content Include="assets\js\wow.min.js" />
