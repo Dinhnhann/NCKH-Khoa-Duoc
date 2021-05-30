@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Great+Vibes|Josefin+Sans:300,400,600,700,700i|Montserrat:200,300,400,500,600,700,800&display=swap");
+@import url('style.css');
 
 .white-bg {
     background: #ffffff
@@ -2466,17 +2467,17 @@ hr {
 }
 
 .section-tittle span {
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 22px;
     color: #c6a16e;
     display: block
 }
 
 .section-tittle h2 {
-    font-size: 35px;
+    font-size: 30px;
     display: block;
     color: #c6a16e;
-    font-family: "Great Vibes",cursive;
+    font-family: "Gill Sans Extrabold", sans-serif;
     font-weight: 600
 }
 
@@ -2525,14 +2526,13 @@ hr {
 }
 
 .section-tittle02 h2 {
-    font-size: 165px;
-    font-weight: 600;
+    font-size: 100px;
     text-transform: uppercase;
-    -webkit-text-stroke: 1px #28241d;
-    -webkit-text-fill-color: transparent;
-    margin: 0;
+    -webkit-text-stroke: 1px #c6a16e;
+    -webkit-text-fill-color: #c6a16e;
+    margin: 40px;
     line-height: 1;
-    font-family: "Montserrat",sans-serif
+    font-family: "Montserrat",sans-serif;
 }
 
 @media (max-width: 767px) {
@@ -3009,7 +3009,7 @@ hr {
     font-size: 100px;
     font-weight: 600;
     margin-bottom: 14px;
-    color: #000000;
+    color: #28a745;
     line-height: 1.1
 }
 
@@ -3036,12 +3036,13 @@ hr {
 
 .slider-area .hero__caption span {
     font-size: 35px;
+    font-weight: 800;
     margin-bottom: 39px;
     margin-bottom: 25px;
     font-family: "Great Vibes",cursive;
     display: block;
     padding-left: 106px;
-    color: #c6a16e;
+    color: #28a745;
     position: relative
 }
 
@@ -3202,7 +3203,7 @@ hr {
 
 .clients-area .single-offers .offers-cap h3 a {
     color: #fff;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
     line-height: 1.5;
     margin-bottom: 16px;
@@ -3395,7 +3396,7 @@ hr {
 
 .history-video-area .video-history-cap h3 {
     color: #161922;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 600;
     line-height: 1.1;
     margin-bottom: 28px
@@ -3541,15 +3542,14 @@ hr {
 }
 
 .visit-tailor-area .tailor-details span {
-    font-size: 35px;
+    font-size: 30px;
     margin-bottom: 22px;
-    font-family: "Great Vibes",cursive;
     color: #c6a16e;
     display: block
 }
 
 .visit-tailor-area .tailor-details h3 {
-    font-size: 60px;
+    font-size: 25px;
     display: block;
     color: #c6a16e;
     font-weight: 600;
@@ -3602,6 +3602,8 @@ hr {
 }
 
     .visit-tailor-area .tailor-details ul li {
+        font-size: 15px;
+        margin-right: 10px;
         color: #fff;
         margin-bottom: 8px
     }
@@ -3639,7 +3641,7 @@ hr {
     -webkit-box-align: end;
     -ms-flex-align: end;
     width: 50%;
-    background-image: url(../img/gallery/visit_bg.jpg);
+    background-image: url('../img/NCKH img/img-body/img-body-5.jpg');
     background-size: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -3877,8 +3879,8 @@ hr {
     -ms-flex-align: end;
     -webkit-box-pack: end;
     -ms-flex-pack: end;
-    background-image: url(../img/gallery/footer_bg.jpg);
-    background-size: 50%;
+    background-image: url('../img/NCKH img/img-body/img-body-6.jpg');
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: left bottom
 }
@@ -3975,7 +3977,7 @@ hr {
 }
 
 .footer-area .footer-caption .footer-tittle h3 {
-    font-size: 60px;
+    font-size: 45px;
     display: block;
     color: #fff;
     font-weight: 600;
@@ -4045,7 +4047,8 @@ hr {
 }
 
 .footer-area .footer-caption .footer-menu .single-menu .single-menu3 {
-    width: 25%
+    margin-left: 100px;
+    width: 15%
 }
 
 @media (max-width: 767px) {
