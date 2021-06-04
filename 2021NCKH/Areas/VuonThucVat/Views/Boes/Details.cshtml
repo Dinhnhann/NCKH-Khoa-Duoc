@@ -1,0 +1,34 @@
+﻿@model _2021NCKH.Areas.VuonThucVat.Data.Bo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Bo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenBo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenBo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhanLop1.TenPhanLop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhanLop1.TenPhanLop)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="53d8e9517bf34bbfad8148d76c3c50ae" Name="Diagram1">
+        <EntityTypeShape EntityType="KHOADUOCModel.Bo" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHOADUOCModel.CayThucVat" Width="1.5" PointX="16.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHOADUOCModel.Chi" Width="1.5" PointX="12" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHOADUOCModel.Ho" Width="1.5" PointX="9.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHOADUOCModel.Loai" Width="1.5" PointX="14.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHOADUOCModel.Lop" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHOADUOCModel.Nganh" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KHOADUOCModel.PhanLop" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <AssociationConnector Association="KHOADUOCModel.FK_Bo_Phan_lop" ManuallyRouted="false" />
+        <AssociationConnector Association="KHOADUOCModel.FK_Ho_Bo" ManuallyRouted="false" />
+        <AssociationConnector Association="KHOADUOCModel.FK_Cay_Thuc_Vat_Loai" ManuallyRouted="false" />
+        <AssociationConnector Association="KHOADUOCModel.FK_Chi_Ho" ManuallyRouted="false" />
+        <AssociationConnector Association="KHOADUOCModel.FK_Loai_Chi" ManuallyRouted="false" />
+        <AssociationConnector Association="KHOADUOCModel.FK_Lop_Nganh" ManuallyRouted="false" />
+        <AssociationConnector Association="KHOADUOCModel.FK_Phan_lop_Lop" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
