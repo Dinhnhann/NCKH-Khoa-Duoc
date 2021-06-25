@@ -2,180 +2,387 @@
 
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-<main>
-    <!-- slider Area Start-->
-    <div class="slider-area">
-        <div class="slider-active">
-            <div class="single-slider slider-height d-flex align-items-center" data-background="@Url.Content("~/assets/img/hero/h1_hero.jpg")">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8 col-lg-8 col-md-10">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single-slider slider-height d-flex align-items-center" data-background="@Url.Content("~/assets/img/hero/h2_hero.jpg")">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-8 col-lg-8 col-md-10">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- slider Area End-->
-    <!-- Clients Offers Start -->
-    <div class="clients-area section-padding30">
-        <div class="container">
-            <!-- Section Tittle -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-tittle text-center mb-100">
-                        <span class=" wow fadeInUp" data-wow-delay=".2s">TRƯỜNG ĐẠI HỌC VĂN LANG</span>
-                        <h2 class=" wow fadeInUp" data-wow-delay=".3s">KHOA DƯỢC</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-offers mb-50 wow fadeInUp" data-wow-delay=".2s">
-                        <div class="offers-img">
-                            <img src="@Url.Content("~/assets/img/gallery/offers1.jpg")" alt="">
-                        </div>
-                        <div class="offers-cap">
-                            <span>1</span>
-                            <h3><a>Sứ mệnh</a></h3>
-                            <p>Khoa Dược trường đại học Văn lang là cơ sở đào tạo nguồn nhân lực Dược có kiến thức, kỹ năng và đạo đức nghề nghiệp, đóng góp tích cực vào công cuộc chăm sóc và bảo vệ sức khỏe nhân dân.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-offers mb-50 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="offers-img">
-                            <img src="@Url.Content("~/assets/img/gallery/offers2.jpg")" alt="">
-                        </div>
-                        <div class="offers-cap">
-                            <span>2</span>
-                            <h3><a>Tầm nhìn</a></h3>
-                            <p>Đến năm 2030 khoa dược trường đại học Văn Lang sẽ trở thành một cơ sở đào tạo dược sĩ có uy tín trong nước và khả năng hội nhập khu vực ASEAN.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-offers mb-50 wow fadeInUp" data-wow-delay=".6s">
-                        <div class="offers-img">
-                            <img src="@Url.Content("~/assets/img/gallery/offers3.jpg")" alt="">
-                        </div>
-                        <div class="offers-cap">
-                            <span>3</span>
-                            <h3><a>Mục tiêu</a></h3>
-                            <p>Đào tạo dược sĩ có sức khỏe, có kiến thức - kỹ năng - đạo đức nghề nghiệp, có khả năng hội nhập quốc tế và phát triển sự nghiệp theo đà tiến bộ của khoa học kỹ thuật.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="single-offers mb-50 wow fadeInUp" data-wow-delay=".8s">
-                        <div class="offers-img">
-                            <img src="@Url.Content("~/assets/img/gallery/offers3.jpg")" alt="">
-                        </div>
-                        <div class="offers-cap">
-                            <span>4</span>
-                            <h3><a>Triết lý giáo dục</a></h3>
-                            <p>Đào tạo người Dược sĩ có đạo đức và đủ năng lực phát triển sáng tạo trong nghề nghiệp, có ảnh hưởng và truyền cảm hứng trong cộng đồng.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Clients Offers End -->
-    <div class="history-video-area fix">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="video-bg wow fadeInLeft" data-wow-delay=".2s">
-                        <img src="@Url.Content("~/assets/img/NCKH img/img-body/loveVL.jpg")" alt="">
-                        <div class="video-icon">
-                            <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=mveofh0MZDQ&t=1s" tabindex="0" target="_blank"><i class="fas fa-play"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <!-- Section Tittle 03 -->
-                    <div class="section-tittle03 section-tittle02 wow fadeInRight" data-wow-delay=".9s">
-                        <h2>History</h2>
-                    </div>
-                    <div class="video-history-cap wow fadeInRight" data-wow-delay=".2s">
-                        <h3>Lịch sử hình thành</h3>
-                        <p>Từ năm 2018, Trường Đại học Văn Lang tuyển sinh ngành Dược học đầu tiên với mong muốn đào tạo những thế hệ sinh viên Dược đa khoa đáp ứng tiêu chuẩn nghề nghiệp và nhu cầu của xã hội. Chương trình đào tạo ngành Dược của Văn Lang kết hợp linh hoạt chương trình khung của Bộ Giáo dục và Đào tạo với chương trình đào tạo của các trường đại học uy tín và nhu cầu thực tế của xã hội về dược học.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="visit-tailor-area fix">
-        <!-- left Contents -->
-        <div class="tailor-details text-center wow fadeInLeft" data-wow-delay=".2s">
-            <span>KHI BẠN LÀ SINH VIÊN DƯỢC HỌC TẠI VĂN LANG</span>
-            <h3>Chiến lược dạy - học</h3>
-            <p>" Học tập và sáng tạo thông qua trải nghiệm "</p>
-            <ul>
-                <li>Ngành Dược học Trường Đại học Văn Lang được đào tạo theo định hướng ứng dụng, sát nhu cầu thực tế của xã hội. Trường Đại học Văn Lang đầu tư phát triển cơ sở vật chất cho khối ngành Sức khỏe: thành lập Phòng khám đa khoa Văn Lang, phát triển mô hình trường học – bệnh viên giúp sinh viên có điều kiện thực hành và làm việc tốt nhất.</li>
-                <li>Ngoài kiến thức chuyên môn, Trường Đại học Văn Lang đẩy mạnh các hoạt động giúp sinh viên phát triển kỹ năng mềm như tổ chức tọa đàm về giá trị nghề nghiệp; cơ hội và thách thức của nghề Dược; văn hóa ứng xử,…; tổ chức các chuyến tham quan học tập trải nghiệm thực tế tại bệnh viện hay các công ty sản xuất dược phẩm. </li>
-            </ul>
-        </div>
-        <!--Right Contents  -->
-        <div class="tailor-offers wow fadeInRight" data-wow-delay=".2s">
-            @*<div class="offers text-center">
-                    <h3>10% Off</h3>
-                    <a href="#" class="btn btn-black">Get Offer</a>
-                </div>*@
-        </div>
-    </div>
-    <!-- Visit Our Tailor End -->
-    <!-- Testimonial Start -->
-    <div class="testimonial-area testimonial-padding2">
-        <div class="container">
-            <!-- Section Tittle 02 -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-tittle02  wow fadeInUp" data-wow-delay=".2s">
-                        <h2>Ý kiến sinh viên</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="h1-testimonial-active dot-style wow fadeInUp" data-wow-delay=".5s">
-                        <!-- Single Testimonial -->
-                        <div class="single-testimonial text-center">
-                            <!-- Testimonial Content -->
-                            <div class="testimonial-caption ">
-                                <div class="testimonial-top-cap">
-                                    <img src="@Url.Content("~/assets/img/icon/testimonial.png")" alt="">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+}   
+<body class="host_version">
+    <div id="carouselExampleControls" class="carousel slide bs-slider box-slider " data-ride="carousel" data-pause="hover" data-interval="false">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+            <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <div id="home" class="first-section" style="background-image: url('../images/img-slide/img-slide-1.jpg');">
+                    <div class="dtab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 text-right">
+                                    <div class="big-tagline">
+                                        <h2><strong>Khoa Dược </strong> Đại học Văn Lang</h2>
+                                        <p class="lead">With Landigoo responsive landing page template, you can promote your all hosting, domain and email services. </p>
+                                        @*<a href="#" class="hover-btn-new"><span>Contact Us</span></a>*@
+                                        <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                                        @*<a href="#" class="hover-btn-new"><span>Read More</span></a>*@
+                                    </div>
                                 </div>
+                            </div><!-- end row -->
+                        </div><!-- end container -->
+                    </div>
+                </div><!-- end section -->
+            </div>
+            <div class="carousel-item">
+                <div id="home" class="first-section" style="background-image: url('../images/img-slide/img-slide-2.jpg');">
+                    <div class="dtab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 text-left">
+                                    <div class="big-tagline">
+                                        <h2 data-animation="animated zoomInRight">SmartEDU <strong>education school</strong></h2>
+                                        <p class="lead" data-animation="animated fadeInLeft">With Landigoo responsive landing page template, you can promote your all hosting, domain and email services. </p>
+                                        <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="#" class="hover-btn-new"><span>Read More</span></a>
+                                    </div>
+                                </div>
+                            </div><!-- end row -->
+                        </div><!-- end container -->
+                    </div>
+                </div><!-- end section -->
+            </div>
+            <div class="carousel-item">
+                <div id="home" class="first-section" style="background-image: url('../images/img-slide/img-slide-3.jpg');">
+                    <div class="dtab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 text-center">
+                                    <div class="big-tagline">
+                                        <h2 data-animation="animated zoomInRight"><strong>VPS Servers</strong> Company</h2>
+                                        <p class="lead" data-animation="animated fadeInLeft">
+                                            1 IP included with each server
+                                            Your Choice of any OS (CentOS, Windows, Debian, Fedora)
+                                            FREE Reboots
+                                        </p>
+                                        <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="#" class="hover-btn-new"><span>Read More</span></a>
+                                    </div>
+                                </div>
+                            </div><!-- end row -->
+                        </div><!-- end container -->
+                    </div>
+                </div><!-- end section -->
+            </div>
+            <div class="carousel-item">
+                <div id="home" class="first-section" style="background-image: url('../images/img-slide/img-slide-4.jpg');">
+                    <div class="dtab">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 text-left">
+                                    <div class="big-tagline">
+                                        <h2 data-animation="animated zoomInRight">SmartEDU <strong>education school</strong></h2>
+                                        <p class="lead" data-animation="animated fadeInLeft">With Landigoo responsive landing page template, you can promote your all hosting, domain and email services. </p>
+                                        <a href="#" class="hover-btn-new"><span>Contact Us</span></a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="#" class="hover-btn-new"><span>Read More</span></a>
+                                    </div>
+                                </div>
+                            </div><!-- end row -->
+                        </div><!-- end container -->
+                    </div>
+                </div><!-- end section -->
+            </div>
+            <!-- Left Control -->
+            <a class="new-effect carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="fa fa-angle-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+
+            <!-- Right Control -->
+            <a class="new-effect carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="fa fa-angle-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div id="overviews" class="section wb">
+        <div class="container">
+            <div class="section-title row text-center">
+                <div class="col-md-8 offset-md-2">
+                    <h3>Giới thiệu Khoa Dược</h3>
+                    <p class="lead">Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem!</p>
+                </div>
+            </div><!-- end title -->
+
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="message-box">
+                        <h4>2018 BEST SmartEDU education school</h4>
+                        <h2>Welcome to SmartEDU education school</h2>
+                        <p>Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>
+
+                        <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis montes, nascetur ridiculus mus. Sed vitae rutrum neque. </p>
+
+                        <a href="#" class="hover-btn-new orange"><span>Learn More</span></a>
+                    </div><!-- end messagebox -->
+                </div><!-- end col -->
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="post-media wow fadeIn">
+                        <img src="~/images/about_02.jpg" alt="" class="img-fluid img-rounded">
+                    </div><!-- end media -->
+                </div><!-- end col -->
+            </div>
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="post-media wow fadeIn">
+                        <img src="~/images/about_03.jpg" alt="" class="img-fluid img-rounded">
+                    </div><!-- end media -->
+                </div><!-- end col -->
+
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="message-box">
+                        <h2>The standard Lorem Ipsum passage, used since the 1500s</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                        <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum.</p>
+
+                        <a href="#" class="hover-btn-new orange"><span>Learn More</span></a>
+                    </div><!-- end messagebox -->
+                </div><!-- end col -->
+
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+    <section class="section lb page-section">
+        <div class="container">
+            <div class="section-title row text-center">
+                <div class="col-md-8 offset-md-2">
+                    <h3>Our history</h3>
+                    <p class="lead">Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem!</p>
+                </div>
+            </div><!-- end title -->
+            <div class="timeline">
+                <div class="timeline__wrap">
+                    <div class="timeline__items">
+                        <div class="timeline__item">
+                            <div class="timeline__content img-bg-01">
+                                <h2>2018</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem
+                                    ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
                             </div>
                         </div>
-                        <!-- Single Testimonial -->
-                        <div class="single-testimonial text-center">
-                            <!-- Testimonial Content -->
-                            <div class="testimonial-caption ">
-                                <div class="testimonial-top-cap">
-                                    <img src="@Url.Content("~/assets/img/icon/testimonial.png")" alt="">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
-                                </div>
+                        <div class="timeline__item">
+                            <div class="timeline__content img-bg-02">
+                                <h2>2015</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem
+                                    ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__content img-bg-03">
+                                <h2>2014</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem
+                                    ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__content img-bg-04">
+                                <h2>2012</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem
+                                    ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__content img-bg-01">
+                                <h2>2010</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem
+                                    ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__content img-bg-02">
+                                <h2>2007</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem
+                                    ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__content img-bg-03">
+                                <h2>2004</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem
+                                    ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__content img-bg-04">
+                                <h2>2002</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem
+                                    ipsum dolor sit amet, consectetur adipiscing elit.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Testimonial End -->
+    </section>
+    <div class="section cl">
+        <div class="container">
+            <div class="row text-left stat-wrap">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <span data-scroll class="global-radius icon_wrap effect-1 alignleft"><i class="flaticon-study"></i></span>
+                    <p class="stat_count">12000</p>
+                    <h3>Students</h3>
+                </div><!-- end col -->
 
-</main>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <span data-scroll class="global-radius icon_wrap effect-1 alignleft"><i class="flaticon-online"></i></span>
+                    <p class="stat_count">240</p>
+                    <h3>Courses</h3>
+                </div><!-- end col -->
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <span data-scroll class="global-radius icon_wrap effect-1 alignleft"><i class="flaticon-years"></i></span>
+                    <p class="stat_count">55</p>
+                    <h3>Years Completed</h3>
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+    <!-- end section -->
+
+    <div id="testimonials" class="parallax section db parallax-off" style="background-image:url('../images/parallax_04.jpg');">
+        <div class="container">
+            <div class="section-title text-center">
+                <h3>Testimonials</h3>
+                <p>Lorem ipsum dolor sit aet, consectetur adipisicing lit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            </div><!-- end title -->
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="testi-carousel owl-carousel owl-theme">
+                        <div class="testimonial clearfix">
+                            <div class="testi-meta">
+                                <img src="~/images/testi_01.png" alt="" class="img-fluid">
+                                <h4>James Fernando </h4>
+                            </div>
+                            <div class="desc">
+                                <h3><i class="fa fa-quote-left"></i> Wonderful Support!</h3>
+                                <p class="lead">They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>
+                            </div>
+                            <!-- end testi-meta -->
+                        </div>
+                        <!-- end testimonial -->
+
+                        <div class="testimonial clearfix">
+                            <div class="testi-meta">
+                                <img src="~/images/testi_02.png" alt="" class="img-fluid">
+                                <h4>Jacques Philips </h4>
+                            </div>
+                            <div class="desc">
+                                <h3><i class="fa fa-quote-left"></i> Awesome Services!</h3>
+                                <p class="lead">Explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you completed.</p>
+                            </div>
+                            <!-- end testi-meta -->
+                        </div>
+                        <!-- end testimonial -->
+
+                        <div class="testimonial clearfix">
+                            <div class="testi-meta">
+                                <img src="~/images/testi_03.png" alt="" class="img-fluid ">
+                                <h4>Venanda Mercy </h4>
+                            </div>
+                            <div class="desc">
+                                <h3><i class="fa fa-quote-left"></i> Great & Talented Team!</h3>
+                                <p class="lead">The master-builder of human happines no one rejects, dislikes avoids pleasure itself, because it is very pursue pleasure. </p>
+                            </div>
+                            <!-- end testi-meta -->
+                        </div>
+                        <!-- end testimonial -->
+                        <div class="testimonial clearfix">
+                            <div class="testi-meta">
+                                <img src="~/images/testi_01.png" alt="" class="img-fluid">
+                                <h4>James Fernando </h4>
+                            </div>
+                            <div class="desc">
+                                <h3><i class="fa fa-quote-left"></i> Wonderful Support!</h3>
+                                <p class="lead">They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>
+                            </div>
+                            <!-- end testi-meta -->
+                        </div>
+                        <!-- end testimonial -->
+
+                        <div class="testimonial clearfix">
+                            <div class="testi-meta">
+                                <img src="~/images/testi_02.png" alt="" class="img-fluid">
+                                <h4>Jacques Philips </h4>
+                            </div>
+                            <div class="desc">
+                                <h3><i class="fa fa-quote-left"></i> Awesome Services!</h3>
+                                <p class="lead">Explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you completed.</p>
+                            </div>
+                            <!-- end testi-meta -->
+                        </div>
+                        <!-- end testimonial -->
+
+                        <div class="testimonial clearfix">
+                            <div class="testi-meta">
+                                <img src="~/images/testi_03.png" alt="" class="img-fluid">
+                                <h4>Venanda Mercy </h4>
+                            </div>
+                            <div class="desc">
+                                <h3><i class="fa fa-quote-left"></i> Great & Talented Team!</h3>
+                                <p class="lead">The master-builder of human happines no one rejects, dislikes avoids pleasure itself, because it is very pursue pleasure. </p>
+                            </div>
+                            <!-- end testi-meta -->
+                        </div><!-- end testimonial -->
+                    </div><!-- end carousel -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+    <div class="parallax section dbcolor">
+        <div class="container">
+            <div class="row logos">
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="~/images/logo_01.png" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="~/images/logo_02.png" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="~/images/logo_03.png" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="~/images/logo_04.png" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="~/images/logo_05.png" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="~/images/logo_06.png" alt="" class="img-repsonsive"></a>
+                </div>
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+</body>

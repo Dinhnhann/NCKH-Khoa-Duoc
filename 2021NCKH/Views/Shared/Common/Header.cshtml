@@ -2,93 +2,84 @@
 @{
     ViewBag.Title = "Header";
 }
-<body class="body-bg">
-    <!-- Preloader Start -->
-    <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="@Url.Content("~/assets/img/NCKH img/header-logo/logo khoa duoc.jpg")" alt="">
-                </div>
-            </div>
+<!-- LOADER -->
+<div id="preloader">
+    <div class="loader-container">
+        <div class="progress-br float shadow">
+            <div class="progress__item"></div>
         </div>
     </div>
-    <!-- Preloader Start -->
+</div>
+<!-- END LOADER -->
+<!-- Start header -->
+<header class="top-navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="Index">
+                <img src="~/images/img-logo/img-logo-vanlang.png" alt="" width="250" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbars-host">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a class="nav-link" href="Index">Trang chủ</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Giới thiệu </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                            <a class="dropdown-item" href="course-grid-2.html">Chiến lược dạy - học</a>
+                            <a class="dropdown-item" href="course-grid-2.html">Cơ cấu tổ chức</a>
+                            <a class="dropdown-item" href="course-grid-3.html">Các bộ môn</a>
+                            <a class="dropdown-item" href="course-grid-4.html">Các phòng thí nghiệm</a>
+                            <a class="dropdown-item" href="course-grid-4.html">Văn bản quy chế</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Đào tạo</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                            <a class="dropdown-item" href="course-grid-2.html">SOP đào tạo</a>
+                            <a class="dropdown-item" href="course-grid-3.html">Chương trình đào tạo</a>
+                            <a class="dropdown-item" href="course-grid-4.html">Tài nguyên</a>
+                            <a class="dropdown-item" href="course-grid-4.html">Đảm bảo chất lượng</a>
+                            <a class="dropdown-item" href="course-grid-4.html">Các cơ sở liên kết đào tạo</a>
+                            <a class="dropdown-item" href="course-grid-4.html">Đào tạo liên tục</a>
 
-    <header>
-        <!-- Header Start -->
-        <div class="header-area header-sticky">
-            <div class="header-wrapper d-flex flex-wrap align-items-center justify-content-between">
-                <!-- Logo -->
-                <div class="logo">
-                    <a href="index"><img src="@Url.Content("~/assets/img/NCKH img/header-logo/panner vlu.png")" width="200" alt=""></a>
-                </div>
-                <!-- Main-menu -->
-                <div class="main-menu d-none d-lg-block">
-                    <nav>
-                        <ul id="navigation">
-                            <li><a href="index">Trang chủ</a></li>
-                            <li>
-                                <a href="blog.html">Giới thiệu</a>
-                                <ul class="submenu">
-                                    <li><a href="blog.html">Cơ cấu tổ chức</a></li>
-                                    <li><a href="single-blog.html">Các bộ môn</a></li>
-                                    <li><a href="single-blog.html">Các phòng thí nghiệm</a></li>
-                                    <li><a href="single-blog.html">Văn bản quy chế</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="blog.html">Đào tạo</a>
-                                <ul class="submenu">
-                                    <li><a href="blog.html">SOP đào tạo</a></li>
-                                    <li><a href="single-blog.html">Chương trình đào tạo</a></li>
-                                    <li><a href="single-blog.html">Tài nguyên</a></li>
-                                    <li><a href="single-blog.html">Đảm bảo chất lượng</a></li>
-                                    <li><a href="single-blog.html">Các cơ sở liên kết đào tạo</a></li>
-                                    <li><a href="single-blog.html">Đào tạo liên tục CPE</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="blog.html">Sinh viên</a>
-                                <ul class="submenu">
-                                    <li><a href="blog.html">Tra cứu thông tin cá nhân</a></li>
-                                    <li><a href="single-blog.html">Tin tức</a></li>
-                                    <li><a href="single-blog.html">Câu lạc bộ</a></li>
-                                    <li><a href="single-blog.html">Đoàn hội</a></li>
-                                    <li><a href="single-blog.html">Quy chế công tác SV</a></li>
-                                    <li><a href="single-blog.html">Hoạt động ngoại khóa</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="blog.html">NCKH</a>
-                                <ul class="submenu">
-                                    <li><a href="blog.html">Các đề tài đang NC của SV</a></li>
-                                    <li><a href="single-blog.html">Các đề tài đang NC của GV</a></li>
-                                    <li><a href="single-blog.html">Lý lịch KH của GV</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="blog.html">Tra cứu</a>
-                                <ul class="submenu">
-                                    <li><a href="blog.html">Thông tin nội bộ</a></li>
-                                    <li><a href="blog.html">Tin tức - Sự kiện</a></li>
-                                    <li><a href="single-blog.html">Tuyển dụng</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="blog.html">Tuyển sinh</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <!-- Header-btn -->
-                <div>
-                </div>
-                <!-- Mobile Menu -->
-                <div class="col-12">
-                    <div class="mobile_menu d-block d-lg-none"></div>
-                </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Sinh viên</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                            <a class="dropdown-item" href="blog.html">Tra cứu thông tin cá nhân</a>
+                            <a class="dropdown-item" href="blog-single.html">Tin tức</a>
+                            <a class="dropdown-item" href="blog-single.html">Câu lạc bộ</a>
+                            <a class="dropdown-item" href="blog-single.html">Đoàn hội</a>
+                            <a class="dropdown-item" href="blog-single.html">Quy chế công tác SV</a>
+                            <a class="dropdown-item" href="blog-single.html">Hoạt động ngoại khóa</a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">NCKH</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                            <a class="dropdown-item" href="blog.html">Các đề tài đang nguyên cứu của SV</a>
+                            <a class="dropdown-item" href="blog-single.html">Các đề tài đang nguyên cứu của GV</a>
+                            <a class="dropdown-item" href="blog-single.html">Lý lịch KH của GV</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Tra cứu</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                            <a class="dropdown-item" href="blog.html">Thông tin nội bộ</a>
+                            <a class="dropdown-item" href="blog-single.html">Tin tức - Sự kiện</a>
+                            <a class="dropdown-item" href="blog-single.html">Tuyển dụng</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="https://tuyensinh.vanlanguni.edu.vn/duoc-hoc/">Tuyển sinh</a></li>
+                </ul>
+
             </div>
         </div>
-        <!-- Header End -->
-    </header>
-</body>
+    </nav>
+</header>

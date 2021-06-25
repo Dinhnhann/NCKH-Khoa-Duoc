@@ -1,33 +1,43 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <!-- Basic -->
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Khoa Dược - Trường Đại Học Văn Lang</title>
-    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="@Url.Content("~/assets/img/NCKH img/header-logo/logo khoa duoc.jpg")">
-    @Styles.Render("~/assets/css")
-    @if (IsSectionDefined("css"))
-    {
-        @RenderSection("css", required: false)
-    }
-    <!-- CSS here -->
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/bootstrap.min.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/owl.carousel.min.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/slicknav.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/animate.min.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/magnific-popup.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/fontawesome-all.min.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/themify-icons.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/slick.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/nice-select.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/style.css")">
+
+    <!-- Site Metas -->
+    <title>SmartEDU - Education Responsive HTML5 Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="~/images/img-logo/img-logo-khoaduoc.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="~/images/img-logo/img-logo-khoaduoc.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- ALL VERSION CSS -->
+    <link href="~/css/versions.css" rel="stylesheet" />
+    <!-- Site CSS -->
+    <link href="~/style.css" rel="stylesheet" />
+    <!-- Responsive CSS -->
+    <link href="~/css/responsive.css" rel="stylesheet" />
+
+    <!-- Modernizer for Portfolio -->
+    <script src="~/js/modernizer.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 <body>
     @Html.Partial("~/Views/Shared/Common/Header.cshtml")
-    <div class="main-content">
         @if (TempData["AMess"] != null)
         {
             <div id="noticeAlert" class="alert @TempData["AType"] hide" style="margin-top:30px">
@@ -36,44 +46,18 @@
         }
         @RenderBody()
         @Html.Partial("~/Views/Shared/Common/Footer.cshtml")
-
-
-        <script src="@Url.Content("~/./assets/js/vendor/modernizr-3.5.0.min.js")"></script>
-
-        <!-- Jquery, Popper, Bootstrap -->
-        <script src="@Url.Content("~/./assets/js/vendor/jquery-1.12.4.min.js")"></script>
-        <script src="@Url.Content("~/./assets/js/popper.min.js")"></script>
-        <script src="@Url.Content("~/./assets/js/bootstrap.min.js")"></script>
-        <!-- Jquery Mobile Menu -->
-        <script src="@Url.Content("~/./assets/js/jquery.slicknav.min.js")"></script>
-
-        <!-- Jquery Slick , Owl-Carousel Plugins -->
-        <script src="@Url.Content("~/./assets/js/owl.carousel.min.js")"></script>
-        <script src="@Url.Content("~/./assets/js/slick.min.js")"></script>
-        <!-- One Page, Animated-HeadLin -->
-        <script src="@Url.Content("~/./assets/js/wow.min.js")"></script>
-        <script src="@Url.Content("~/./assets/js/animated.headline.js")"></script>
-        <script src="@Url.Content("~/./assets/js/jquery.magnific-popup.js")"></script>
-
-        <!-- Scrollup, nice-select, sticky -->
-        <script src="@Url.Content("~/./assets/js/jquery.scrollUp.min.js")"></script>
-        <script src="@Url.Content("~/./assets/js/jquery.nice-select.min.js")"></script>
-        <script src="@Url.Content("~/./assets/js/jquery.sticky.js")"></script>
-
-        <!-- contact js -->
-        <script src="@Url.Content("~/./assets/js/contact.js")"></script>
-        <script src="@Url.Content("~/./assets/js/jquery.form.js")"></script>
-        <script src="@Url.Content("~/./assets/js/jquery.validate.min.js")"></script>
-        <script src="@Url.Content("~/./assets/js/mail-script.js")"></script>
-        <script src="@Url.Content("~/./assets/js/jquery.ajaxchimp.min.js")"></script>
-
-        <!-- Jquery Plugins, main Jquery -->
-        <script src="@Url.Content("~/./assets/js/plugins.js")"></script>
-        <script src="@Url.Content("~/./assets/js/main.js")"></script>
-
-        @if (IsSectionDefined("scripts"))
-        {
-            @RenderSection("scripts", required: false)
-        }
+    <!-- ALL JS FILES -->
+    <script src="~/js/all.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="~/js/custom.js"></script>
+    <script src="~/js/timeline.min.js"></script>
+    <script>
+        timeline(document.querySelectorAll('.timeline'), {
+            forceVerticalMode: 700,
+            mode: 'horizontal',
+            verticalStartPosition: 'left',
+            visibleItems: 4
+        });
+    </script>
 </body>
 </html>
