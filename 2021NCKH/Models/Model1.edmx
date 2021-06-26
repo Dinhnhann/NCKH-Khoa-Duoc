@@ -4,16 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="NCKHVLUModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="AccountAdmin">
+    <Schema Namespace="NCKHVLUModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admin">
           <Key>
-            <PropertyRef Name="AdminID" />
+            <PropertyRef Name="admin_id" />
           </Key>
-          <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FullName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="PassWord" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="admin_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fullname" Type="nvarchar" MaxLength="20" />
+          <Property Name="username" Type="nvarchar" MaxLength="10" />
+          <Property Name="email" Type="nvarchar" MaxLength="20" />
+          <Property Name="password" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="BoThucVat">
           <Key>
@@ -322,7 +322,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="NCKHVLUModelStoreContainer">
-          <EntitySet Name="AccountAdmin" EntityType="Self.AccountAdmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BoThucVat" EntityType="Self.BoThucVat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CacBoMon" EntityType="Self.CacBoMon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CacCoSoLienKetDaoTao" EntityType="Self.CacCoSoLienKetDaoTao" Schema="dbo" store:Type="Tables" />
@@ -381,20 +381,79 @@
             <End Role="ThucVat" EntitySet="ThucVat" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NCKHVLUModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="AccountAdmin">
+        <EntityContainer Name="NCKHVLUEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="admins" EntityType="NCKHVLUModel.admin" />
+          <EntitySet Name="BoThucVats" EntityType="NCKHVLUModel.BoThucVat" />
+          <EntitySet Name="CacBoMons" EntityType="NCKHVLUModel.CacBoMon" />
+          <EntitySet Name="CacCoSoLienKetDaoTaos" EntityType="NCKHVLUModel.CacCoSoLienKetDaoTao" />
+          <EntitySet Name="CacDeTaiDangNCCuaGVs" EntityType="NCKHVLUModel.CacDeTaiDangNCCuaGV" />
+          <EntitySet Name="CacDeTaiDangNCCuaSVs" EntityType="NCKHVLUModel.CacDeTaiDangNCCuaSV" />
+          <EntitySet Name="CacPhongThiNghiems" EntityType="NCKHVLUModel.CacPhongThiNghiem" />
+          <EntitySet Name="CauLacboes" EntityType="NCKHVLUModel.CauLacbo" />
+          <EntitySet Name="ChiThucVats" EntityType="NCKHVLUModel.ChiThucVat" />
+          <EntitySet Name="ChuongTrinhDaoTaos" EntityType="NCKHVLUModel.ChuongTrinhDaoTao" />
+          <EntitySet Name="CoCauToChucs" EntityType="NCKHVLUModel.CoCauToChuc" />
+          <EntitySet Name="DamBaoChatLuongs" EntityType="NCKHVLUModel.DamBaoChatLuong" />
+          <EntitySet Name="DaoTaoLienTucCPEs" EntityType="NCKHVLUModel.DaoTaoLienTucCPE" />
+          <EntitySet Name="DoanHois" EntityType="NCKHVLUModel.DoanHoi" />
+          <EntitySet Name="HoatDongNgoaiKhoas" EntityType="NCKHVLUModel.HoatDongNgoaiKhoa" />
+          <EntitySet Name="HoThucVats" EntityType="NCKHVLUModel.HoThucVat" />
+          <EntitySet Name="LoaiThucVats" EntityType="NCKHVLUModel.LoaiThucVat" />
+          <EntitySet Name="LopThucVats" EntityType="NCKHVLUModel.LopThucVat" />
+          <EntitySet Name="LyLichKHCuaGVs" EntityType="NCKHVLUModel.LyLichKHCuaGV" />
+          <EntitySet Name="NganhThucVats" EntityType="NCKHVLUModel.NganhThucVat" />
+          <EntitySet Name="PhanLopThucVats" EntityType="NCKHVLUModel.PhanLopThucVat" />
+          <EntitySet Name="QuyCheCongTacSVs" EntityType="NCKHVLUModel.QuyCheCongTacSV" />
+          <EntitySet Name="SOPDaoTaos" EntityType="NCKHVLUModel.SOPDaoTao" />
+          <EntitySet Name="sysdiagrams" EntityType="NCKHVLUModel.sysdiagram" />
+          <EntitySet Name="TaiNguyens" EntityType="NCKHVLUModel.TaiNguyen" />
+          <EntitySet Name="ThongTinNoiBoes" EntityType="NCKHVLUModel.ThongTinNoiBo" />
+          <EntitySet Name="ThucVats" EntityType="NCKHVLUModel.ThucVat" />
+          <EntitySet Name="TinTucs" EntityType="NCKHVLUModel.TinTuc" />
+          <EntitySet Name="TinTucSuKiens" EntityType="NCKHVLUModel.TinTucSuKien" />
+          <EntitySet Name="TuyenDungs" EntityType="NCKHVLUModel.TuyenDung" />
+          <AssociationSet Name="FK_BoThucVat_PhanLopThucVat" Association="NCKHVLUModel.FK_BoThucVat_PhanLopThucVat">
+            <End Role="PhanLopThucVat" EntitySet="PhanLopThucVats" />
+            <End Role="BoThucVat" EntitySet="BoThucVats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HoThucVat_BoThucVat" Association="NCKHVLUModel.FK_HoThucVat_BoThucVat">
+            <End Role="BoThucVat" EntitySet="BoThucVats" />
+            <End Role="HoThucVat" EntitySet="HoThucVats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChiThucVat_HoThucVat" Association="NCKHVLUModel.FK_ChiThucVat_HoThucVat">
+            <End Role="HoThucVat" EntitySet="HoThucVats" />
+            <End Role="ChiThucVat" EntitySet="ChiThucVats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoaiThucVat_ChiThucVat" Association="NCKHVLUModel.FK_LoaiThucVat_ChiThucVat">
+            <End Role="ChiThucVat" EntitySet="ChiThucVats" />
+            <End Role="LoaiThucVat" EntitySet="LoaiThucVats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThucVat_LoaiThucVat" Association="NCKHVLUModel.FK_ThucVat_LoaiThucVat">
+            <End Role="LoaiThucVat" EntitySet="LoaiThucVats" />
+            <End Role="ThucVat" EntitySet="ThucVats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LopThucVat_NganhThucVat" Association="NCKHVLUModel.FK_LopThucVat_NganhThucVat">
+            <End Role="NganhThucVat" EntitySet="NganhThucVats" />
+            <End Role="LopThucVat" EntitySet="LopThucVats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhanLopThucVat_LopThucVat" Association="NCKHVLUModel.FK_PhanLopThucVat_LopThucVat">
+            <End Role="LopThucVat" EntitySet="LopThucVats" />
+            <End Role="PhanLopThucVat" EntitySet="PhanLopThucVats" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="admin">
           <Key>
-            <PropertyRef Name="AdminID" />
+            <PropertyRef Name="admin_id" />
           </Key>
-          <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="PassWord" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="admin_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fullname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="username" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="BoThucVat">
           <Key>
@@ -403,8 +462,8 @@
           <Property Name="MaBoThucVat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenBoThucVat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="MaPhanLopThucVat" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="PhanLopThucVat" Relationship="Self.FK_BoThucVat_PhanLopThucVat" FromRole="BoThucVat" ToRole="PhanLopThucVat" />
-          <NavigationProperty Name="HoThucVats" Relationship="Self.FK_HoThucVat_BoThucVat" FromRole="BoThucVat" ToRole="HoThucVat" />
+          <NavigationProperty Name="PhanLopThucVat" Relationship="NCKHVLUModel.FK_BoThucVat_PhanLopThucVat" FromRole="BoThucVat" ToRole="PhanLopThucVat" />
+          <NavigationProperty Name="HoThucVats" Relationship="NCKHVLUModel.FK_HoThucVat_BoThucVat" FromRole="BoThucVat" ToRole="HoThucVat" />
         </EntityType>
         <EntityType Name="CacBoMon">
           <Key>
@@ -455,8 +514,8 @@
           <Property Name="MaChiThucVat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenChiThucVat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="MaHoThucVat" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="HoThucVat" Relationship="Self.FK_ChiThucVat_HoThucVat" FromRole="ChiThucVat" ToRole="HoThucVat" />
-          <NavigationProperty Name="LoaiThucVats" Relationship="Self.FK_LoaiThucVat_ChiThucVat" FromRole="ChiThucVat" ToRole="LoaiThucVat" />
+          <NavigationProperty Name="HoThucVat" Relationship="NCKHVLUModel.FK_ChiThucVat_HoThucVat" FromRole="ChiThucVat" ToRole="HoThucVat" />
+          <NavigationProperty Name="LoaiThucVats" Relationship="NCKHVLUModel.FK_LoaiThucVat_ChiThucVat" FromRole="ChiThucVat" ToRole="LoaiThucVat" />
         </EntityType>
         <EntityType Name="ChuongTrinhDaoTao">
           <Key>
@@ -507,8 +566,8 @@
           <Property Name="MaHoThucVat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenHoThucVat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="MaBoThucVat" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="BoThucVat" Relationship="Self.FK_HoThucVat_BoThucVat" FromRole="HoThucVat" ToRole="BoThucVat" />
-          <NavigationProperty Name="ChiThucVats" Relationship="Self.FK_ChiThucVat_HoThucVat" FromRole="HoThucVat" ToRole="ChiThucVat" />
+          <NavigationProperty Name="BoThucVat" Relationship="NCKHVLUModel.FK_HoThucVat_BoThucVat" FromRole="HoThucVat" ToRole="BoThucVat" />
+          <NavigationProperty Name="ChiThucVats" Relationship="NCKHVLUModel.FK_ChiThucVat_HoThucVat" FromRole="HoThucVat" ToRole="ChiThucVat" />
         </EntityType>
         <EntityType Name="LoaiThucVat">
           <Key>
@@ -517,8 +576,8 @@
           <Property Name="MaLoaiThucVat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenLoaiThucVat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="MaChiThucVat" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ChiThucVat" Relationship="Self.FK_LoaiThucVat_ChiThucVat" FromRole="LoaiThucVat" ToRole="ChiThucVat" />
-          <NavigationProperty Name="ThucVats" Relationship="Self.FK_ThucVat_LoaiThucVat" FromRole="LoaiThucVat" ToRole="ThucVat" />
+          <NavigationProperty Name="ChiThucVat" Relationship="NCKHVLUModel.FK_LoaiThucVat_ChiThucVat" FromRole="LoaiThucVat" ToRole="ChiThucVat" />
+          <NavigationProperty Name="ThucVats" Relationship="NCKHVLUModel.FK_ThucVat_LoaiThucVat" FromRole="LoaiThucVat" ToRole="ThucVat" />
         </EntityType>
         <EntityType Name="LopThucVat">
           <Key>
@@ -527,8 +586,8 @@
           <Property Name="MaLopThucVat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenLopThucVat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="MaNganhThucVat" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="NganhThucVat" Relationship="Self.FK_LopThucVat_NganhThucVat" FromRole="LopThucVat" ToRole="NganhThucVat" />
-          <NavigationProperty Name="PhanLopThucVats" Relationship="Self.FK_PhanLopThucVat_LopThucVat" FromRole="LopThucVat" ToRole="PhanLopThucVat" />
+          <NavigationProperty Name="NganhThucVat" Relationship="NCKHVLUModel.FK_LopThucVat_NganhThucVat" FromRole="LopThucVat" ToRole="NganhThucVat" />
+          <NavigationProperty Name="PhanLopThucVats" Relationship="NCKHVLUModel.FK_PhanLopThucVat_LopThucVat" FromRole="LopThucVat" ToRole="PhanLopThucVat" />
         </EntityType>
         <EntityType Name="LyLichKHCuaGV">
           <Key>
@@ -543,7 +602,7 @@
           </Key>
           <Property Name="MaNganhThucVat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenNganhThucVat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="LopThucVats" Relationship="Self.FK_LopThucVat_NganhThucVat" FromRole="NganhThucVat" ToRole="LopThucVat" />
+          <NavigationProperty Name="LopThucVats" Relationship="NCKHVLUModel.FK_LopThucVat_NganhThucVat" FromRole="NganhThucVat" ToRole="LopThucVat" />
         </EntityType>
         <EntityType Name="PhanLopThucVat">
           <Key>
@@ -552,8 +611,8 @@
           <Property Name="MaPhanLopThucVat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenPhanLopThucVat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="MaLopThucVat" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="BoThucVats" Relationship="Self.FK_BoThucVat_PhanLopThucVat" FromRole="PhanLopThucVat" ToRole="BoThucVat" />
-          <NavigationProperty Name="LopThucVat" Relationship="Self.FK_PhanLopThucVat_LopThucVat" FromRole="PhanLopThucVat" ToRole="LopThucVat" />
+          <NavigationProperty Name="BoThucVats" Relationship="NCKHVLUModel.FK_BoThucVat_PhanLopThucVat" FromRole="PhanLopThucVat" ToRole="BoThucVat" />
+          <NavigationProperty Name="LopThucVat" Relationship="NCKHVLUModel.FK_PhanLopThucVat_LopThucVat" FromRole="PhanLopThucVat" ToRole="LopThucVat" />
         </EntityType>
         <EntityType Name="QuyCheCongTacSV">
           <Key>
@@ -573,7 +632,7 @@
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="principal_id" Type="Int32" Nullable="false" />
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
@@ -601,7 +660,7 @@
           <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="TenVietNam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="TenKhoaHoc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="HoThucVat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HoThucVat" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="BoPhanDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ThanhPhanHoaHoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -609,7 +668,7 @@
           <Property Name="LieuDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TaiLieuThamKhao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MaLoaiThucVat" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="LoaiThucVat" Relationship="Self.FK_ThucVat_LoaiThucVat" FromRole="ThucVat" ToRole="LoaiThucVat" />
+          <NavigationProperty Name="LoaiThucVat" Relationship="NCKHVLUModel.FK_ThucVat_LoaiThucVat" FromRole="ThucVat" ToRole="LoaiThucVat" />
         </EntityType>
         <EntityType Name="TinTuc">
           <Key>
@@ -633,8 +692,8 @@
           <Property Name="NDTuyenDung" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_BoThucVat_PhanLopThucVat">
-          <End Role="PhanLopThucVat" Type="Self.PhanLopThucVat" Multiplicity="1" />
-          <End Role="BoThucVat" Type="Self.BoThucVat" Multiplicity="*" />
+          <End Type="NCKHVLUModel.PhanLopThucVat" Role="PhanLopThucVat" Multiplicity="1" />
+          <End Type="NCKHVLUModel.BoThucVat" Role="BoThucVat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PhanLopThucVat">
               <PropertyRef Name="MaPhanLopThucVat" />
@@ -645,8 +704,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HoThucVat_BoThucVat">
-          <End Role="BoThucVat" Type="Self.BoThucVat" Multiplicity="1" />
-          <End Role="HoThucVat" Type="Self.HoThucVat" Multiplicity="*" />
+          <End Type="NCKHVLUModel.BoThucVat" Role="BoThucVat" Multiplicity="1" />
+          <End Type="NCKHVLUModel.HoThucVat" Role="HoThucVat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BoThucVat">
               <PropertyRef Name="MaBoThucVat" />
@@ -657,8 +716,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ChiThucVat_HoThucVat">
-          <End Role="HoThucVat" Type="Self.HoThucVat" Multiplicity="1" />
-          <End Role="ChiThucVat" Type="Self.ChiThucVat" Multiplicity="*" />
+          <End Type="NCKHVLUModel.HoThucVat" Role="HoThucVat" Multiplicity="1" />
+          <End Type="NCKHVLUModel.ChiThucVat" Role="ChiThucVat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HoThucVat">
               <PropertyRef Name="MaHoThucVat" />
@@ -669,8 +728,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LoaiThucVat_ChiThucVat">
-          <End Role="ChiThucVat" Type="Self.ChiThucVat" Multiplicity="1" />
-          <End Role="LoaiThucVat" Type="Self.LoaiThucVat" Multiplicity="*" />
+          <End Type="NCKHVLUModel.ChiThucVat" Role="ChiThucVat" Multiplicity="1" />
+          <End Type="NCKHVLUModel.LoaiThucVat" Role="LoaiThucVat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ChiThucVat">
               <PropertyRef Name="MaChiThucVat" />
@@ -681,8 +740,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ThucVat_LoaiThucVat">
-          <End Role="LoaiThucVat" Type="Self.LoaiThucVat" Multiplicity="1" />
-          <End Role="ThucVat" Type="Self.ThucVat" Multiplicity="*" />
+          <End Type="NCKHVLUModel.LoaiThucVat" Role="LoaiThucVat" Multiplicity="1" />
+          <End Type="NCKHVLUModel.ThucVat" Role="ThucVat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="LoaiThucVat">
               <PropertyRef Name="MaLoaiThucVat" />
@@ -693,8 +752,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_LopThucVat_NganhThucVat">
-          <End Role="NganhThucVat" Type="Self.NganhThucVat" Multiplicity="1" />
-          <End Role="LopThucVat" Type="Self.LopThucVat" Multiplicity="*" />
+          <End Type="NCKHVLUModel.NganhThucVat" Role="NganhThucVat" Multiplicity="1" />
+          <End Type="NCKHVLUModel.LopThucVat" Role="LopThucVat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NganhThucVat">
               <PropertyRef Name="MaNganhThucVat" />
@@ -705,8 +764,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PhanLopThucVat_LopThucVat">
-          <End Role="LopThucVat" Type="Self.LopThucVat" Multiplicity="1" />
-          <End Role="PhanLopThucVat" Type="Self.PhanLopThucVat" Multiplicity="*" />
+          <End Type="NCKHVLUModel.LopThucVat" Role="LopThucVat" Multiplicity="1" />
+          <End Type="NCKHVLUModel.PhanLopThucVat" Role="PhanLopThucVat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="LopThucVat">
               <PropertyRef Name="MaLopThucVat" />
@@ -716,331 +775,271 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="NCKHVLUEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="AccountAdmins" EntityType="Self.AccountAdmin" />
-          <EntitySet Name="BoThucVats" EntityType="Self.BoThucVat" />
-          <EntitySet Name="CacBoMons" EntityType="Self.CacBoMon" />
-          <EntitySet Name="CacCoSoLienKetDaoTaos" EntityType="Self.CacCoSoLienKetDaoTao" />
-          <EntitySet Name="CacDeTaiDangNCCuaGVs" EntityType="Self.CacDeTaiDangNCCuaGV" />
-          <EntitySet Name="CacDeTaiDangNCCuaSVs" EntityType="Self.CacDeTaiDangNCCuaSV" />
-          <EntitySet Name="CacPhongThiNghiems" EntityType="Self.CacPhongThiNghiem" />
-          <EntitySet Name="CauLacboes" EntityType="Self.CauLacbo" />
-          <EntitySet Name="ChiThucVats" EntityType="Self.ChiThucVat" />
-          <EntitySet Name="ChuongTrinhDaoTaos" EntityType="Self.ChuongTrinhDaoTao" />
-          <EntitySet Name="CoCauToChucs" EntityType="Self.CoCauToChuc" />
-          <EntitySet Name="DamBaoChatLuongs" EntityType="Self.DamBaoChatLuong" />
-          <EntitySet Name="DaoTaoLienTucCPEs" EntityType="Self.DaoTaoLienTucCPE" />
-          <EntitySet Name="DoanHois" EntityType="Self.DoanHoi" />
-          <EntitySet Name="HoatDongNgoaiKhoas" EntityType="Self.HoatDongNgoaiKhoa" />
-          <EntitySet Name="HoThucVats" EntityType="Self.HoThucVat" />
-          <EntitySet Name="LoaiThucVats" EntityType="Self.LoaiThucVat" />
-          <EntitySet Name="LopThucVats" EntityType="Self.LopThucVat" />
-          <EntitySet Name="LyLichKHCuaGVs" EntityType="Self.LyLichKHCuaGV" />
-          <EntitySet Name="NganhThucVats" EntityType="Self.NganhThucVat" />
-          <EntitySet Name="PhanLopThucVats" EntityType="Self.PhanLopThucVat" />
-          <EntitySet Name="QuyCheCongTacSVs" EntityType="Self.QuyCheCongTacSV" />
-          <EntitySet Name="SOPDaoTaos" EntityType="Self.SOPDaoTao" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <EntitySet Name="TaiNguyens" EntityType="Self.TaiNguyen" />
-          <EntitySet Name="ThongTinNoiBoes" EntityType="Self.ThongTinNoiBo" />
-          <EntitySet Name="ThucVats" EntityType="Self.ThucVat" />
-          <EntitySet Name="TinTucs" EntityType="Self.TinTuc" />
-          <EntitySet Name="TinTucSuKiens" EntityType="Self.TinTucSuKien" />
-          <EntitySet Name="TuyenDungs" EntityType="Self.TuyenDung" />
-          <AssociationSet Name="FK_BoThucVat_PhanLopThucVat" Association="Self.FK_BoThucVat_PhanLopThucVat">
-            <End Role="PhanLopThucVat" EntitySet="PhanLopThucVats" />
-            <End Role="BoThucVat" EntitySet="BoThucVats" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HoThucVat_BoThucVat" Association="Self.FK_HoThucVat_BoThucVat">
-            <End Role="BoThucVat" EntitySet="BoThucVats" />
-            <End Role="HoThucVat" EntitySet="HoThucVats" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ChiThucVat_HoThucVat" Association="Self.FK_ChiThucVat_HoThucVat">
-            <End Role="HoThucVat" EntitySet="HoThucVats" />
-            <End Role="ChiThucVat" EntitySet="ChiThucVats" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LoaiThucVat_ChiThucVat" Association="Self.FK_LoaiThucVat_ChiThucVat">
-            <End Role="ChiThucVat" EntitySet="ChiThucVats" />
-            <End Role="LoaiThucVat" EntitySet="LoaiThucVats" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ThucVat_LoaiThucVat" Association="Self.FK_ThucVat_LoaiThucVat">
-            <End Role="LoaiThucVat" EntitySet="LoaiThucVats" />
-            <End Role="ThucVat" EntitySet="ThucVats" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LopThucVat_NganhThucVat" Association="Self.FK_LopThucVat_NganhThucVat">
-            <End Role="NganhThucVat" EntitySet="NganhThucVats" />
-            <End Role="LopThucVat" EntitySet="LopThucVats" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PhanLopThucVat_LopThucVat" Association="Self.FK_PhanLopThucVat_LopThucVat">
-            <End Role="LopThucVat" EntitySet="LopThucVats" />
-            <End Role="PhanLopThucVat" EntitySet="PhanLopThucVats" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="NCKHVLUModelStoreContainer" CdmEntityContainer="NCKHVLUEntities">
-          <EntitySetMapping Name="AccountAdmins">
-            <EntityTypeMapping TypeName="NCKHVLUModel.AccountAdmin">
-              <MappingFragment StoreEntitySet="AccountAdmin">
-                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+          <EntitySetMapping Name="admins">
+            <EntityTypeMapping TypeName="NCKHVLUModel.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BoThucVats">
             <EntityTypeMapping TypeName="NCKHVLUModel.BoThucVat">
               <MappingFragment StoreEntitySet="BoThucVat">
-                <ScalarProperty Name="MaBoThucVat" ColumnName="MaBoThucVat" />
-                <ScalarProperty Name="TenBoThucVat" ColumnName="TenBoThucVat" />
                 <ScalarProperty Name="MaPhanLopThucVat" ColumnName="MaPhanLopThucVat" />
+                <ScalarProperty Name="TenBoThucVat" ColumnName="TenBoThucVat" />
+                <ScalarProperty Name="MaBoThucVat" ColumnName="MaBoThucVat" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CacBoMons">
             <EntityTypeMapping TypeName="NCKHVLUModel.CacBoMon">
               <MappingFragment StoreEntitySet="CacBoMon">
-                <ScalarProperty Name="MaCacBoMon" ColumnName="MaCacBoMon" />
                 <ScalarProperty Name="NDCacBoMon" ColumnName="NDCacBoMon" />
+                <ScalarProperty Name="MaCacBoMon" ColumnName="MaCacBoMon" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CacCoSoLienKetDaoTaos">
             <EntityTypeMapping TypeName="NCKHVLUModel.CacCoSoLienKetDaoTao">
               <MappingFragment StoreEntitySet="CacCoSoLienKetDaoTao">
-                <ScalarProperty Name="MaCacCoSoLienKetDaoTao" ColumnName="MaCacCoSoLienKetDaoTao" />
                 <ScalarProperty Name="NDCacCoSoLienKetDaoTao" ColumnName="NDCacCoSoLienKetDaoTao" />
+                <ScalarProperty Name="MaCacCoSoLienKetDaoTao" ColumnName="MaCacCoSoLienKetDaoTao" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CacDeTaiDangNCCuaGVs">
             <EntityTypeMapping TypeName="NCKHVLUModel.CacDeTaiDangNCCuaGV">
               <MappingFragment StoreEntitySet="CacDeTaiDangNCCuaGV">
-                <ScalarProperty Name="MaCacDeTaiDangNCCuaGV" ColumnName="MaCacDeTaiDangNCCuaGV" />
                 <ScalarProperty Name="NDCacDeTaiDangNCCuaGV" ColumnName="NDCacDeTaiDangNCCuaGV" />
+                <ScalarProperty Name="MaCacDeTaiDangNCCuaGV" ColumnName="MaCacDeTaiDangNCCuaGV" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CacDeTaiDangNCCuaSVs">
             <EntityTypeMapping TypeName="NCKHVLUModel.CacDeTaiDangNCCuaSV">
               <MappingFragment StoreEntitySet="CacDeTaiDangNCCuaSV">
-                <ScalarProperty Name="MaCacDeTaiDangNCCuaSV" ColumnName="MaCacDeTaiDangNCCuaSV" />
                 <ScalarProperty Name="NDCacDeTaiDangNCCuaSV" ColumnName="NDCacDeTaiDangNCCuaSV" />
+                <ScalarProperty Name="MaCacDeTaiDangNCCuaSV" ColumnName="MaCacDeTaiDangNCCuaSV" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CacPhongThiNghiems">
             <EntityTypeMapping TypeName="NCKHVLUModel.CacPhongThiNghiem">
               <MappingFragment StoreEntitySet="CacPhongThiNghiem">
-                <ScalarProperty Name="MaCacPhongThiNghiem" ColumnName="MaCacPhongThiNghiem" />
                 <ScalarProperty Name="NDCacPhongThiNghiem" ColumnName="NDCacPhongThiNghiem" />
+                <ScalarProperty Name="MaCacPhongThiNghiem" ColumnName="MaCacPhongThiNghiem" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CauLacboes">
             <EntityTypeMapping TypeName="NCKHVLUModel.CauLacbo">
               <MappingFragment StoreEntitySet="CauLacbo">
-                <ScalarProperty Name="MaCauLacBo" ColumnName="MaCauLacBo" />
                 <ScalarProperty Name="NDCauLacBo" ColumnName="NDCauLacBo" />
+                <ScalarProperty Name="MaCauLacBo" ColumnName="MaCauLacBo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ChiThucVats">
             <EntityTypeMapping TypeName="NCKHVLUModel.ChiThucVat">
               <MappingFragment StoreEntitySet="ChiThucVat">
-                <ScalarProperty Name="MaChiThucVat" ColumnName="MaChiThucVat" />
-                <ScalarProperty Name="TenChiThucVat" ColumnName="TenChiThucVat" />
                 <ScalarProperty Name="MaHoThucVat" ColumnName="MaHoThucVat" />
+                <ScalarProperty Name="TenChiThucVat" ColumnName="TenChiThucVat" />
+                <ScalarProperty Name="MaChiThucVat" ColumnName="MaChiThucVat" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ChuongTrinhDaoTaos">
             <EntityTypeMapping TypeName="NCKHVLUModel.ChuongTrinhDaoTao">
               <MappingFragment StoreEntitySet="ChuongTrinhDaoTao">
-                <ScalarProperty Name="MaChuongTrinhDaoTao" ColumnName="MaChuongTrinhDaoTao" />
                 <ScalarProperty Name="NDChuongTrinhDaoTao" ColumnName="NDChuongTrinhDaoTao" />
+                <ScalarProperty Name="MaChuongTrinhDaoTao" ColumnName="MaChuongTrinhDaoTao" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CoCauToChucs">
             <EntityTypeMapping TypeName="NCKHVLUModel.CoCauToChuc">
               <MappingFragment StoreEntitySet="CoCauToChuc">
-                <ScalarProperty Name="MaCoCauToChuc" ColumnName="MaCoCauToChuc" />
                 <ScalarProperty Name="NDCoCauToChuc" ColumnName="NDCoCauToChuc" />
+                <ScalarProperty Name="MaCoCauToChuc" ColumnName="MaCoCauToChuc" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DamBaoChatLuongs">
             <EntityTypeMapping TypeName="NCKHVLUModel.DamBaoChatLuong">
               <MappingFragment StoreEntitySet="DamBaoChatLuong">
-                <ScalarProperty Name="MaDamBaoChatLuong" ColumnName="MaDamBaoChatLuong" />
                 <ScalarProperty Name="NDDamBaoChatLuong" ColumnName="NDDamBaoChatLuong" />
+                <ScalarProperty Name="MaDamBaoChatLuong" ColumnName="MaDamBaoChatLuong" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DaoTaoLienTucCPEs">
             <EntityTypeMapping TypeName="NCKHVLUModel.DaoTaoLienTucCPE">
               <MappingFragment StoreEntitySet="DaoTaoLienTucCPE">
-                <ScalarProperty Name="MaDaoTaoLienTucCPE" ColumnName="MaDaoTaoLienTucCPE" />
                 <ScalarProperty Name="NDDaoTaoLienTucCPE" ColumnName="NDDaoTaoLienTucCPE" />
+                <ScalarProperty Name="MaDaoTaoLienTucCPE" ColumnName="MaDaoTaoLienTucCPE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DoanHois">
             <EntityTypeMapping TypeName="NCKHVLUModel.DoanHoi">
               <MappingFragment StoreEntitySet="DoanHoi">
-                <ScalarProperty Name="MaDoanHoi" ColumnName="MaDoanHoi" />
                 <ScalarProperty Name="NDDoanHoi" ColumnName="NDDoanHoi" />
+                <ScalarProperty Name="MaDoanHoi" ColumnName="MaDoanHoi" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HoatDongNgoaiKhoas">
             <EntityTypeMapping TypeName="NCKHVLUModel.HoatDongNgoaiKhoa">
               <MappingFragment StoreEntitySet="HoatDongNgoaiKhoa">
-                <ScalarProperty Name="MaHoatDongNgoaiKhoa" ColumnName="MaHoatDongNgoaiKhoa" />
                 <ScalarProperty Name="NDHoatDongNgoaiKhoa" ColumnName="NDHoatDongNgoaiKhoa" />
+                <ScalarProperty Name="MaHoatDongNgoaiKhoa" ColumnName="MaHoatDongNgoaiKhoa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HoThucVats">
             <EntityTypeMapping TypeName="NCKHVLUModel.HoThucVat">
               <MappingFragment StoreEntitySet="HoThucVat">
-                <ScalarProperty Name="MaHoThucVat" ColumnName="MaHoThucVat" />
-                <ScalarProperty Name="TenHoThucVat" ColumnName="TenHoThucVat" />
                 <ScalarProperty Name="MaBoThucVat" ColumnName="MaBoThucVat" />
+                <ScalarProperty Name="TenHoThucVat" ColumnName="TenHoThucVat" />
+                <ScalarProperty Name="MaHoThucVat" ColumnName="MaHoThucVat" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LoaiThucVats">
             <EntityTypeMapping TypeName="NCKHVLUModel.LoaiThucVat">
               <MappingFragment StoreEntitySet="LoaiThucVat">
-                <ScalarProperty Name="MaLoaiThucVat" ColumnName="MaLoaiThucVat" />
-                <ScalarProperty Name="TenLoaiThucVat" ColumnName="TenLoaiThucVat" />
                 <ScalarProperty Name="MaChiThucVat" ColumnName="MaChiThucVat" />
+                <ScalarProperty Name="TenLoaiThucVat" ColumnName="TenLoaiThucVat" />
+                <ScalarProperty Name="MaLoaiThucVat" ColumnName="MaLoaiThucVat" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LopThucVats">
             <EntityTypeMapping TypeName="NCKHVLUModel.LopThucVat">
               <MappingFragment StoreEntitySet="LopThucVat">
-                <ScalarProperty Name="MaLopThucVat" ColumnName="MaLopThucVat" />
-                <ScalarProperty Name="TenLopThucVat" ColumnName="TenLopThucVat" />
                 <ScalarProperty Name="MaNganhThucVat" ColumnName="MaNganhThucVat" />
+                <ScalarProperty Name="TenLopThucVat" ColumnName="TenLopThucVat" />
+                <ScalarProperty Name="MaLopThucVat" ColumnName="MaLopThucVat" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LyLichKHCuaGVs">
             <EntityTypeMapping TypeName="NCKHVLUModel.LyLichKHCuaGV">
               <MappingFragment StoreEntitySet="LyLichKHCuaGV">
-                <ScalarProperty Name="MaLyLichKHCuaGV" ColumnName="MaLyLichKHCuaGV" />
                 <ScalarProperty Name="NDLyLichKHCuaGV" ColumnName="NDLyLichKHCuaGV" />
+                <ScalarProperty Name="MaLyLichKHCuaGV" ColumnName="MaLyLichKHCuaGV" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NganhThucVats">
             <EntityTypeMapping TypeName="NCKHVLUModel.NganhThucVat">
               <MappingFragment StoreEntitySet="NganhThucVat">
-                <ScalarProperty Name="MaNganhThucVat" ColumnName="MaNganhThucVat" />
                 <ScalarProperty Name="TenNganhThucVat" ColumnName="TenNganhThucVat" />
+                <ScalarProperty Name="MaNganhThucVat" ColumnName="MaNganhThucVat" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PhanLopThucVats">
             <EntityTypeMapping TypeName="NCKHVLUModel.PhanLopThucVat">
               <MappingFragment StoreEntitySet="PhanLopThucVat">
-                <ScalarProperty Name="MaPhanLopThucVat" ColumnName="MaPhanLopThucVat" />
-                <ScalarProperty Name="TenPhanLopThucVat" ColumnName="TenPhanLopThucVat" />
                 <ScalarProperty Name="MaLopThucVat" ColumnName="MaLopThucVat" />
+                <ScalarProperty Name="TenPhanLopThucVat" ColumnName="TenPhanLopThucVat" />
+                <ScalarProperty Name="MaPhanLopThucVat" ColumnName="MaPhanLopThucVat" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="QuyCheCongTacSVs">
             <EntityTypeMapping TypeName="NCKHVLUModel.QuyCheCongTacSV">
               <MappingFragment StoreEntitySet="QuyCheCongTacSV">
-                <ScalarProperty Name="MaQuyCheCongTacSV" ColumnName="MaQuyCheCongTacSV" />
                 <ScalarProperty Name="NDQuyCheCongTacSV" ColumnName="NDQuyCheCongTacSV" />
+                <ScalarProperty Name="MaQuyCheCongTacSV" ColumnName="MaQuyCheCongTacSV" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SOPDaoTaos">
             <EntityTypeMapping TypeName="NCKHVLUModel.SOPDaoTao">
               <MappingFragment StoreEntitySet="SOPDaoTao">
-                <ScalarProperty Name="MaSOPDaoTao" ColumnName="MaSOPDaoTao" />
                 <ScalarProperty Name="NDSOPDaoTao" ColumnName="NDSOPDaoTao" />
+                <ScalarProperty Name="MaSOPDaoTao" ColumnName="MaSOPDaoTao" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="NCKHVLUModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TaiNguyens">
             <EntityTypeMapping TypeName="NCKHVLUModel.TaiNguyen">
               <MappingFragment StoreEntitySet="TaiNguyen">
-                <ScalarProperty Name="MaTaiNguyen" ColumnName="MaTaiNguyen" />
                 <ScalarProperty Name="NDTaiNguyen" ColumnName="NDTaiNguyen" />
+                <ScalarProperty Name="MaTaiNguyen" ColumnName="MaTaiNguyen" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ThongTinNoiBoes">
             <EntityTypeMapping TypeName="NCKHVLUModel.ThongTinNoiBo">
               <MappingFragment StoreEntitySet="ThongTinNoiBo">
-                <ScalarProperty Name="MaThongTinNoiBo" ColumnName="MaThongTinNoiBo" />
                 <ScalarProperty Name="NDThongTinNoiBo" ColumnName="NDThongTinNoiBo" />
+                <ScalarProperty Name="MaThongTinNoiBo" ColumnName="MaThongTinNoiBo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ThucVats">
             <EntityTypeMapping TypeName="NCKHVLUModel.ThucVat">
               <MappingFragment StoreEntitySet="ThucVat">
-                <ScalarProperty Name="MaCay" ColumnName="MaCay" />
-                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
-                <ScalarProperty Name="TenVietNam" ColumnName="TenVietNam" />
-                <ScalarProperty Name="TenKhoaHoc" ColumnName="TenKhoaHoc" />
-                <ScalarProperty Name="HoThucVat" ColumnName="HoThucVat" />
-                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
-                <ScalarProperty Name="BoPhanDung" ColumnName="BoPhanDung" />
-                <ScalarProperty Name="ThanhPhanHoaHoc" ColumnName="ThanhPhanHoaHoc" />
-                <ScalarProperty Name="TacDungDuocLy" ColumnName="TacDungDuocLy" />
-                <ScalarProperty Name="LieuDung" ColumnName="LieuDung" />
-                <ScalarProperty Name="TaiLieuThamKhao" ColumnName="TaiLieuThamKhao" />
                 <ScalarProperty Name="MaLoaiThucVat" ColumnName="MaLoaiThucVat" />
+                <ScalarProperty Name="TaiLieuThamKhao" ColumnName="TaiLieuThamKhao" />
+                <ScalarProperty Name="LieuDung" ColumnName="LieuDung" />
+                <ScalarProperty Name="TacDungDuocLy" ColumnName="TacDungDuocLy" />
+                <ScalarProperty Name="ThanhPhanHoaHoc" ColumnName="ThanhPhanHoaHoc" />
+                <ScalarProperty Name="BoPhanDung" ColumnName="BoPhanDung" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="HoThucVat" ColumnName="HoThucVat" />
+                <ScalarProperty Name="TenKhoaHoc" ColumnName="TenKhoaHoc" />
+                <ScalarProperty Name="TenVietNam" ColumnName="TenVietNam" />
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+                <ScalarProperty Name="MaCay" ColumnName="MaCay" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TinTucs">
             <EntityTypeMapping TypeName="NCKHVLUModel.TinTuc">
               <MappingFragment StoreEntitySet="TinTuc">
-                <ScalarProperty Name="MaTinTuc" ColumnName="MaTinTuc" />
                 <ScalarProperty Name="NDTinTuc" ColumnName="NDTinTuc" />
+                <ScalarProperty Name="MaTinTuc" ColumnName="MaTinTuc" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TinTucSuKiens">
             <EntityTypeMapping TypeName="NCKHVLUModel.TinTucSuKien">
               <MappingFragment StoreEntitySet="TinTucSuKien">
-                <ScalarProperty Name="MaTinTucSuKien" ColumnName="MaTinTucSuKien" />
                 <ScalarProperty Name="NDTinTucSuKien" ColumnName="NDTinTucSuKien" />
+                <ScalarProperty Name="MaTinTucSuKien" ColumnName="MaTinTucSuKien" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TuyenDungs">
             <EntityTypeMapping TypeName="NCKHVLUModel.TuyenDung">
               <MappingFragment StoreEntitySet="TuyenDung">
-                <ScalarProperty Name="MaTuyenDung" ColumnName="MaTuyenDung" />
                 <ScalarProperty Name="NDTuyenDung" ColumnName="NDTuyenDung" />
+                <ScalarProperty Name="MaTuyenDung" ColumnName="MaTuyenDung" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

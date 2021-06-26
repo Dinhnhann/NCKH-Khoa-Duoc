@@ -9,7 +9,7 @@ namespace _2021NCKH.Areas.Admin.Controllers
     public class HomeController : Controller
     {
         // GET: Admin/Home
-        public ActionResult Dasboard()
+        public ActionResult Dashboard()
         {
             return View();
         }

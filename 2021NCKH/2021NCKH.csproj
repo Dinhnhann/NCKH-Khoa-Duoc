@@ -137,7 +137,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountAdmin.cs">
+    <Compile Include="Models\admin.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\BoThucVat.cs">
@@ -647,7 +647,7 @@
     <Content Include="Areas\Admin\Views\Shared\Common\_Footer.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Common\_Navbar.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Common\_Sidebar.cshtml" />
-    <Content Include="Areas\Admin\Views\Home\Dasboard.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Dashboard.cshtml" />
     <Content Include="Areas\Admin\assets\vendor\fonts\circular-std\CircularStd-Black.woff" />
     <Content Include="Areas\Admin\assets\vendor\fonts\circular-std\CircularStd-BlackItalic.woff" />
     <Content Include="Areas\Admin\assets\vendor\fonts\circular-std\CircularStd-Bold.woff" />

@@ -25,7 +25,7 @@ namespace _2021NCKH.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AccountAdmin> AccountAdmins { get; set; }
+        public virtual DbSet<admin> admins { get; set; }
         public virtual DbSet<BoThucVat> BoThucVats { get; set; }
         public virtual DbSet<CacBoMon> CacBoMons { get; set; }
         public virtual DbSet<CacCoSoLienKetDaoTao> CacCoSoLienKetDaoTaos { get; set; }

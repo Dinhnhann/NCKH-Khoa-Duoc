@@ -12,12 +12,12 @@ namespace _2021NCKH.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class AccountAdmin
+    public partial class admin
     {
-        public int AdminID { get; set; }
-        public string FullName { get; set; }
-        public string UserName { get; set; }
-        public string Email { get; set; }
-        public string PassWord { get; set; }
+        public int admin_id { get; set; }
+        public string fullname { get; set; }
+        public string username { get; set; }
+        public string email { get; set; }
+        public string password { get; set; }
     }
 }
