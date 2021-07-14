@@ -50,6 +50,7 @@ namespace _2021NCKH.Models
         public virtual DbSet<SOPDaoTao> SOPDaoTaos { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TaiNguyen> TaiNguyens { get; set; }
+        public virtual DbSet<TamNhinMTCL> TamNhinMTCLs { get; set; }
         public virtual DbSet<ThongTinNoiBo> ThongTinNoiBoes { get; set; }
         public virtual DbSet<ThucVat> ThucVats { get; set; }
         public virtual DbSet<TinTuc> TinTucs { get; set; }

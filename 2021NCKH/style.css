@@ -87,7 +87,7 @@ h6 {
     font-weight: normal;
     line-height: 120% !important;
     color: #1f1f1f;
-    margin: 0
+    margin: 0;
 }
 
 h1 {
@@ -508,7 +508,6 @@ a img.aligncenter {
 }
 
     .top-navbar .navbar-light .navbar-nav .nav-item .nav-link {
-        padding: 6px 0px;
         position: relative;
         display: block;
         line-height: 30px;
@@ -1187,7 +1186,6 @@ a img.aligncenter {
 .inner-hmv h3 {
     font-size: 28px;
     color: #212121;
-    font-weight: 500;
     margin-bottom: 20px;
     padding: 0px;
     -webkit-transition: all 0.3s;
@@ -2658,7 +2656,7 @@ select.mobile-device {
 .footer-distributed .footer-company-name {
     font-weight: 300;
     margin: 0 10px;
-    color: #666;
+    color: #ffffff;
     padding: 5px 0px;
 }
 
@@ -2937,13 +2935,13 @@ body.host_version .first-section .effect-1.slide-btn::after {
         font-weight: 600;
         text-transform: capitalize;
         padding-top: 11%;
-        font-size: 48px;
+        font-size: 40px;
         line-height: 0px;
     }
 
 span.m_1 {
-    font-weight: 300;
-    font-size: 20px;
+    font-weight: 400;
+    font-size: 24px;
     line-height: 1.5em;
     display: block;
 }
@@ -3528,6 +3526,13 @@ span.m_1 {
 .blog-item {
     background: #f1f1f1;
     padding: 20px;
+    width: 350px;
+    height: 480px;
+    margin-block: 15px;
+}
+.blog-item1 {
+    background: #f1f1f1;
+    padding: 20px;
 }
 
 .image-blog img {
@@ -3582,7 +3587,6 @@ span.m_1 {
 .blog-title a {
     font-size: 18px;
     line-height: 25px;
-    font-weight: 500;
     color: #555;
     text-transform: capitalize;
 }

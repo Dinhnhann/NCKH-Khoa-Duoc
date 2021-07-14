@@ -15,6 +15,8 @@ namespace _2021NCKH.Models
     public partial class CauLacbo
     {
         public int MaCauLacBo { get; set; }
-        public string NDCauLacBo { get; set; }
+        public string TenCauLacBo { get; set; }
+        public string NDTomTatCauLacBo { get; set; }
+        public string NDChiTietCauLacBo { get; set; }
     }
 }

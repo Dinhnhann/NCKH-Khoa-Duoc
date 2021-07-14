@@ -15,6 +15,8 @@ namespace _2021NCKH.Models
     public partial class SOPDaoTao
     {
         public int MaSOPDaoTao { get; set; }
-        public string NDSOPDaoTao { get; set; }
+        public string TenSOPDaoTao { get; set; }
+        public string NDTomTatSOPDaoTao { get; set; }
+        public string NDChiTietSOPDaoTao { get; set; }
     }
 }

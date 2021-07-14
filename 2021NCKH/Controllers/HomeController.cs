@@ -13,7 +13,7 @@ namespace _2021NCKH.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult TNMTCL()
         {
             ViewBag.Message = "Your application description page.";
 

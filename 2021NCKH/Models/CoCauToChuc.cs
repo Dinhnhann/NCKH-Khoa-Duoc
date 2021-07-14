@@ -15,6 +15,8 @@ namespace _2021NCKH.Models
     public partial class CoCauToChuc
     {
         public int MaCoCauToChuc { get; set; }
-        public string NDCoCauToChuc { get; set; }
+        public string TenCoCauToChuc { get; set; }
+        public string NDTomTatCoCauToChuc { get; set; }
+        public string NDChiTietCoCauToChuc { get; set; }
     }
 }

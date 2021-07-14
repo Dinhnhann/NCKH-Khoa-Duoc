@@ -1,0 +1,57 @@
+﻿@model _2021NCKH.Models.CacDeTaiDangNCCuaSV
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+
+            <h2>Delete</h2>
+
+            <h3>Xác nhận xóa nội dung?</h3>
+            <div>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        Tên đề tài
+                    </dt>
+                    <dd>
+                        @Model.TenCacDeTaiDangNCCuaSV
+                    </dd>
+                    <dt>
+                        Nội dung tóm tắt
+                    </dt>
+
+                    <dd>
+                        <div>
+                            @MvcHtmlString.Create(Model.NDTomTatCacDeTaiDangNCCuaSV)
+                        </div>
+                    </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.TenCacDeTaiDangNCCuaSV)
+                    </dd>
+                    <dt>
+                        Hình ảnh
+                    </dt>
+                    <dd>
+                        <img id="Picture" src="@Url.Action("Picture", new { Model.MaCacDeTaiDangNCCuaSV })" width="700" />
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Xóa" class="btn btn-default" /> |
+                        @Html.ActionLink("Trở lại danh sách đề tài SV", "Index")
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

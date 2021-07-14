@@ -1,0 +1,67 @@
+﻿@model IEnumerable<_2021NCKH.Models.CacBoMon>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+
+            <h2>Index</h2>
+            <a href="@Url.Action("Create","CacBoMon")" class="btn btn-sm btn-success">Thêm bộ môn</a>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-table"></i>  Danh sách nội dung các bộ môn
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Tên nội dung</th>
+                                    <th>Nội dung tóm tắt</th>
+                                    <th>Chức năng</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Tên nội dung</th>
+                                    <th>Nội dung tóm tắt</th>
+                                    <th>Chức năng</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.TenCacBoMon
+                                        </td>
+                                        <td>
+                                            @if (item.NDTomTatCacBoMon != null && item.NDTomTatCacBoMon.Length > 100)
+                                            {
+                                                @MvcHtmlString.Create(item.NDTomTatCacBoMon.Substring(0, 100))
+                                            }
+                                            else
+                                            {
+                                                @MvcHtmlString.Create(item.NDTomTatCacBoMon)
+                                            }
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("Edit","CacBoMon", new { id = item.MaCacBoMon})" class="btn btn-sm btn-warning">Sửa</a>
+                                            <a href="@Url.Action("Delete","CacBoMon", new { id = item.MaCacBoMon} )" class="btn btn-sm btn-danger">Xóa</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer small text-muted">Truy cập vào lúc @DateTime.Now</div>
+            </div>
+        </div>
+    </div>
+</div>
