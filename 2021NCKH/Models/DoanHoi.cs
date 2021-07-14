@@ -15,8 +15,6 @@ namespace _2021NCKH.Models
     public partial class DoanHoi
     {
         public int MaDoanHoi { get; set; }
-        public string TenDoanHoi { get; set; }
-        public string NDTomTatDoanHoi { get; set; }
-        public string NDChiTietDoanHoi { get; set; }
+        public string NDDoanHoi { get; set; }
     }
 }

@@ -18,11 +18,11 @@
     <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
 </head>
 <body>
-    @Html.Partial("~/Areas/Admin/Views/Shared/Common/_Sidebar.cshtml")
-    @Html.Partial("~/Areas/Admin/Views/Shared/Common/_Navbar.cshtml")
-    @RenderBody()
+        @Html.Partial("~/Areas/Admin/Views/Shared/Common/_Sidebar.cshtml")
+            @Html.Partial("~/Areas/Admin/Views/Shared/Common/_Navbar.cshtml")
+                @RenderBody()
 
-    @Html.Partial("~/Areas/Admin/Views/Shared/Common/_Footer.cshtml")
+            @Html.Partial("~/Areas/Admin/Views/Shared/Common/_Footer.cshtml")
 
     <script src="~/Areas/Admin/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
@@ -43,12 +43,9 @@
     <script src="~/Areas/Admin/assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
     <script src="~/Areas/Admin/assets/vendor/charts/c3charts/C3chartjs.js"></script>
     <script src="~/Areas/Admin/assets/libs/js/dashboard-ecommerce.js"></script>
-    <script src="~/Content/ckeditor/ckeditor.js"></script>
-    <script src="~/Areas/Admin/assets/libs/js/main.js"></script>
-    <script src="~/Content/ckfinder/ckfinder.js"></script>
-    <script src="~/Content/ckeditor/config.js"></script>
+
     @if (IsSectionDefined("scripts"))
     {
-        @RenderSection("scripts", required: false)}
+@RenderSection("scripts", required: false)}
 </body>
 </html>

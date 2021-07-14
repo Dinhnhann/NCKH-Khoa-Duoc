@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace _2021NCKH.Areas.Admin.Controllers
 {
-    public class HomeController : BaseController
+    public class HomeController : Controller
     {
         // GET: Admin/Home
         public ActionResult Dashboard()

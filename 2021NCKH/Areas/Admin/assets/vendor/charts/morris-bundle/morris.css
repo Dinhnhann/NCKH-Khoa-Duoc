@@ -18,20 +18,22 @@
 
 }
 
-    .morris-hover.morris-default-style .morris-hover-row-label {
-        font-family: 'Serif';
-        border-bottom: 1px solid #e6e6f2;
-        padding: 8px;
-    }
+.morris-hover.morris-default-style .morris-hover-row-label {
+  font-family:'Circular Std Medium';
+  border-bottom: 1px solid #e6e6f2;
+  padding: 8px;
+   
+}
 
-    .morris-hover.morris-default-style .morris-hover-point {
-        white-space: nowrap;
-        font-size: 16px;
-        padding: 8px;
-        background: #f7f7fd;
-        line-height: 18px;
-        font-family: 'Serif';
-    }
+.morris-hover.morris-default-style .morris-hover-point {
+    white-space: nowrap;
+    font-size: 16px;
+    padding: 8px;
+    background: #f7f7fd;
+    line-height: 18px;
+      font-family:'Circular Std Medium';
+ 
+}
 
 #morris_donut svg text{
       font-size: 6px!important;

@@ -15,8 +15,6 @@ namespace _2021NCKH.Models
     public partial class DamBaoChatLuong
     {
         public int MaDamBaoChatLuong { get; set; }
-        public string TenDamBaoChatLuong { get; set; }
-        public string NDTomTatDamBaoChatLuong { get; set; }
-        public string NDChiTietDamBaoChatLuong { get; set; }
+        public string NDDamBaoChatLuong { get; set; }
     }
 }

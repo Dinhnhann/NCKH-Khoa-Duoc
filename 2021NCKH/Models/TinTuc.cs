@@ -15,8 +15,6 @@ namespace _2021NCKH.Models
     public partial class TinTuc
     {
         public int MaTinTuc { get; set; }
-        public string TenTinTuc { get; set; }
-        public string NDTomTatTinTuc { get; set; }
-        public string NDChiTietTinTuc { get; set; }
+        public string NDTinTuc { get; set; }
     }
 }

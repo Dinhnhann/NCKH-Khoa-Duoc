@@ -15,8 +15,6 @@ namespace _2021NCKH.Models
     public partial class DaoTaoLienTucCPE
     {
         public int MaDaoTaoLienTucCPE { get; set; }
-        public string TenDaoTaoLienTucCPE { get; set; }
-        public string NDTomTatDaoTaoLienTucCPE { get; set; }
-        public string NDChiTietDaoTaoLienTucCPE { get; set; }
+        public string NDDaoTaoLienTucCPE { get; set; }
     }
 }

@@ -15,16 +15,11 @@ namespace _2021NCKH.Areas.Admin
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "AdminLogin",
-                "Admin/Login",
-                new { action = "Login", controller = "Admin", id = UrlParameter.Optional }
-            );
-            context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new { action = "Dashboard", controller = "Home", id = UrlParameter.Optional }
+                new { action = "Login", controller = "Admin", id = UrlParameter.Optional },
+                namespaces: new[] { "_2021NCKH.Areas.Admin.Controllers" }
             );
-            
         }
     }
 }

@@ -15,8 +15,6 @@ namespace _2021NCKH.Models
     public partial class TuyenDung
     {
         public int MaTuyenDung { get; set; }
-        public string TenTuyenDung { get; set; }
-        public string NDTomTatTuyenDung { get; set; }
-        public string NDChiTietTuyenDung { get; set; }
+        public string NDTuyenDung { get; set; }
     }
 }

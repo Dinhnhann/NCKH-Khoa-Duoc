@@ -10,9 +10,9 @@
             <PropertyRef Name="admin_id" />
           </Key>
           <Property Name="admin_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="fullname" Type="nvarchar" MaxLength="50" />
-          <Property Name="username" Type="nvarchar" MaxLength="50" />
-          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="fullname" Type="nvarchar" MaxLength="20" />
+          <Property Name="username" Type="nvarchar" MaxLength="10" />
+          <Property Name="email" Type="nvarchar" MaxLength="20" />
           <Property Name="password" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="BoThucVat">
@@ -28,54 +28,42 @@
             <PropertyRef Name="MaCacBoMon" />
           </Key>
           <Property Name="MaCacBoMon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenCacBoMon" Type="nvarchar(max)" />
-          <Property Name="NDTomTatCacBoMon" Type="nvarchar(max)" />
-          <Property Name="NDChiTietCacBoMon" Type="nvarchar(max)" />
+          <Property Name="NDCacBoMon" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="CacCoSoLienKetDaoTao">
           <Key>
             <PropertyRef Name="MaCacCoSoLienKetDaoTao" />
           </Key>
           <Property Name="MaCacCoSoLienKetDaoTao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenCacCoSoLienKetDaoTao" Type="nvarchar(max)" />
-          <Property Name="NDTomTatCacCoSoLienKetDaoTao" Type="nvarchar(max)" />
-          <Property Name="NDChiTietCacCoSoLienKetDaoTao" Type="nvarchar(max)" />
+          <Property Name="NDCacCoSoLienKetDaoTao" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="CacDeTaiDangNCCuaGV">
           <Key>
             <PropertyRef Name="MaCacDeTaiDangNCCuaGV" />
           </Key>
           <Property Name="MaCacDeTaiDangNCCuaGV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenCacDeTaiDangNCCuaGV" Type="nvarchar(max)" />
-          <Property Name="NDTomTatCacDeTaiDangNCCuaGV" Type="nvarchar(max)" />
-          <Property Name="NDChiTietCacDeTaiDangNCCuaGV" Type="nvarchar(max)" />
+          <Property Name="NDCacDeTaiDangNCCuaGV" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="CacDeTaiDangNCCuaSV">
           <Key>
             <PropertyRef Name="MaCacDeTaiDangNCCuaSV" />
           </Key>
           <Property Name="MaCacDeTaiDangNCCuaSV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenCacDeTaiDangNCCuaSV" Type="nvarchar(max)" />
-          <Property Name="NDTomTatCacDeTaiDangNCCuaSV" Type="nvarchar(max)" />
-          <Property Name="NDChiTietCacDeTaiDangNCCuaSV" Type="nvarchar(max)" />
+          <Property Name="NDCacDeTaiDangNCCuaSV" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="CacPhongThiNghiem">
           <Key>
             <PropertyRef Name="MaCacPhongThiNghiem" />
           </Key>
           <Property Name="MaCacPhongThiNghiem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenCacPhongThiNghiem" Type="nvarchar(max)" />
-          <Property Name="NDTomTatCacPhongThiNghiem" Type="nvarchar(max)" />
-          <Property Name="NDChiTietCacPhongThiNghiem" Type="nvarchar(max)" />
+          <Property Name="NDCacPhongThiNghiem" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="CauLacbo">
           <Key>
             <PropertyRef Name="MaCauLacBo" />
           </Key>
           <Property Name="MaCauLacBo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenCauLacBo" Type="nvarchar(max)" />
-          <Property Name="NDTomTatCauLacBo" Type="nvarchar(max)" />
-          <Property Name="NDChiTietCauLacBo" Type="nvarchar(max)" />
+          <Property Name="NDCauLacBo" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="ChiThucVat">
           <Key>
@@ -90,54 +78,42 @@
             <PropertyRef Name="MaChuongTrinhDaoTao" />
           </Key>
           <Property Name="MaChuongTrinhDaoTao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenChuongTrinhDaoTao" Type="nvarchar(max)" />
-          <Property Name="NDChiTietChuongTrinhDaoTao" Type="nvarchar(max)" />
-          <Property Name="NDTomTatChuongTrinhDaoTao" Type="nvarchar(max)" />
+          <Property Name="NDChuongTrinhDaoTao" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="CoCauToChuc">
           <Key>
             <PropertyRef Name="MaCoCauToChuc" />
           </Key>
           <Property Name="MaCoCauToChuc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenCoCauToChuc" Type="nvarchar(max)" />
-          <Property Name="NDTomTatCoCauToChuc" Type="nvarchar(max)" />
-          <Property Name="NDChiTietCoCauToChuc" Type="nvarchar(max)" />
+          <Property Name="NDCoCauToChuc" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="DamBaoChatLuong">
           <Key>
             <PropertyRef Name="MaDamBaoChatLuong" />
           </Key>
           <Property Name="MaDamBaoChatLuong" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenDamBaoChatLuong" Type="nvarchar(max)" />
-          <Property Name="NDTomTatDamBaoChatLuong" Type="nvarchar(max)" />
-          <Property Name="NDChiTietDamBaoChatLuong" Type="nvarchar(max)" />
+          <Property Name="NDDamBaoChatLuong" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="DaoTaoLienTucCPE">
           <Key>
             <PropertyRef Name="MaDaoTaoLienTucCPE" />
           </Key>
           <Property Name="MaDaoTaoLienTucCPE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenDaoTaoLienTucCPE" Type="nvarchar(max)" />
-          <Property Name="NDTomTatDaoTaoLienTucCPE" Type="nvarchar(max)" />
-          <Property Name="NDChiTietDaoTaoLienTucCPE" Type="nvarchar(max)" />
+          <Property Name="NDDaoTaoLienTucCPE" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="DoanHoi">
           <Key>
             <PropertyRef Name="MaDoanHoi" />
           </Key>
           <Property Name="MaDoanHoi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenDoanHoi" Type="nvarchar(max)" />
-          <Property Name="NDTomTatDoanHoi" Type="nvarchar(max)" />
-          <Property Name="NDChiTietDoanHoi" Type="nvarchar(max)" />
+          <Property Name="NDDoanHoi" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="HoatDongNgoaiKhoa">
           <Key>
             <PropertyRef Name="MaHoatDongNgoaiKhoa" />
           </Key>
           <Property Name="MaHoatDongNgoaiKhoa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenHoatDongNgoaiKhoa" Type="nvarchar(max)" />
-          <Property Name="NDTomTatHoatDongNgoaiKhoa" Type="nvarchar(max)" />
-          <Property Name="NDChiTietHoatDongNgoaiKhoa" Type="nvarchar(max)" />
+          <Property Name="NDHoatDongNgoaiKhoa" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="HoThucVat">
           <Key>
@@ -168,9 +144,7 @@
             <PropertyRef Name="MaLyLichKHCuaGV" />
           </Key>
           <Property Name="MaLyLichKHCuaGV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenLyLichKHCuaGV" Type="nvarchar(max)" />
-          <Property Name="NDTomTatLyLichKHCuaGV" Type="nvarchar(max)" />
-          <Property Name="NDChiTietLyLichKHCuaGV" Type="nvarchar(max)" />
+          <Property Name="NDLyLichKHCuaGV" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="NganhThucVat">
           <Key>
@@ -192,18 +166,14 @@
             <PropertyRef Name="MaQuyCheCongTacSV" />
           </Key>
           <Property Name="MaQuyCheCongTacSV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenQuyCheCongTacSV" Type="nvarchar(max)" />
-          <Property Name="NDTomTatQuyCheCongTacSV" Type="nvarchar(max)" />
-          <Property Name="NDChiTietQuyCheCongTacSV" Type="nvarchar(max)" />
+          <Property Name="NDQuyCheCongTacSV" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="SOPDaoTao">
           <Key>
             <PropertyRef Name="MaSOPDaoTao" />
           </Key>
           <Property Name="MaSOPDaoTao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenSOPDaoTao" Type="nvarchar(max)" />
-          <Property Name="NDTomTatSOPDaoTao" Type="nvarchar(max)" />
-          <Property Name="NDChiTietSOPDaoTao" Type="nvarchar(max)" />
+          <Property Name="NDSOPDaoTao" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -220,33 +190,21 @@
             <PropertyRef Name="MaTaiNguyen" />
           </Key>
           <Property Name="MaTaiNguyen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenTaiNguyen" Type="nvarchar(max)" />
-          <Property Name="NDTomTatTaiNguyen" Type="nvarchar(max)" />
-          <Property Name="NDChiTietTaiNguyen" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="TamNhinMTCL">
-          <Key>
-            <PropertyRef Name="MaTamNhinMTCL" />
-          </Key>
-          <Property Name="MaTamNhinMTCL" Type="int" Nullable="false" />
-          <Property Name="TenTamNhinMTCL" Type="nvarchar(max)" />
-          <Property Name="NDTomTatTamNhinMTCL" Type="nvarchar(max)" />
-          <Property Name="NDChiTietTamNhinMTCL" Type="nvarchar(max)" />
+          <Property Name="NDTaiNguyen" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="ThongTinNoiBo">
           <Key>
             <PropertyRef Name="MaThongTinNoiBo" />
           </Key>
           <Property Name="MaThongTinNoiBo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenThongTinNoiBo" Type="nvarchar(max)" />
-          <Property Name="NDTomTatThongTinNoiBo" Type="nvarchar(max)" />
-          <Property Name="NDChiTietThongTinNoiBo" Type="nvarchar(max)" />
+          <Property Name="NDThongTinNoiBo" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="ThucVat">
           <Key>
             <PropertyRef Name="MaCay" />
           </Key>
           <Property Name="MaCay" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HinhAnh" Type="image" />
           <Property Name="TenVietNam" Type="nvarchar" MaxLength="100" />
           <Property Name="TenKhoaHoc" Type="nvarchar" MaxLength="100" />
           <Property Name="HoThucVat" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -263,27 +221,21 @@
             <PropertyRef Name="MaTinTuc" />
           </Key>
           <Property Name="MaTinTuc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenTinTuc" Type="nvarchar(max)" />
-          <Property Name="NDTomTatTinTuc" Type="nvarchar(max)" />
-          <Property Name="NDChiTietTinTuc" Type="nvarchar(max)" />
+          <Property Name="NDTinTuc" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="TinTucSuKien">
           <Key>
             <PropertyRef Name="MaTinTucSuKien" />
           </Key>
           <Property Name="MaTinTucSuKien" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenTinTucSuKien" Type="nvarchar(max)" />
-          <Property Name="NDTomTatTinTucSuKien" Type="nvarchar(max)" />
-          <Property Name="NDChiTietTinTucSuKien" Type="nvarchar(max)" />
+          <Property Name="NDTinTucSuKien" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="TuyenDung">
           <Key>
             <PropertyRef Name="MaTuyenDung" />
           </Key>
           <Property Name="MaTuyenDung" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenTuyenDung" Type="nvarchar(max)" />
-          <Property Name="NDTomTatTuyenDung" Type="nvarchar(max)" />
-          <Property Name="NDChiTietTuyenDung" Type="nvarchar(max)" />
+          <Property Name="NDTuyenDung" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <Association Name="FK_BoThucVat_PhanLopThucVat">
           <End Role="PhanLopThucVat" Type="Self.PhanLopThucVat" Multiplicity="1" />
@@ -395,7 +347,6 @@
           <EntitySet Name="SOPDaoTao" EntityType="Self.SOPDaoTao" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TaiNguyen" EntityType="Self.TaiNguyen" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TamNhinMTCL" EntityType="Self.TamNhinMTCL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThongTinNoiBo" EntityType="Self.ThongTinNoiBo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThucVat" EntityType="Self.ThucVat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TinTuc" EntityType="Self.TinTuc" Schema="dbo" store:Type="Tables" />
@@ -460,7 +411,6 @@
           <EntitySet Name="SOPDaoTaos" EntityType="NCKHVLUModel.SOPDaoTao" />
           <EntitySet Name="sysdiagrams" EntityType="NCKHVLUModel.sysdiagram" />
           <EntitySet Name="TaiNguyens" EntityType="NCKHVLUModel.TaiNguyen" />
-          <EntitySet Name="TamNhinMTCLs" EntityType="NCKHVLUModel.TamNhinMTCL" />
           <EntitySet Name="ThongTinNoiBoes" EntityType="NCKHVLUModel.ThongTinNoiBo" />
           <EntitySet Name="ThucVats" EntityType="NCKHVLUModel.ThucVat" />
           <EntitySet Name="TinTucs" EntityType="NCKHVLUModel.TinTuc" />
@@ -500,9 +450,9 @@
             <PropertyRef Name="admin_id" />
           </Key>
           <Property Name="admin_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fullname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="username" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="BoThucVat">
@@ -520,54 +470,42 @@
             <PropertyRef Name="MaCacBoMon" />
           </Key>
           <Property Name="MaCacBoMon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenCacBoMon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatCacBoMon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietCacBoMon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDCacBoMon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="CacCoSoLienKetDaoTao">
           <Key>
             <PropertyRef Name="MaCacCoSoLienKetDaoTao" />
           </Key>
           <Property Name="MaCacCoSoLienKetDaoTao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenCacCoSoLienKetDaoTao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatCacCoSoLienKetDaoTao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietCacCoSoLienKetDaoTao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDCacCoSoLienKetDaoTao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="CacDeTaiDangNCCuaGV">
           <Key>
             <PropertyRef Name="MaCacDeTaiDangNCCuaGV" />
           </Key>
           <Property Name="MaCacDeTaiDangNCCuaGV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenCacDeTaiDangNCCuaGV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatCacDeTaiDangNCCuaGV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietCacDeTaiDangNCCuaGV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDCacDeTaiDangNCCuaGV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="CacDeTaiDangNCCuaSV">
           <Key>
             <PropertyRef Name="MaCacDeTaiDangNCCuaSV" />
           </Key>
           <Property Name="MaCacDeTaiDangNCCuaSV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenCacDeTaiDangNCCuaSV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatCacDeTaiDangNCCuaSV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietCacDeTaiDangNCCuaSV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDCacDeTaiDangNCCuaSV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="CacPhongThiNghiem">
           <Key>
             <PropertyRef Name="MaCacPhongThiNghiem" />
           </Key>
           <Property Name="MaCacPhongThiNghiem" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenCacPhongThiNghiem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatCacPhongThiNghiem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietCacPhongThiNghiem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDCacPhongThiNghiem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="CauLacbo">
           <Key>
             <PropertyRef Name="MaCauLacBo" />
           </Key>
           <Property Name="MaCauLacBo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenCauLacBo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatCauLacBo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietCauLacBo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDCauLacBo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ChiThucVat">
           <Key>
@@ -584,54 +522,42 @@
             <PropertyRef Name="MaChuongTrinhDaoTao" />
           </Key>
           <Property Name="MaChuongTrinhDaoTao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenChuongTrinhDaoTao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietChuongTrinhDaoTao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatChuongTrinhDaoTao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDChuongTrinhDaoTao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="CoCauToChuc">
           <Key>
             <PropertyRef Name="MaCoCauToChuc" />
           </Key>
           <Property Name="MaCoCauToChuc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenCoCauToChuc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatCoCauToChuc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietCoCauToChuc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDCoCauToChuc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="DamBaoChatLuong">
           <Key>
             <PropertyRef Name="MaDamBaoChatLuong" />
           </Key>
           <Property Name="MaDamBaoChatLuong" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenDamBaoChatLuong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatDamBaoChatLuong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietDamBaoChatLuong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDDamBaoChatLuong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="DaoTaoLienTucCPE">
           <Key>
             <PropertyRef Name="MaDaoTaoLienTucCPE" />
           </Key>
           <Property Name="MaDaoTaoLienTucCPE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenDaoTaoLienTucCPE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatDaoTaoLienTucCPE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietDaoTaoLienTucCPE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDDaoTaoLienTucCPE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="DoanHoi">
           <Key>
             <PropertyRef Name="MaDoanHoi" />
           </Key>
           <Property Name="MaDoanHoi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenDoanHoi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatDoanHoi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietDoanHoi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDDoanHoi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="HoatDongNgoaiKhoa">
           <Key>
             <PropertyRef Name="MaHoatDongNgoaiKhoa" />
           </Key>
           <Property Name="MaHoatDongNgoaiKhoa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenHoatDongNgoaiKhoa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatHoatDongNgoaiKhoa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietHoatDongNgoaiKhoa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDHoatDongNgoaiKhoa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="HoThucVat">
           <Key>
@@ -668,9 +594,7 @@
             <PropertyRef Name="MaLyLichKHCuaGV" />
           </Key>
           <Property Name="MaLyLichKHCuaGV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenLyLichKHCuaGV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatLyLichKHCuaGV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietLyLichKHCuaGV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDLyLichKHCuaGV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="NganhThucVat">
           <Key>
@@ -695,18 +619,14 @@
             <PropertyRef Name="MaQuyCheCongTacSV" />
           </Key>
           <Property Name="MaQuyCheCongTacSV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenQuyCheCongTacSV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatQuyCheCongTacSV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietQuyCheCongTacSV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDQuyCheCongTacSV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="SOPDaoTao">
           <Key>
             <PropertyRef Name="MaSOPDaoTao" />
           </Key>
           <Property Name="MaSOPDaoTao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenSOPDaoTao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatSOPDaoTao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietSOPDaoTao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDSOPDaoTao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -723,33 +643,21 @@
             <PropertyRef Name="MaTaiNguyen" />
           </Key>
           <Property Name="MaTaiNguyen" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenTaiNguyen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatTaiNguyen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietTaiNguyen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="TamNhinMTCL">
-          <Key>
-            <PropertyRef Name="MaTamNhinMTCL" />
-          </Key>
-          <Property Name="MaTamNhinMTCL" Type="Int32" Nullable="false" />
-          <Property Name="TenTamNhinMTCL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatTamNhinMTCL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietTamNhinMTCL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDTaiNguyen" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ThongTinNoiBo">
           <Key>
             <PropertyRef Name="MaThongTinNoiBo" />
           </Key>
           <Property Name="MaThongTinNoiBo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenThongTinNoiBo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatThongTinNoiBo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietThongTinNoiBo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDThongTinNoiBo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ThucVat">
           <Key>
             <PropertyRef Name="MaCay" />
           </Key>
           <Property Name="MaCay" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="TenVietNam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="TenKhoaHoc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="HoThucVat" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -767,27 +675,21 @@
             <PropertyRef Name="MaTinTuc" />
           </Key>
           <Property Name="MaTinTuc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenTinTuc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatTinTuc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietTinTuc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDTinTuc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TinTucSuKien">
           <Key>
             <PropertyRef Name="MaTinTucSuKien" />
           </Key>
           <Property Name="MaTinTucSuKien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenTinTucSuKien" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatTinTucSuKien" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietTinTucSuKien" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDTinTucSuKien" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="TuyenDung">
           <Key>
             <PropertyRef Name="MaTuyenDung" />
           </Key>
           <Property Name="MaTuyenDung" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenTuyenDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDTomTatTuyenDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NDChiTietTuyenDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NDTuyenDung" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_BoThucVat_PhanLopThucVat">
           <End Type="NCKHVLUModel.PhanLopThucVat" Role="PhanLopThucVat" Multiplicity="1" />
@@ -902,9 +804,7 @@
           <EntitySetMapping Name="CacBoMons">
             <EntityTypeMapping TypeName="NCKHVLUModel.CacBoMon">
               <MappingFragment StoreEntitySet="CacBoMon">
-                <ScalarProperty Name="NDChiTietCacBoMon" ColumnName="NDChiTietCacBoMon" />
-                <ScalarProperty Name="NDTomTatCacBoMon" ColumnName="NDTomTatCacBoMon" />
-                <ScalarProperty Name="TenCacBoMon" ColumnName="TenCacBoMon" />
+                <ScalarProperty Name="NDCacBoMon" ColumnName="NDCacBoMon" />
                 <ScalarProperty Name="MaCacBoMon" ColumnName="MaCacBoMon" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -912,9 +812,7 @@
           <EntitySetMapping Name="CacCoSoLienKetDaoTaos">
             <EntityTypeMapping TypeName="NCKHVLUModel.CacCoSoLienKetDaoTao">
               <MappingFragment StoreEntitySet="CacCoSoLienKetDaoTao">
-                <ScalarProperty Name="NDChiTietCacCoSoLienKetDaoTao" ColumnName="NDChiTietCacCoSoLienKetDaoTao" />
-                <ScalarProperty Name="NDTomTatCacCoSoLienKetDaoTao" ColumnName="NDTomTatCacCoSoLienKetDaoTao" />
-                <ScalarProperty Name="TenCacCoSoLienKetDaoTao" ColumnName="TenCacCoSoLienKetDaoTao" />
+                <ScalarProperty Name="NDCacCoSoLienKetDaoTao" ColumnName="NDCacCoSoLienKetDaoTao" />
                 <ScalarProperty Name="MaCacCoSoLienKetDaoTao" ColumnName="MaCacCoSoLienKetDaoTao" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -922,9 +820,7 @@
           <EntitySetMapping Name="CacDeTaiDangNCCuaGVs">
             <EntityTypeMapping TypeName="NCKHVLUModel.CacDeTaiDangNCCuaGV">
               <MappingFragment StoreEntitySet="CacDeTaiDangNCCuaGV">
-                <ScalarProperty Name="NDChiTietCacDeTaiDangNCCuaGV" ColumnName="NDChiTietCacDeTaiDangNCCuaGV" />
-                <ScalarProperty Name="NDTomTatCacDeTaiDangNCCuaGV" ColumnName="NDTomTatCacDeTaiDangNCCuaGV" />
-                <ScalarProperty Name="TenCacDeTaiDangNCCuaGV" ColumnName="TenCacDeTaiDangNCCuaGV" />
+                <ScalarProperty Name="NDCacDeTaiDangNCCuaGV" ColumnName="NDCacDeTaiDangNCCuaGV" />
                 <ScalarProperty Name="MaCacDeTaiDangNCCuaGV" ColumnName="MaCacDeTaiDangNCCuaGV" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -932,9 +828,7 @@
           <EntitySetMapping Name="CacDeTaiDangNCCuaSVs">
             <EntityTypeMapping TypeName="NCKHVLUModel.CacDeTaiDangNCCuaSV">
               <MappingFragment StoreEntitySet="CacDeTaiDangNCCuaSV">
-                <ScalarProperty Name="NDChiTietCacDeTaiDangNCCuaSV" ColumnName="NDChiTietCacDeTaiDangNCCuaSV" />
-                <ScalarProperty Name="NDTomTatCacDeTaiDangNCCuaSV" ColumnName="NDTomTatCacDeTaiDangNCCuaSV" />
-                <ScalarProperty Name="TenCacDeTaiDangNCCuaSV" ColumnName="TenCacDeTaiDangNCCuaSV" />
+                <ScalarProperty Name="NDCacDeTaiDangNCCuaSV" ColumnName="NDCacDeTaiDangNCCuaSV" />
                 <ScalarProperty Name="MaCacDeTaiDangNCCuaSV" ColumnName="MaCacDeTaiDangNCCuaSV" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -942,9 +836,7 @@
           <EntitySetMapping Name="CacPhongThiNghiems">
             <EntityTypeMapping TypeName="NCKHVLUModel.CacPhongThiNghiem">
               <MappingFragment StoreEntitySet="CacPhongThiNghiem">
-                <ScalarProperty Name="NDChiTietCacPhongThiNghiem" ColumnName="NDChiTietCacPhongThiNghiem" />
-                <ScalarProperty Name="NDTomTatCacPhongThiNghiem" ColumnName="NDTomTatCacPhongThiNghiem" />
-                <ScalarProperty Name="TenCacPhongThiNghiem" ColumnName="TenCacPhongThiNghiem" />
+                <ScalarProperty Name="NDCacPhongThiNghiem" ColumnName="NDCacPhongThiNghiem" />
                 <ScalarProperty Name="MaCacPhongThiNghiem" ColumnName="MaCacPhongThiNghiem" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -952,9 +844,7 @@
           <EntitySetMapping Name="CauLacboes">
             <EntityTypeMapping TypeName="NCKHVLUModel.CauLacbo">
               <MappingFragment StoreEntitySet="CauLacbo">
-                <ScalarProperty Name="NDChiTietCauLacBo" ColumnName="NDChiTietCauLacBo" />
-                <ScalarProperty Name="NDTomTatCauLacBo" ColumnName="NDTomTatCauLacBo" />
-                <ScalarProperty Name="TenCauLacBo" ColumnName="TenCauLacBo" />
+                <ScalarProperty Name="NDCauLacBo" ColumnName="NDCauLacBo" />
                 <ScalarProperty Name="MaCauLacBo" ColumnName="MaCauLacBo" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -971,9 +861,7 @@
           <EntitySetMapping Name="ChuongTrinhDaoTaos">
             <EntityTypeMapping TypeName="NCKHVLUModel.ChuongTrinhDaoTao">
               <MappingFragment StoreEntitySet="ChuongTrinhDaoTao">
-                <ScalarProperty Name="NDTomTatChuongTrinhDaoTao" ColumnName="NDTomTatChuongTrinhDaoTao" />
-                <ScalarProperty Name="NDChiTietChuongTrinhDaoTao" ColumnName="NDChiTietChuongTrinhDaoTao" />
-                <ScalarProperty Name="TenChuongTrinhDaoTao" ColumnName="TenChuongTrinhDaoTao" />
+                <ScalarProperty Name="NDChuongTrinhDaoTao" ColumnName="NDChuongTrinhDaoTao" />
                 <ScalarProperty Name="MaChuongTrinhDaoTao" ColumnName="MaChuongTrinhDaoTao" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -981,9 +869,7 @@
           <EntitySetMapping Name="CoCauToChucs">
             <EntityTypeMapping TypeName="NCKHVLUModel.CoCauToChuc">
               <MappingFragment StoreEntitySet="CoCauToChuc">
-                <ScalarProperty Name="NDChiTietCoCauToChuc" ColumnName="NDChiTietCoCauToChuc" />
-                <ScalarProperty Name="NDTomTatCoCauToChuc" ColumnName="NDTomTatCoCauToChuc" />
-                <ScalarProperty Name="TenCoCauToChuc" ColumnName="TenCoCauToChuc" />
+                <ScalarProperty Name="NDCoCauToChuc" ColumnName="NDCoCauToChuc" />
                 <ScalarProperty Name="MaCoCauToChuc" ColumnName="MaCoCauToChuc" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -991,9 +877,7 @@
           <EntitySetMapping Name="DamBaoChatLuongs">
             <EntityTypeMapping TypeName="NCKHVLUModel.DamBaoChatLuong">
               <MappingFragment StoreEntitySet="DamBaoChatLuong">
-                <ScalarProperty Name="NDChiTietDamBaoChatLuong" ColumnName="NDChiTietDamBaoChatLuong" />
-                <ScalarProperty Name="NDTomTatDamBaoChatLuong" ColumnName="NDTomTatDamBaoChatLuong" />
-                <ScalarProperty Name="TenDamBaoChatLuong" ColumnName="TenDamBaoChatLuong" />
+                <ScalarProperty Name="NDDamBaoChatLuong" ColumnName="NDDamBaoChatLuong" />
                 <ScalarProperty Name="MaDamBaoChatLuong" ColumnName="MaDamBaoChatLuong" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1001,9 +885,7 @@
           <EntitySetMapping Name="DaoTaoLienTucCPEs">
             <EntityTypeMapping TypeName="NCKHVLUModel.DaoTaoLienTucCPE">
               <MappingFragment StoreEntitySet="DaoTaoLienTucCPE">
-                <ScalarProperty Name="NDChiTietDaoTaoLienTucCPE" ColumnName="NDChiTietDaoTaoLienTucCPE" />
-                <ScalarProperty Name="NDTomTatDaoTaoLienTucCPE" ColumnName="NDTomTatDaoTaoLienTucCPE" />
-                <ScalarProperty Name="TenDaoTaoLienTucCPE" ColumnName="TenDaoTaoLienTucCPE" />
+                <ScalarProperty Name="NDDaoTaoLienTucCPE" ColumnName="NDDaoTaoLienTucCPE" />
                 <ScalarProperty Name="MaDaoTaoLienTucCPE" ColumnName="MaDaoTaoLienTucCPE" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1011,9 +893,7 @@
           <EntitySetMapping Name="DoanHois">
             <EntityTypeMapping TypeName="NCKHVLUModel.DoanHoi">
               <MappingFragment StoreEntitySet="DoanHoi">
-                <ScalarProperty Name="NDChiTietDoanHoi" ColumnName="NDChiTietDoanHoi" />
-                <ScalarProperty Name="NDTomTatDoanHoi" ColumnName="NDTomTatDoanHoi" />
-                <ScalarProperty Name="TenDoanHoi" ColumnName="TenDoanHoi" />
+                <ScalarProperty Name="NDDoanHoi" ColumnName="NDDoanHoi" />
                 <ScalarProperty Name="MaDoanHoi" ColumnName="MaDoanHoi" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1021,9 +901,7 @@
           <EntitySetMapping Name="HoatDongNgoaiKhoas">
             <EntityTypeMapping TypeName="NCKHVLUModel.HoatDongNgoaiKhoa">
               <MappingFragment StoreEntitySet="HoatDongNgoaiKhoa">
-                <ScalarProperty Name="NDChiTietHoatDongNgoaiKhoa" ColumnName="NDChiTietHoatDongNgoaiKhoa" />
-                <ScalarProperty Name="NDTomTatHoatDongNgoaiKhoa" ColumnName="NDTomTatHoatDongNgoaiKhoa" />
-                <ScalarProperty Name="TenHoatDongNgoaiKhoa" ColumnName="TenHoatDongNgoaiKhoa" />
+                <ScalarProperty Name="NDHoatDongNgoaiKhoa" ColumnName="NDHoatDongNgoaiKhoa" />
                 <ScalarProperty Name="MaHoatDongNgoaiKhoa" ColumnName="MaHoatDongNgoaiKhoa" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1058,9 +936,7 @@
           <EntitySetMapping Name="LyLichKHCuaGVs">
             <EntityTypeMapping TypeName="NCKHVLUModel.LyLichKHCuaGV">
               <MappingFragment StoreEntitySet="LyLichKHCuaGV">
-                <ScalarProperty Name="NDChiTietLyLichKHCuaGV" ColumnName="NDChiTietLyLichKHCuaGV" />
-                <ScalarProperty Name="NDTomTatLyLichKHCuaGV" ColumnName="NDTomTatLyLichKHCuaGV" />
-                <ScalarProperty Name="TenLyLichKHCuaGV" ColumnName="TenLyLichKHCuaGV" />
+                <ScalarProperty Name="NDLyLichKHCuaGV" ColumnName="NDLyLichKHCuaGV" />
                 <ScalarProperty Name="MaLyLichKHCuaGV" ColumnName="MaLyLichKHCuaGV" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1085,9 +961,7 @@
           <EntitySetMapping Name="QuyCheCongTacSVs">
             <EntityTypeMapping TypeName="NCKHVLUModel.QuyCheCongTacSV">
               <MappingFragment StoreEntitySet="QuyCheCongTacSV">
-                <ScalarProperty Name="NDChiTietQuyCheCongTacSV" ColumnName="NDChiTietQuyCheCongTacSV" />
-                <ScalarProperty Name="NDTomTatQuyCheCongTacSV" ColumnName="NDTomTatQuyCheCongTacSV" />
-                <ScalarProperty Name="TenQuyCheCongTacSV" ColumnName="TenQuyCheCongTacSV" />
+                <ScalarProperty Name="NDQuyCheCongTacSV" ColumnName="NDQuyCheCongTacSV" />
                 <ScalarProperty Name="MaQuyCheCongTacSV" ColumnName="MaQuyCheCongTacSV" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1095,9 +969,7 @@
           <EntitySetMapping Name="SOPDaoTaos">
             <EntityTypeMapping TypeName="NCKHVLUModel.SOPDaoTao">
               <MappingFragment StoreEntitySet="SOPDaoTao">
-                <ScalarProperty Name="NDChiTietSOPDaoTao" ColumnName="NDChiTietSOPDaoTao" />
-                <ScalarProperty Name="NDTomTatSOPDaoTao" ColumnName="NDTomTatSOPDaoTao" />
-                <ScalarProperty Name="TenSOPDaoTao" ColumnName="TenSOPDaoTao" />
+                <ScalarProperty Name="NDSOPDaoTao" ColumnName="NDSOPDaoTao" />
                 <ScalarProperty Name="MaSOPDaoTao" ColumnName="MaSOPDaoTao" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1116,29 +988,15 @@
           <EntitySetMapping Name="TaiNguyens">
             <EntityTypeMapping TypeName="NCKHVLUModel.TaiNguyen">
               <MappingFragment StoreEntitySet="TaiNguyen">
-                <ScalarProperty Name="NDChiTietTaiNguyen" ColumnName="NDChiTietTaiNguyen" />
-                <ScalarProperty Name="NDTomTatTaiNguyen" ColumnName="NDTomTatTaiNguyen" />
-                <ScalarProperty Name="TenTaiNguyen" ColumnName="TenTaiNguyen" />
+                <ScalarProperty Name="NDTaiNguyen" ColumnName="NDTaiNguyen" />
                 <ScalarProperty Name="MaTaiNguyen" ColumnName="MaTaiNguyen" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TamNhinMTCLs">
-            <EntityTypeMapping TypeName="NCKHVLUModel.TamNhinMTCL">
-              <MappingFragment StoreEntitySet="TamNhinMTCL">
-                <ScalarProperty Name="NDChiTietTamNhinMTCL" ColumnName="NDChiTietTamNhinMTCL" />
-                <ScalarProperty Name="NDTomTatTamNhinMTCL" ColumnName="NDTomTatTamNhinMTCL" />
-                <ScalarProperty Name="TenTamNhinMTCL" ColumnName="TenTamNhinMTCL" />
-                <ScalarProperty Name="MaTamNhinMTCL" ColumnName="MaTamNhinMTCL" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ThongTinNoiBoes">
             <EntityTypeMapping TypeName="NCKHVLUModel.ThongTinNoiBo">
               <MappingFragment StoreEntitySet="ThongTinNoiBo">
-                <ScalarProperty Name="NDChiTietThongTinNoiBo" ColumnName="NDChiTietThongTinNoiBo" />
-                <ScalarProperty Name="NDTomTatThongTinNoiBo" ColumnName="NDTomTatThongTinNoiBo" />
-                <ScalarProperty Name="TenThongTinNoiBo" ColumnName="TenThongTinNoiBo" />
+                <ScalarProperty Name="NDThongTinNoiBo" ColumnName="NDThongTinNoiBo" />
                 <ScalarProperty Name="MaThongTinNoiBo" ColumnName="MaThongTinNoiBo" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1156,6 +1014,7 @@
                 <ScalarProperty Name="HoThucVat" ColumnName="HoThucVat" />
                 <ScalarProperty Name="TenKhoaHoc" ColumnName="TenKhoaHoc" />
                 <ScalarProperty Name="TenVietNam" ColumnName="TenVietNam" />
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
                 <ScalarProperty Name="MaCay" ColumnName="MaCay" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1163,9 +1022,7 @@
           <EntitySetMapping Name="TinTucs">
             <EntityTypeMapping TypeName="NCKHVLUModel.TinTuc">
               <MappingFragment StoreEntitySet="TinTuc">
-                <ScalarProperty Name="NDChiTietTinTuc" ColumnName="NDChiTietTinTuc" />
-                <ScalarProperty Name="NDTomTatTinTuc" ColumnName="NDTomTatTinTuc" />
-                <ScalarProperty Name="TenTinTuc" ColumnName="TenTinTuc" />
+                <ScalarProperty Name="NDTinTuc" ColumnName="NDTinTuc" />
                 <ScalarProperty Name="MaTinTuc" ColumnName="MaTinTuc" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1173,9 +1030,7 @@
           <EntitySetMapping Name="TinTucSuKiens">
             <EntityTypeMapping TypeName="NCKHVLUModel.TinTucSuKien">
               <MappingFragment StoreEntitySet="TinTucSuKien">
-                <ScalarProperty Name="NDChiTietTinTucSuKien" ColumnName="NDChiTietTinTucSuKien" />
-                <ScalarProperty Name="NDTomTatTinTucSuKien" ColumnName="NDTomTatTinTucSuKien" />
-                <ScalarProperty Name="TenTinTucSuKien" ColumnName="TenTinTucSuKien" />
+                <ScalarProperty Name="NDTinTucSuKien" ColumnName="NDTinTucSuKien" />
                 <ScalarProperty Name="MaTinTucSuKien" ColumnName="MaTinTucSuKien" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1183,9 +1038,7 @@
           <EntitySetMapping Name="TuyenDungs">
             <EntityTypeMapping TypeName="NCKHVLUModel.TuyenDung">
               <MappingFragment StoreEntitySet="TuyenDung">
-                <ScalarProperty Name="NDChiTietTuyenDung" ColumnName="NDChiTietTuyenDung" />
-                <ScalarProperty Name="NDTomTatTuyenDung" ColumnName="NDTomTatTuyenDung" />
-                <ScalarProperty Name="TenTuyenDung" ColumnName="TenTuyenDung" />
+                <ScalarProperty Name="NDTuyenDung" ColumnName="NDTuyenDung" />
                 <ScalarProperty Name="MaTuyenDung" ColumnName="MaTuyenDung" />
               </MappingFragment>
             </EntityTypeMapping>
