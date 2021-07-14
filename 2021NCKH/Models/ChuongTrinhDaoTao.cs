@@ -15,6 +15,8 @@ namespace _2021NCKH.Models
     public partial class ChuongTrinhDaoTao
     {
         public int MaChuongTrinhDaoTao { get; set; }
-        public string NDChuongTrinhDaoTao { get; set; }
+        public string TenChuongTrinhDaoTao { get; set; }
+        public string NDChiTietChuongTrinhDaoTao { get; set; }
+        public string NDTomTatChuongTrinhDaoTao { get; set; }
     }
 }

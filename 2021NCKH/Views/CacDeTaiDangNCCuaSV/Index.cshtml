@@ -1,0 +1,52 @@
+﻿@model IEnumerable<_2021NCKH.Models.CacDeTaiDangNCCuaSV>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="all-title-box">
+    <div class="container text-center">
+        <h1>NGHIÊN CỨU KHOA HỌC<span class="m_1">Dành cho sinh viên</span></h1>
+    </div>
+</div>
+
+<div id="overviews" class="section wb">
+    <div class="container">
+        <div class="section-title row text-center">
+            <div class="col-md-8 offset-md-2">
+                <p class="lead">Danh sách các đề tài nguyên cứu của sinh viên khoa dược</p>
+            </div>
+        </div><!-- end title -->
+
+        <hr class="invis">
+
+        <div class="row">
+            @{ foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="blog-item">
+
+                            <div class="image-blog">
+                                <img src="@Url.Action("Picture", new { item.MaCacDeTaiDangNCCuaSV })" width="100" height="200" />
+                            </div>
+
+                            <div class="blog-title" style="margin-top: 20px;">
+                                <h3>
+                                    <a href="@Url.Action("Details", new {id = item.MaCacDeTaiDangNCCuaSV })">@item.TenCacDeTaiDangNCCuaSV.Substring(0, 50)...</a>
+                                </h3>
+                            </div>
+                            <div class="blog-desc">
+                                <p>
+                                    @MvcHtmlString.Create(item.NDTomTatCacDeTaiDangNCCuaSV.Substring(0,90))...
+                                </p>
+                            </div>
+                            <div class="blog-button">
+                                <h4><a class="hover-btn-new orange" href="@Url.Action("Details", new {id = item.MaCacDeTaiDangNCCuaSV })"><span>Chi tiết</span></a></h4>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

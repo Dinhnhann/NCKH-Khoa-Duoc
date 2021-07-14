@@ -1,0 +1,67 @@
+﻿@model _2021NCKH.Models.CacBoMon
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+
+            <h2>Edit</h2>
+            @using (Html.BeginForm("Edit", "CacBoMon", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>Chỉnh sửa danh mục</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.MaCacBoMon)
+
+                    <div class="form-group">
+                        <label for="StudentName">Tên nội dung</label>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.TenCacBoMon, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.TenCacBoMon, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="StudentName">Nội dung tóm tắt</label>
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.NDTomTatCacBoMon, new { id = "Noidungtomtat", rows = "7", @class = "form-control", })
+                            @Html.ValidationMessageFor(model => model.NDTomTatCacBoMon, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="StudentName">Nội dung chi tiết</label>
+                        <div class="col-md-10">
+                            @Html.TextAreaFor(model => model.NDChiTietCacBoMon, new { id = "Noidungchitiet", rows = "7", @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.NDChiTietCacBoMon, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Cập nhật" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div>
+                @Html.ActionLink("Trở lại danh sách", "Index")
+            </div>
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+                
+            }
+        </div>
+    </div>
+</div>

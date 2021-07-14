@@ -1,0 +1,45 @@
+﻿@model _2021NCKH.Models.CacBoMon
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+
+            <h2>Delete</h2>
+
+            <h3>Vui lòng xác nhận xóa nội dung?</h3>
+            <div>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        Tên nội dung
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TenCacBoMon)
+                    </dd>
+                    <dt>
+                        Nội dung tóm tắt
+                    </dt>
+                    <dd>
+                        @MvcHtmlString.Create(Model.NDTomTatCacBoMon) 
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-default" /> |
+                        @Html.ActionLink("Trở lại danh sách", "Index")
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

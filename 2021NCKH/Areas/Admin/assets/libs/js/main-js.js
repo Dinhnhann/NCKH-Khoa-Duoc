@@ -1,5 +1,5 @@
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
     'use strict';
 
     // ============================================================== 
@@ -12,6 +12,8 @@ jQuery(document).ready(function($) {
         });
 
     }
+
+   
 
     // ============================================================== 
     // Menu Slim Scroll List

@@ -15,6 +15,8 @@ namespace _2021NCKH.Models
     public partial class LyLichKHCuaGV
     {
         public int MaLyLichKHCuaGV { get; set; }
-        public string NDLyLichKHCuaGV { get; set; }
+        public string TenLyLichKHCuaGV { get; set; }
+        public string NDTomTatLyLichKHCuaGV { get; set; }
+        public string NDChiTietLyLichKHCuaGV { get; set; }
     }
 }

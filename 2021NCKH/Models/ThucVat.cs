@@ -15,7 +15,6 @@ namespace _2021NCKH.Models
     public partial class ThucVat
     {
         public int MaCay { get; set; }
-        public byte[] HinhAnh { get; set; }
         public string TenVietNam { get; set; }
         public string TenKhoaHoc { get; set; }
         public string HoThucVat { get; set; }

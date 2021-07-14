@@ -15,6 +15,8 @@ namespace _2021NCKH.Models
     public partial class ThongTinNoiBo
     {
         public int MaThongTinNoiBo { get; set; }
-        public string NDThongTinNoiBo { get; set; }
+        public string TenThongTinNoiBo { get; set; }
+        public string NDTomTatThongTinNoiBo { get; set; }
+        public string NDChiTietThongTinNoiBo { get; set; }
     }
 }

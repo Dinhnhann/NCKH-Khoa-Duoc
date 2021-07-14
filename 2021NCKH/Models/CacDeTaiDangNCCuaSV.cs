@@ -15,6 +15,8 @@ namespace _2021NCKH.Models
     public partial class CacDeTaiDangNCCuaSV
     {
         public int MaCacDeTaiDangNCCuaSV { get; set; }
-        public string NDCacDeTaiDangNCCuaSV { get; set; }
+        public string TenCacDeTaiDangNCCuaSV { get; set; }
+        public string NDTomTatCacDeTaiDangNCCuaSV { get; set; }
+        public string NDChiTietCacDeTaiDangNCCuaSV { get; set; }
     }
 }

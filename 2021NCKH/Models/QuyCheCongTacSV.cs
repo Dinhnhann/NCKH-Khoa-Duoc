@@ -15,6 +15,8 @@ namespace _2021NCKH.Models
     public partial class QuyCheCongTacSV
     {
         public int MaQuyCheCongTacSV { get; set; }
-        public string NDQuyCheCongTacSV { get; set; }
+        public string TenQuyCheCongTacSV { get; set; }
+        public string NDTomTatQuyCheCongTacSV { get; set; }
+        public string NDChiTietQuyCheCongTacSV { get; set; }
     }
 }
