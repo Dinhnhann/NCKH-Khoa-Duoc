@@ -10,7 +10,7 @@ using _2021NCKH.Models;
 
 namespace _2021NCKH.Areas.VuonThucVat.Controllers
 {
-    public class ThucVatsController : Controller
+    public class ThucVats1Controller : Controller
     {
         private NCKHVLUEntities db = new NCKHVLUEntities();
 
@@ -21,7 +21,7 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
             return View(thucVats.ToList());
         }
 
-        // GET: VuonThucVat/ThucVats/Details/5
+        // GET: VuonThucVat/ThucVats1/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,14 +36,14 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
             return View(thucVat);
         }
 
-        // GET: VuonThucVat/ThucVats/Create
+        // GET: VuonThucVat/ThucVats1/Create
         public ActionResult Create()
         {
             ViewBag.MaLoaiThucVat = new SelectList(db.LoaiThucVats, "MaLoaiThucVat", "TenLoaiThucVat");
             return View();
         }
 
-        // POST: VuonThucVat/ThucVats/Create
+        // POST: VuonThucVat/ThucVats1/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -61,7 +61,7 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
             return View(thucVat);
         }
 
-        // GET: VuonThucVat/ThucVats/Edit/5
+        // GET: VuonThucVat/ThucVats1/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -77,7 +77,7 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
             return View(thucVat);
         }
 
-        // POST: VuonThucVat/ThucVats/Edit/5
+        // POST: VuonThucVat/ThucVats1/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -94,7 +94,7 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
             return View(thucVat);
         }
 
-        // GET: VuonThucVat/ThucVats/Delete/5
+        // GET: VuonThucVat/ThucVats1/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -109,7 +109,7 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
             return View(thucVat);
         }
 
-        // POST: VuonThucVat/ThucVats/Delete/5
+        // POST: VuonThucVat/ThucVats1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -1,96 +1,185 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@model IEnumerable<_2021NCKH.Models.ThucVat>
+@{ string nganh = "";
+    string lop = "";
+    string phanlop = "";
+    string bo = "";
+    string ho = "";
+    string chi = "";
+    string loai = ""; 
+    }
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Khoa Dược - Trường Đại Học Văn Lang</title>
-    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="@Url.Content("~/assets/img/NCKH img/header-logo/logo khoa duoc.jpg")">
-    @Styles.Render("~/assets/css")
-    @if (IsSectionDefined("css"))
-    {
-        @RenderSection("css", required: false)
-    }
-    <!-- CSS here -->
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/bootstrap.min.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/owl.carousel.min.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/slicknav.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/animate.min.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/magnific-popup.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/fontawesome-all.min.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/themify-icons.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/slick.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/nice-select.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/style.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/fontawesome.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/templatemo-style.css")">
-    <link rel="stylesheet" href="@Url.Content("~/assets/css/owl.css")">
-    <link href="@Url.Content("~/vendor/bootstrap/css/bootstrap.min.css")" rel="stylesheet">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Startmin - Bootstrap Admin Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="@Url.Content("~/assets/css/bootstrap.min.css")" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="@Url.Content("~/assets/css/metisMenu.min.css")" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="@Url.Content("~/assets/css/startmin.css")" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="@Url.Content("~/assets/css/font-awesome.min.css")" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
-    @Html.Partial("~/Views/Shared/Common/Header.cshtml")
 
-    <div class="main-content">
-        @if (TempData["AMess"] != null)
-        {
-            <div id="noticeAlert" class="alert @TempData["AType"] hide" style="margin-top:30px">
-                @TempData["AMess"]
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Startmin</a>
             </div>
-        }
-        @*@Html.Partial("~/Areas/VuonThucVat/Views/Shared/Common/sidebar.cshtml")*@
-        @RenderBody()
-        @Html.Partial("~/Views/Shared/Common/Footer.cshtml")
 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
 
-        <script src="@Url.Content("~/./assets/js/vendor/modernizr-3.5.0.min.js")"></script>
+            <ul class="nav navbar-nav navbar-left navbar-top-links">
+                <li><a href="#"><i class="fa fa-home fa-fw"></i>Khoa Dược</a></li>
+            </ul>
 
-        <!-- Jquery, Popper, Bootstrap -->
-        <script src="@Url.Content("~/./assets/js/vendor/jquery-1.12.4.min.js")"></script>
-        <script src="@Url.Content("~/./assets/js/popper.min.js")"></script>
-        <script src="@Url.Content("~/./assets/js/bootstrap.min.js")"></script>
-        <!-- Jquery Mobile Menu -->
-        <script src="@Url.Content("~/./assets/js/jquery.slicknav.min.js")"></script>
+            <ul class="nav navbar-right navbar-top-links">
+                <li class="dropdown navbar-inverse">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i><b class="caret"></b>
+                    </a>
+                </li>
+            </ul>
+            <!-- /.navbar-top-links -->
 
-        <!-- Jquery Slick , Owl-Carousel Plugins -->
-        <script src="@Url.Content("~/./assets/js/owl.carousel.min.js")"></script>
-        <script src="@Url.Content("~/./assets/js/slick.min.js")"></script>
-        <!-- One Page, Animated-HeadLin -->
-        <script src="@Url.Content("~/./assets/js/wow.min.js")"></script>
-        <script src="@Url.Content("~/./assets/js/animated.headline.js")"></script>
-        <script src="@Url.Content("~/./assets/js/jquery.magnific-popup.js")"></script>
-
-        <!-- Scrollup, nice-select, sticky -->
-        <script src="@Url.Content("~/./assets/js/jquery.scrollUp.min.js")"></script>
-        <script src="@Url.Content("~/./assets/js/jquery.nice-select.min.js")"></script>
-        <script src="@Url.Content("~/./assets/js/jquery.sticky.js")"></script>
-
-        <!-- contact js -->
-        <script src="@Url.Content("~/./assets/js/contact.js")"></script>
-        <script src="@Url.Content("~/./assets/js/jquery.form.js")"></script>
-        <script src="@Url.Content("~/./assets/js/jquery.validate.min.js")"></script>
-        <script src="@Url.Content("~/./assets/js/mail-script.js")"></script>
-        <script src="@Url.Content("~/./assets/js/jquery.ajaxchimp.min.js")"></script>
-
-        <!-- Jquery Plugins, main Jquery -->
-        <script src="@Url.Content("~/./assets/js/plugins.js")"></script>
-        <script src="@Url.Content("~/./assets/js/main.js")"></script>
-
-        <script src="@Url.Content("~/./vendor/jquery/jquery.min.js")"></script>
-        <script src="@Url.Content("~/./vendor/bootstrap/js/bootstrap.bundle.min.js")"></script>
-
-        <script src="@Url.Content("~/assets/js/browser.min.js")"></script>
-        <script src="@Url.Content("~/assets/js/breakpoints.min.js")"></script>
-        <script src="@Url.Content("~/assets/js/transition.js")"></script>
-        <script src="@Url.Content("~/assets/js/owl-carousel.js")"></script>
-        <script src="@Url.Content("~/assets/js/custom.js")"></script>
-
-
-        @if (IsSectionDefined("scripts"))
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        @foreach (var item in Model)
+                        {
+            <li>
+                @if (item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.NganhThucVat.TenNganhThucVat != nganh)
+                {
+                    nganh = @item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.NganhThucVat.TenNganhThucVat;
+<a href="#"><i class="fa fa-sitemap fa-fw"></i>Ngành @nganh<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        @foreach (var item2 in Model)
+                        {
+    <li>
+        @if (item2.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.NganhThucVat.TenNganhThucVat == nganh && item2.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.TenLopThucVat != lop)
         {
-            @RenderSection("scripts", required: false)
-        }
+            lop = @item2.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.TenLopThucVat;
+<a href="#">Lớp @lop</a>
+                            <ul class="nav nav-second-level">
+                                @foreach (var item3 in Model)
+                                {
+    <li>
+        @if (item3.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.TenLopThucVat == lop && item3.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.TenPhanLopThucVat != phanlop)
+        {
+            phanlop = @item3.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.TenPhanLopThucVat;
+<a href="#">Phân lớp @phanlop</a>
+                                    <ul class="nav nav-second-level">
+                                        @foreach (var item4 in Model)
+                                        {
+    <li>
+        @if (item4.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.TenPhanLopThucVat == phanlop && item4.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.TenBoThucVat != bo)
+        {
+            bo = @item4.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.TenBoThucVat;
+<a href="#">Bộ @bo</a>
+                                            <ul class="nav nav-second-level">
+                                                @foreach (var item5 in Model)
+                                                {
+    <li>
+        @if (item5.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.TenBoThucVat == bo && item5.LoaiThucVat.ChiThucVat.HoThucVat.TenHoThucVat != ho)
+        {
+            ho = @item5.LoaiThucVat.ChiThucVat.HoThucVat.TenHoThucVat;
+<a href="#">Họ @ho</a>
+                                                    <ul class="nav nav-second-level">
+                                                        @foreach (var item6 in Model)
+                                                        {
+    <li>
+        @if (item6.LoaiThucVat.ChiThucVat.HoThucVat.TenHoThucVat == ho && item6.LoaiThucVat.ChiThucVat.TenChiThucVat != chi)
+        {
+            chi = @item6.LoaiThucVat.ChiThucVat.TenChiThucVat;
+<a href="#">Chi @chi</a>
+                                                            <ul class="nav nav-second-level">
+                                                                @foreach (var item7 in Model)
+                                                                {
+    <li>
+        @if (item7.LoaiThucVat.ChiThucVat.TenChiThucVat == chi && item7.LoaiThucVat.TenLoaiThucVat != loai)
+        {
+            loai = @item7.LoaiThucVat.TenLoaiThucVat;
+<a href="#">Loài @loai</a>}
+    </li>
+}
+                                                            </ul>}
+    </li>
+}
+                                                    </ul>}
+    </li>
+}
+                                            </ul>}
+    </li>
+}
+                                    </ul>}
+    </li>
+}
+                            </ul>}
+    </li>
+}
+                    </ul>}
+            </li>
+}
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        @RenderBody()
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
         </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="@Url.Content("~/assets/js/jquery.min.js")"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="@Url.Content("~/assets/js/bootstrap.min.js")"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="@Url.Content("~/assets/js/metisMenu.min.js")"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="@Url.Content("~/assets/js/startmin.js")"></script>
+
 </body>
 </html>
