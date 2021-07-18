@@ -12,10 +12,10 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
 {
     public class ThucVats1Controller : Controller
     {
-        private NCKHVLUEntities db = new NCKHVLUEntities();
+        private NCKHVLUEntities1 db = new NCKHVLUEntities1();
 
         // GET: VuonThucVat/ThucVats
-        public ActionResult Index1()
+        public ActionResult Index()
         {
             var thucVats = db.ThucVats.Include(t => t.LoaiThucVat);
             return View(thucVats.ToList());

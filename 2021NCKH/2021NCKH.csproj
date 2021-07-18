@@ -307,11 +307,6 @@
     <Content Include="Areas\VuonThucVat\Views\web.config" />
     <Content Include="Areas\VuonThucVat\Views\_ViewStart.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\ThucVats1\Create.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\ThucVats1\Delete.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\ThucVats1\Details.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\ThucVats1\Edit.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\ThucVats1\Index.cshtml" />
     <Content Include="assets\fonts\fontawesome-webfont.eot" />
     <Content Include="assets\fonts\fontawesome-webfont.ttf" />
     <Content Include="assets\fonts\fontawesome-webfont.woff" />
@@ -321,6 +316,7 @@
     <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\VuonThucVat\Views\ThucVats1\Index.cshtml" />
     <None Include="Dockerfile" />
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
