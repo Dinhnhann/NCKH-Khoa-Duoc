@@ -15,7 +15,7 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
         private NCKHVLUEntities db = new NCKHVLUEntities();
 
         // GET: VuonThucVat/ThucVats
-        public ActionResult Index()
+        public ActionResult Index1()
         {
             var thucVats = db.ThucVats.Include(t => t.LoaiThucVat);
             return View(thucVats.ToList());
