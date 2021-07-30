@@ -1,4 +1,18 @@
 ﻿@model IEnumerable<_2021NCKH.Models.ThucVat>
+@{ string nganh = "";
+    string lop = "";
+    string phanlop = "";
+    string bo = "";
+    string ho = "";
+    string chi = "";
+    string loai = "";
+    int snganh = 0;
+    int slop = 0;
+    int sphanlop = 0;
+    int sbo = 0;
+    int sho = 0;
+    int schi = 0;
+    int sloai = 0; }
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,35 +22,47 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Startmin - Bootstrap Admin Theme</title>
+    <title>Admin CNTT</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="@Url.Content("~/assets/css/bootstrap.min.css")" rel="stylesheet">
+    <link href="@Url.Content("~/css/bootstrap.min.css")" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="@Url.Content("~/assets/css/metisMenu.min.css")" rel="stylesheet">
+    <link href="@Url.Content("~/css/metisMenu.min.css")" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="@Url.Content("~/assets/css/startmin.css")" rel="stylesheet">
+    <link href="@Url.Content("~/css/startmin.css")" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="@Url.Content("~/assets/css/font-awesome.min.css")" rel="stylesheet" type="text/css">
+    <link href="@Url.Content("~/css/font-awesome.min.css")" rel="stylesheet" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
-
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1></h1>
+                    <br />
+                    @if (TempData["AlertMessage"] != null)
+                    {
+        <div class="alert @TempData["AlertType"] hide" id="alertBox">
+            @TempData["AlertMessage"]
+        </div>}
+                    @RenderBody()
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+        </div>
+    </div>
     <div id="wrapper">
 
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">Startmin</a>
+                <a class="navbar-brand" href="@Url.Action("Index2","BaiViets")">Khoa CNTT</a>
             </div>
 
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -46,47 +72,134 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <ul class="nav navbar-nav navbar-left navbar-top-links">
-                <li><a href="#"><i class="fa fa-home fa-fw"></i>Khoa Dược</a></li>
-            </ul>
-
             <ul class="nav navbar-right navbar-top-links">
-                <li class="dropdown navbar-inverse">
+                <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i><b class="caret"></b>
+                        <i class="fa fa-user fa-fw"></i>Khoa cntt<b class="caret"></b>
                     </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="@Url.Action("Logout", "ManagerAdmin" )"><i class="fa fa-sign-out fa-fw"></i> Đăng Xuất </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
-        </nav>
+            <!-- /.navbar-top-links -->
 
-        <!-- Page Content -->
-        <div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        @RenderBody()
-                    </div>
-                    <!-- /.col-lg-12 -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        @foreach (var item in Model)
+                        {
+                            snganh++;
+            <li>
+                @if (item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.NganhThucVat.TenNganhThucVat != nganh)
+                {
+                    nganh = @item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.NganhThucVat.TenNganhThucVat;
+<a href="#">@snganh. Ngành @nganh<span class="fa arrow"></span></a>
+                    <ul class="nav" id="side-menu">
+                        @foreach (var item2 in Model)
+                        {
+    <li>
+        @if (item2.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.NganhThucVat.TenNganhThucVat == nganh && item2.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.TenLopThucVat != lop)
+        {
+            slop++;
+            lop = @item2.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.TenLopThucVat;
+<a href="#">@snganh.@slop Lớp @lop</a>
+                            <ul class="nav" id="side-menu">
+                                @foreach (var item3 in Model)
+                                {
+    <li>
+        @if (item3.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.TenLopThucVat == lop && item3.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.TenPhanLopThucVat != phanlop)
+        {
+            sphanlop++;
+            phanlop = @item3.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.TenPhanLopThucVat;
+<a href="#">@snganh.@slop.@sphanlop Phân lớp @phanlop</a>
+                                    <ul class="nav" id="side-menu">
+                                        @foreach (var item4 in Model)
+                                        {
+    <li>
+        @if (item4.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.TenPhanLopThucVat == phanlop && item4.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.TenBoThucVat != bo)
+        {
+            sbo++;
+            bo = @item4.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.TenBoThucVat;
+<a href="#">@snganh.@slop.@sphanlop.@sbo Bộ @bo</a>
+                                            <ul class="nav" id="side-menu">
+                                                @foreach (var item5 in Model)
+                                                {
+    <li>
+        @if (item5.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.TenBoThucVat == bo && item5.LoaiThucVat.ChiThucVat.HoThucVat.TenHoThucVat != ho)
+        {
+            sho++;
+            ho = @item5.LoaiThucVat.ChiThucVat.HoThucVat.TenHoThucVat;
+        <a href="#">@snganh.@slop.@sphanlop.@sbo.@sho Họ @ho</a>
+                                                    <ul class="nav" id="side-menu">
+                                                        @foreach (var item6 in Model)
+                                                        {
+    <li>
+        @if (item6.LoaiThucVat.ChiThucVat.HoThucVat.TenHoThucVat == ho && item6.LoaiThucVat.ChiThucVat.TenChiThucVat != chi)
+        {
+            schi++;
+            chi = @item6.LoaiThucVat.ChiThucVat.TenChiThucVat;
+        <a href="#">@snganh.@slop.@sphanlop.@sbo.@sho.@schi Chi @chi</a>
+                                                            <ul class="nav" id="side-menu">
+                                                                @foreach (var item7 in Model)
+                                                                {
+    <li>
+        @if (item7.LoaiThucVat.ChiThucVat.TenChiThucVat == chi && item7.LoaiThucVat.TenLoaiThucVat != loai)
+        {
+            sloai++;
+            loai = @item7.LoaiThucVat.TenLoaiThucVat;
+        <a href="#">@snganh.@slop.@sphanlop.@sbo.@sho.@schi.@sloai Loài @loai</a>}
+    </li>}
+                                                            </ul>}
+    </li>}
+                                                    </ul>}
+    </li>
+}
+                                            </ul>}
+    </li>
+}
+                                    </ul>}
+    </li>
+}
+                            </ul>}
+    </li>}
+                    </ul>}
+            </li>
+}
+                    </ul>
                 </div>
-                <!-- /.row -->
+                <!-- /.sidebar-collapse -->
             </div>
-            <!-- /.container-fluid -->
-        </div>
-        <!-- /#page-wrapper -->
-
+            <!-- /.navbar-static-side -->
+        </nav>
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src="@Url.Content("~/assets/js/jquery.min.js")"></script>
+    <script src="@Url.Content("~/js/jquery.min.js")"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="@Url.Content("~/assets/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/js/bootstrap.min.js")"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="@Url.Content("~/assets/js/metisMenu.min.js")"></script>
+    <script src="@Url.Content("~/js/metisMenu.min.js")"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="@Url.Content("~/assets/js/startmin.js")"></script>
+    <script src="@Url.Content("~/js/startmin.js")"></script>
 
+
+    <script src="@Url.Content("~/js/dataTables/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/js/dataTables/dataTables.bootstrap.min.js")"></script>
+    @RenderSection("scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').DataTable({
+                responsive: true
+            });
+        });
+        $('#alertBox').removeClass('hide');
+        $('#alertBox').delay(1000).slideUp(500);
+    </script>
 </body>
 </html>

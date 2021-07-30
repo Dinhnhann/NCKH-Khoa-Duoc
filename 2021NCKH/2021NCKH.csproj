@@ -63,6 +63,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -129,6 +130,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\VuonThucVat\Controllers\ThucVatController.cs" />
     <Compile Include="Areas\VuonThucVat\Controllers\ThucVatsController.cs" />
     <Compile Include="Areas\VuonThucVat\VuonThucVatAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -317,6 +319,12 @@
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Areas\VuonThucVat\Views\ThucVats1\Index.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThucVats1\Delete.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThucVat\Create.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThucVat\Delete.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThucVat\Details.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThucVat\Edit.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThucVat\Index.cshtml" />
     <None Include="Dockerfile" />
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
@@ -363,6 +371,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\VuonThucVat\Data\" />
+    <Folder Include="images\ThucVat\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
