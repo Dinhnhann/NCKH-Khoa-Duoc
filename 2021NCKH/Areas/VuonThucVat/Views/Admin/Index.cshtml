@@ -1,0 +1,53 @@
+﻿@model IEnumerable<_2021NCKH.Models.ThucVat>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/VuonThucVat/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên Việt Nam
+        </th>
+        <th>
+            Tên Khoa học
+        </th>
+        <th>
+            Tên Khác
+        </th>
+        <th>
+            Họ thực vật
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.TenVietNam
+            </td>
+            <td>
+                @item.TenKhoaHocDau <i>@item.TenKhoaHocDuoi</i>
+            </td>
+            <td>
+                @item.TenKhac
+            </td>
+            <td>
+                @item.LoaiThucVat.TenLoaiThucVat
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaCay }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaCay }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaCay })
+            </td>
+        </tr>
+    }
+
+</table>

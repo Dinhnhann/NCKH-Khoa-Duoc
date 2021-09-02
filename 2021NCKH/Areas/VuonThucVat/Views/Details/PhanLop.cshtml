@@ -1,0 +1,43 @@
+﻿@model IEnumerable<_2021NCKH.Models.ThucVat>
+@{
+    ViewBag.Title = "PhanLop";
+    Layout = "~/Areas/VuonThucVat/Views/Shared/_Layout.cshtml";
+    string phanlop = "";
+}
+
+<h2>Phân Lớp Thực vật</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Tên Phân Lớp thực vật
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.TenPhanLopThucVat != phanlop)
+        {
+            phanlop = item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.TenPhanLopThucVat;
+            <tr>
+                <td>
+                    <a href="@Url.Action("Bo", new { id = item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.MaBoThucVat })">
+                        @item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.TenPhanLopThucVat
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+    <tr>
+        <td>
+            <a href="@Url.Action("Lop")">
+                Lớp
+            </a>
+        </td>
+        <td>
+            <a href="@Url.Action("Bo")">
+                Bộ
+            </a>
+        </td>
+    </tr>
+</table>

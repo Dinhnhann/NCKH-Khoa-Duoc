@@ -1,0 +1,27 @@
+﻿@model IEnumerable<_2021NCKH.Models.ThucVat>
+@{
+    ViewBag.Title = "Nganh";
+    Layout = "~/Areas/VuonThucVat/Views/Shared/_Layout.cshtml";
+    string loai = "";
+}
+
+<h2>Loài thực vật</h2>
+<table class="table">
+    <tr>
+        <th>
+            Tên loài thực vật
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    @if (item.LoaiThucVat.TenLoaiThucVat != loai)
+    {
+        loai = item.LoaiThucVat.TenLoaiThucVat;
+        <td>
+            @loai
+        </td>
+    }
+</tr>
+}
+</table>

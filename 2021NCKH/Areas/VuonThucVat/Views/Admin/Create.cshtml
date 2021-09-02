@@ -1,13 +1,12 @@
 ﻿@model _2021NCKH.Models.ThucVat
-
 @{
-    ViewBag.Title = "Edit";
-    Layout = "~/Areas/VuonThucVat/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/VuonThucVat/Views/Shared/_LayoutUser.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Create</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Create", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -15,15 +14,16 @@
         <h4>ThucVat</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.MaCay)
 
-    <div class="form-group">
-        <label class="control-label col-md-2" for="IMG">Hình ảnh</label>
-        <div class="col-md-10">
-            <input class="form-control" type="file" name="Picture" id="IMG" onchange="readPicture(this)" accept="image/gif,image/jpeg,image/png" />
+        <div class="form-group">
+            <label class="control-label col-md-2" for="IMG">Hình ảnh</label>
+            <div class="col-md-5">
+                <input class="form-control" type="file" name="Picture" id="IMG" onchange="readPicture(this)" accept="image/gif,image/jpeg,image/png" />
+            </div>
+            <div class="col-md-5">
+                <img id="Picture" />
+            </div>
         </div>
-        <img id="Picture" src="@Url.Action("Picture", new { Model.MaCay })" />
-    </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.TenVietNam, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -32,12 +32,22 @@
                 @Html.ValidationMessageFor(model => model.TenVietNam, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.TenKhoaHoc, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TenKhac, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TenKhoaHoc, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TenKhoaHoc, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.TenKhac, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenKhac, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Tên Khoa học", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.TenKhoaHocDau, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenKhoaHocDau, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-5">
+                @Html.EditorFor(model => model.TenKhoaHocDuoi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenKhoaHocDuoi, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -52,7 +62,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MoTa, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.MoTa, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.MoTa, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -107,7 +117,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -117,13 +127,6 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 @section scripts{
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>
-        tinymce.init({
-            selector: 'textarea#MoTa',
-            menubar: false
-        });
-    </script>
     <script>
         function readPicture(input) {
             if (input.files && input.files[0]) {

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<_2021NCKH.Models.PhanLopThucVat>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/VuonThucVat/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenPhanLopThucVat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LopThucVat.TenLopThucVat)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenPhanLopThucVat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LopThucVat.TenLopThucVat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaPhanLopThucVat }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaPhanLopThucVat }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaPhanLopThucVat })
+        </td>
+    </tr>
+}
+
+</table>

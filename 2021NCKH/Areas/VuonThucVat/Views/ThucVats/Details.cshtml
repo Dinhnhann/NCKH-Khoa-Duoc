@@ -1,0 +1,100 @@
+﻿@model _2021NCKH.Models.ThucVat
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/VuonThucVat/Views/Shared/LayoutDetails.cshtml";
+}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+    <!-- Breadcrumb Section End -->
+    <!-- Product Details Section Begin -->
+    <section class="product-details spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="product__details__pic">
+                        <div class="product__details__pic__item">
+                            <img class="product__details__pic__item--large"
+                                 src="@Url.Action("Picture", "Admin", new { id = Model.MaCay })" height="400px" alt="hinh-anh">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="product__details__text">
+                        <h4>@Model.TenVietNam</h4>
+                        <ul>
+                            <li><b>Tên Khoa học</b> <span>@Model.TenKhoaHocDau <i>@Model.TenKhoaHocDuoi</i></span></li>
+                            <li><b>Tên khác</b><span>@Model.TenKhac</span></li>
+                            <li><b>Họ Thực Vật</b><span>@Model.LoaiThucVat.TenLoaiThucVat</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="product__details__tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"
+                                   aria-selected="true">Nội dung</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"
+                                   aria-selected="false">Tác dụng dược lý</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                <div class="product__details__tab__desc">
+                                    <h6>Mô tả</h6>
+                                    <p>
+                                        <a href="@Model.MoTa">
+                                            @Model.MoTa
+                                        </a>
+                                    </p>
+                                    <h6>Bộ phận dùng</h6>
+                                    <p>
+                                        @Model.BoPhanDung
+                                    </p>
+                                    <h6>Thành phần hóa học</h6>
+                                    <p>
+                                        @Model.ThanhPhanHoaHoc
+                                    </p>
+                                    <h6>Liều dùng</h6>
+                                    <p>
+                                        @Model.LieuDung
+                                    </p>
+                                    <h6>Tài liệu tham khảo</h6>
+                                    <p>
+                                        @Model.TaiLieuThamKhao
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                <div class="product__details__tab__desc">
+                                    <h6>Tác dụng dược lý</h6>
+                                    <p>@Model.TacDungDuocLy</p>
+                                </div>
+                            </div>
+                            <div class="form-actions no-color">
+                                @Html.ActionLink("Danh mục cây thuốc", "Index")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Product Details Section End -->
+</body>
+
+</html>
+

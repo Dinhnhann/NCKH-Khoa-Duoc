@@ -17,7 +17,8 @@ namespace _2021NCKH.Models
         public int MaCay { get; set; }
         public byte[] HinhAnh { get; set; }
         public string TenVietNam { get; set; }
-        public string TenKhoaHoc { get; set; }
+        public string TenKhoaHocDau { get; set; }
+        public string TenKhoaHocDuoi { get; set; }
         public string HoThucVat { get; set; }
         public string MoTa { get; set; }
         public string BoPhanDung { get; set; }
@@ -26,6 +27,7 @@ namespace _2021NCKH.Models
         public string LieuDung { get; set; }
         public string TaiLieuThamKhao { get; set; }
         public int MaLoaiThucVat { get; set; }
+        public string TenKhac { get; set; }
     
         public virtual LoaiThucVat LoaiThucVat { get; set; }
     }
