@@ -2,25 +2,20 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Areas/VuonThucVat/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/VuonThucVat/Views/Shared/AdminLayout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Chi tiết thực vật</h2>
 
 <div>
-    <h4>ThucVat</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            Hình ảnh
-        </dt>
-
         <dd>
             @Html.DisplayFor(model => model.HinhAnh)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TenVietNam)
+            Tên Việt Nam
         </dt>
 
         <dd>
@@ -32,11 +27,11 @@
         </dt>
 
         <dd>
-            @Model.TenKhoaHocDau <i>@Model.TenKhoaHocDuoi</i>
+            <i>@Model.LoaiThucVat.TenLoaiThucVatDau</i> @Model.LoaiThucVat.TenLoaiThucVatDuoi
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.HoThucVat)
+            Họ thực vật
         </dt>
 
         <dd>
@@ -44,7 +39,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.MoTa)
+            Mô tả
         </dt>
 
         <dd>
@@ -52,7 +47,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BoPhanDung)
+            Bộ phận dùng
         </dt>
 
         <dd>
@@ -60,15 +55,15 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ThanhPhanHoaHoc)
+            Thành phần hóa học
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ThanhPhanHoaHoc)
+            @Html.DisplayFor(model => model.SoLuongThanhPhanHoaHoc)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TacDungDuocLy)
+            Tác dụng dược lý
         </dt>
 
         <dd>
@@ -76,7 +71,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LieuDung)
+            Liều dùng
         </dt>
 
         <dd>
@@ -84,21 +79,12 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TaiLieuThamKhao)
+            Tài liệu tham khảo
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.TaiLieuThamKhao)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LoaiThucVat.TenLoaiThucVat)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LoaiThucVat.TenLoaiThucVat)
-        </dd>
-
     </dl>
 </div>
 <p>

@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/VuonThucVat/Views/Shared/AdminLayout.cshtml";
+    bool dk = false;
 }
 
 <h2>Index</h2>
@@ -19,10 +20,13 @@
             Tên Khoa học
         </th>
         <th>
-            Tên Khác
+            Hình ảnh
         </th>
         <th>
             Họ thực vật
+        </th>
+        <th>
+            Công thức hóa học
         </th>
         <th></th>
     </tr>
@@ -34,19 +38,44 @@
                 @item.TenVietNam
             </td>
             <td>
-                @item.TenKhoaHocDau <i>@item.TenKhoaHocDuoi</i>
+                <i>@item.LoaiThucVat.TenLoaiThucVatDau</i> @item.LoaiThucVat.TenLoaiThucVatDuoi
             </td>
             <td>
-                @item.TenKhac
+                <img src="@Url.Action("Picture", new { id = item.MaCay })" width="80px" height="60px" />
             </td>
             <td>
-                @item.LoaiThucVat.TenLoaiThucVat
+                @item.LoaiThucVat.ChiThucVat.HoThucVat.TenHoThucVat
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.MaCay }) |
-                @Html.ActionLink("Details", "Details", new { id = item.MaCay }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.MaCay })
-            </td>
+            @foreach (var item1 in ViewData["CTHH"] as List<_2021NCKH.Models.ChiTietCTHH>)
+            {
+                if (item1.ThucVat1.MaCay == item.MaCay)
+                {
+                    dk = true;
+                    break;
+                }
+            }
+            @if (dk)
+            {
+        <td>
+            @foreach (var item1 in ViewData["CTHH"] as List<_2021NCKH.Models.ChiTietCTHH>)
+            {
+                if (item1.ThucVat1.MaCay == item.MaCay)
+                {
+                    <p>@item1.ThanhPhanHoaHoc.TenDanhPhap,</p>
+                }
+            }
+        </td>
+            }
+            else
+            {
+                <td>Chưa điền</td>  
+            }
+        <td>
+            @Html.ActionLink("Thêm CTHH", "ThemCTHH", new { id = item.MaCay }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.MaCay }) |
+            @Html.ActionLink("Details", "Details", new { id = item.MaCay }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MaCay })
+        </td>
         </tr>
     }
 

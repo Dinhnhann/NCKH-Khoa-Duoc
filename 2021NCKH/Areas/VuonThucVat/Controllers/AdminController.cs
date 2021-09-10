@@ -19,9 +19,74 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
         public ActionResult Index()
         {
             var thucVats = db.ThucVats.Include(t => t.LoaiThucVat);
+            ViewData["CTHH"] = db.ChiTietCTHHs.ToList();
             return View(thucVats.ToList());
         }
-
+        public ActionResult ThemCTHH(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ThucVat thucVat = db.ThucVats.Find(id);
+            if (thucVat == null)
+            {
+                return HttpNotFound();
+            }
+            ViewData["id"] = id;
+            var tphh = db.ThanhPhanHoaHocs.ToList();
+            ViewData["CTHH"] = db.ChiTietCTHHs.ToList();
+            return View(tphh);
+        }
+        [HttpPost]
+        public ActionResult ThemCTHH(int idhh, int idtv)
+        {
+            ThucVat thucVat = db.ThucVats.Find(idtv);
+            if (thucVat == null)
+            {
+                return HttpNotFound();
+            }
+            ThanhPhanHoaHoc tphh = db.ThanhPhanHoaHocs.Find(idhh);
+            if (tphh == null)
+            {
+                return HttpNotFound();
+            }
+            ChiTietCTHH ct = new ChiTietCTHH();
+            ct.ThucVat1 = thucVat;
+            ct.ThanhPhanHoaHoc = tphh;
+            db.ChiTietCTHHs.Add(ct);
+            db.SaveChanges();
+            ViewData["CTHH"] = db.ChiTietCTHHs.ToList();
+            return RedirectToAction("ThemCTHH", new { id = idtv });
+        }
+        [HttpPost]
+        public ActionResult XoaCTHH(int idhh, int idtv)
+        {
+            ThucVat thucVat = db.ThucVats.Find(idtv);
+            if (thucVat == null)
+            {
+                return HttpNotFound();
+            }
+            ThanhPhanHoaHoc tphh = db.ThanhPhanHoaHocs.Find(idhh);
+            if (tphh == null)
+            {
+                return HttpNotFound();
+            }
+            var model = db.ChiTietCTHHs.ToList();
+            //model = model.Where(p => p.TenVietNam.ToLower().Contains(keyword.ToLower())).ToList();
+            model = (from s in model
+                     where s.ThanhPhanHoaHoc.ID.ToString().Contains(idhh.ToString())
+                     && s.ThucVat1.MaCay.ToString().Contains(idtv.ToString())
+                     select s).ToList();
+            foreach (var item in model)
+            {
+                ChiTietCTHH cthh = db.ChiTietCTHHs.Find(item.ID);
+                db.ChiTietCTHHs.Remove(cthh);
+                db.SaveChanges();
+            }
+            ViewData["CTHH"] = db.ChiTietCTHHs.ToList();
+            return RedirectToAction("ThemCTHH", new { id = idtv });
+        }
         // GET: VuonThucVat/ThucVat/Details/5
         public ActionResult Details(int? id)
         {
@@ -45,10 +110,9 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
         // GET: VuonThucVat/ThucVat/Create
         public ActionResult Create()
         {
-            ViewBag.MaLoaiThucVat = new SelectList(db.LoaiThucVats, "MaLoaiThucVat", "TenLoaiThucVat");
+            ViewBag.MaLoaiThucVat = new SelectList(db.LoaiThucVats, "MaLoaiThucVat", "TenLoaiThucVatDuoi");
             return View();
         }
-
         // POST: VuonThucVat/ThucVat/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -73,7 +137,7 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
                     }
                 }
             }
-            ViewBag.MaLoaiThucVat = new SelectList(db.LoaiThucVats, "MaLoaiThucVat", "TenLoaiThucVat", thucVat.MaLoaiThucVat);
+            ViewBag.MaLoaiThucVat = new SelectList(db.LoaiThucVats, "MaLoaiThucVat", "TenLoaiThucVatDuoi", thucVat.MaLoaiThucVat);
             return View(thucVat);
         }
 
@@ -89,7 +153,7 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.MaLoaiThucVat = new SelectList(db.LoaiThucVats, "MaLoaiThucVat", "TenLoaiThucVat", thucVat.MaLoaiThucVat);
+            ViewBag.MaLoaiThucVat = new SelectList(db.LoaiThucVats, "MaLoaiThucVat", "TenLoaiThucVatDuoi", thucVat.MaLoaiThucVat);
             return View(thucVat);
         }
 
@@ -116,7 +180,7 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
                     return RedirectToAction("Index");
                 }
             }
-            ViewBag.MaLoaiThucVat = new SelectList(db.LoaiThucVats, "MaLoaiThucVat", "TenLoaiThucVat", thucVat.MaLoaiThucVat);
+            ViewBag.MaLoaiThucVat = new SelectList(db.LoaiThucVats, "MaLoaiThucVat", "TenLoaiThucVatDuoi", thucVat.MaLoaiThucVat);
             return View(thucVat);
         }
 

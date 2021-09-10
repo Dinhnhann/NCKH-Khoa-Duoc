@@ -34,6 +34,7 @@ namespace _2021NCKH.Models
         public virtual DbSet<CacPhongThiNghiem> CacPhongThiNghiems { get; set; }
         public virtual DbSet<CauLacbo> CauLacboes { get; set; }
         public virtual DbSet<ChiThucVat> ChiThucVats { get; set; }
+        public virtual DbSet<ChiTietCTHH> ChiTietCTHHs { get; set; }
         public virtual DbSet<ChuongTrinhDaoTao> ChuongTrinhDaoTaos { get; set; }
         public virtual DbSet<CoCauToChuc> CoCauToChucs { get; set; }
         public virtual DbSet<DamBaoChatLuong> DamBaoChatLuongs { get; set; }
@@ -41,18 +42,20 @@ namespace _2021NCKH.Models
         public virtual DbSet<DoanHoi> DoanHois { get; set; }
         public virtual DbSet<HoatDongNgoaiKhoa> HoatDongNgoaiKhoas { get; set; }
         public virtual DbSet<HoThucVat> HoThucVats { get; set; }
-        public virtual DbSet<LoaiThucVat> LoaiThucVats { get; set; }
         public virtual DbSet<LopThucVat> LopThucVats { get; set; }
         public virtual DbSet<LyLichKHCuaGV> LyLichKHCuaGVs { get; set; }
         public virtual DbSet<NganhThucVat> NganhThucVats { get; set; }
         public virtual DbSet<PhanLopThucVat> PhanLopThucVats { get; set; }
         public virtual DbSet<QuyCheCongTacSV> QuyCheCongTacSVs { get; set; }
         public virtual DbSet<SOPDaoTao> SOPDaoTaos { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TaiNguyen> TaiNguyens { get; set; }
+        public virtual DbSet<ThanhPhanHoaHoc> ThanhPhanHoaHocs { get; set; }
         public virtual DbSet<ThongTinNoiBo> ThongTinNoiBoes { get; set; }
-        public virtual DbSet<ThucVat> ThucVats { get; set; }
         public virtual DbSet<TinTuc> TinTucs { get; set; }
         public virtual DbSet<TinTucSuKien> TinTucSuKiens { get; set; }
         public virtual DbSet<TuyenDung> TuyenDungs { get; set; }
+        public virtual DbSet<LoaiThucVat> LoaiThucVats { get; set; }
+        public virtual DbSet<ThucVat> ThucVats { get; set; }
     }
 }

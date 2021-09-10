@@ -12,30 +12,23 @@ namespace _2021NCKH.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ThucVat
+    public partial class ThanhPhanHoaHoc
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ThucVat()
+        public ThanhPhanHoaHoc()
         {
             this.ChiTietCTHHs = new HashSet<ChiTietCTHH>();
         }
     
-        public int MaCay { get; set; }
-        public byte[] HinhAnh { get; set; }
-        public string TenVietNam { get; set; }
-        public string HoThucVat { get; set; }
-        public string MoTa { get; set; }
-        public string BoPhanDung { get; set; }
-        public Nullable<int> SoLuongThanhPhanHoaHoc { get; set; }
-        public string TacDungDuocLy { get; set; }
-        public string LieuDung { get; set; }
+        public int ID { get; set; }
+        public string NhomChat { get; set; }
+        public string CongThucHoaHoc { get; set; }
+        public string TenDanhPhap { get; set; }
+        public string CongThucPhanTu { get; set; }
+        public string PubchemID { get; set; }
         public string TaiLieuThamKhao { get; set; }
-        public Nullable<int> MaLoaiThucVat { get; set; }
-        public string TenKhac { get; set; }
-        public string LinkMoTa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietCTHH> ChiTietCTHHs { get; set; }
-        public virtual LoaiThucVat LoaiThucVat { get; set; }
     }
 }

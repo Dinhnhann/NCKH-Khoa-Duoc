@@ -5,23 +5,15 @@
     Layout = "~/Areas/VuonThucVat/Views/Shared/AdminLayout.cshtml";
 }
 
-<h2>Delete</h2>
+<h2>Xóa Phân lớp thực vật</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Bạn có chắc chắn muốn xóa không?</h3>
 <div>
-    <h4>PhanLopThucVat</h4>
+    <h4>@Model.TenPhanLopThucVat</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TenPhanLopThucVat)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TenPhanLopThucVat)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.LopThucVat.TenLopThucVat)
+            Tên Lớp thực vật
         </dt>
 
         <dd>

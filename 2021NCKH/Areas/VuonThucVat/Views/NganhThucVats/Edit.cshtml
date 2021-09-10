@@ -27,7 +27,7 @@
             @Html.HiddenFor(model => model.MaNganhThucVat)
     
             <div class="form-group">
-                @Html.LabelFor(model => model.TenNganhThucVat, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.Label("Ngành thực vật", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.TenNganhThucVat, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.TenNganhThucVat, "", new { @class = "text-danger" })

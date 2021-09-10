@@ -1,0 +1,67 @@
+﻿@model _2021NCKH.Models.ThanhPhanHoaHoc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/VuonThucVat/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ThanhPhanHoaHoc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NhomChat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhomChat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CongThucHoaHoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CongThucHoaHoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenDanhPhap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenDanhPhap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CongThucPhanTu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CongThucPhanTu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PubchemID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PubchemID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaiLieuThamKhao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaiLieuThamKhao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -48,7 +48,7 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaBoThucVat,TenBoThucVat,MaPhanLopThucVat")] BoThucVat boThucVat)
+        public ActionResult Create(BoThucVat boThucVat)
         {
             if (ModelState.IsValid)
             {

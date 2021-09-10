@@ -85,6 +85,14 @@
           <Property Name="TenChiThucVat" Type="nvarchar" MaxLength="100" />
           <Property Name="MaHoThucVat" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="ChiTietCTHH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ThucVat" Type="int" />
+          <Property Name="CongThucHoaHoc" Type="int" />
+        </EntityType>
         <EntityType Name="ChuongTrinhDaoTao">
           <Key>
             <PropertyRef Name="MaChuongTrinhDaoTao" />
@@ -152,7 +160,8 @@
             <PropertyRef Name="MaLoaiThucVat" />
           </Key>
           <Property Name="MaLoaiThucVat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenLoaiThucVat" Type="nvarchar" MaxLength="100" />
+          <Property Name="TenLoaiThucVatDau" Type="nvarchar(max)" />
+          <Property Name="TenLoaiThucVatDuoi" Type="nvarchar(max)" />
           <Property Name="MaChiThucVat" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="LopThucVat">
@@ -205,6 +214,16 @@
           <Property Name="NDTomTatSOPDaoTao" Type="nvarchar(max)" />
           <Property Name="NDChiTietSOPDaoTao" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="TaiNguyen">
           <Key>
             <PropertyRef Name="MaTaiNguyen" />
@@ -213,6 +232,18 @@
           <Property Name="TenTaiNguyen" Type="nvarchar(max)" />
           <Property Name="NDTomTatTaiNguyen" Type="nvarchar(max)" />
           <Property Name="NDChiTietTaiNguyen" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ThanhPhanHoaHoc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NhomChat" Type="nvarchar(max)" />
+          <Property Name="CongThucHoaHoc" Type="nvarchar(max)" />
+          <Property Name="TenDanhPhap" Type="nvarchar(max)" />
+          <Property Name="CongThucPhanTu" Type="nvarchar(max)" />
+          <Property Name="PubchemID" Type="nvarchar(max)" />
+          <Property Name="TaiLieuThamKhao" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="ThongTinNoiBo">
           <Key>
@@ -230,17 +261,16 @@
           <Property Name="MaCay" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="HinhAnh" Type="image" />
           <Property Name="TenVietNam" Type="nvarchar" MaxLength="100" />
-          <Property Name="TenKhoaHocDau" Type="nvarchar" MaxLength="100" />
-          <Property Name="TenKhoaHocDuoi" Type="nvarchar(max)" />
-          <Property Name="HoThucVat" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="HoThucVat" Type="nvarchar" MaxLength="100" />
           <Property Name="MoTa" Type="nvarchar(max)" />
           <Property Name="BoPhanDung" Type="nvarchar(max)" />
-          <Property Name="ThanhPhanHoaHoc" Type="nvarchar(max)" />
+          <Property Name="SoLuongThanhPhanHoaHoc" Type="int" />
           <Property Name="TacDungDuocLy" Type="nvarchar(max)" />
           <Property Name="LieuDung" Type="nvarchar(max)" />
           <Property Name="TaiLieuThamKhao" Type="nvarchar(max)" />
-          <Property Name="MaLoaiThucVat" Type="int" Nullable="false" />
+          <Property Name="MaLoaiThucVat" Type="int" />
           <Property Name="TenKhac" Type="nvarchar(max)" />
+          <Property Name="LinkMoTa" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="TinTuc">
           <Key>
@@ -293,6 +323,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ChiTietCTHH_ThanhPhanHoaHoc">
+          <End Role="ThanhPhanHoaHoc" Type="Self.ThanhPhanHoaHoc" Multiplicity="0..1" />
+          <End Role="ChiTietCTHH" Type="Self.ChiTietCTHH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ThanhPhanHoaHoc">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ChiTietCTHH">
+              <PropertyRef Name="CongThucHoaHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ChiTietCTHH_ThucVat">
+          <End Role="ThucVat" Type="Self.ThucVat" Multiplicity="0..1" />
+          <End Role="ChiTietCTHH" Type="Self.ChiTietCTHH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ThucVat">
+              <PropertyRef Name="MaCay" />
+            </Principal>
+            <Dependent Role="ChiTietCTHH">
+              <PropertyRef Name="ThucVat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_HoThucVat_BoThucVat">
           <End Role="BoThucVat" Type="Self.BoThucVat" Multiplicity="1" />
           <End Role="HoThucVat" Type="Self.HoThucVat" Multiplicity="*" />
@@ -342,7 +396,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ThucVat_LoaiThucVat">
-          <End Role="LoaiThucVat" Type="Self.LoaiThucVat" Multiplicity="1" />
+          <End Role="LoaiThucVat" Type="Self.LoaiThucVat" Multiplicity="0..1" />
           <End Role="ThucVat" Type="Self.ThucVat" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="LoaiThucVat">
@@ -363,6 +417,7 @@
           <EntitySet Name="CacPhongThiNghiem" EntityType="Self.CacPhongThiNghiem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CauLacbo" EntityType="Self.CauLacbo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChiThucVat" EntityType="Self.ChiThucVat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChiTietCTHH" EntityType="Self.ChiTietCTHH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChuongTrinhDaoTao" EntityType="Self.ChuongTrinhDaoTao" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CoCauToChuc" EntityType="Self.CoCauToChuc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DamBaoChatLuong" EntityType="Self.DamBaoChatLuong" Schema="dbo" store:Type="Tables" />
@@ -377,7 +432,9 @@
           <EntitySet Name="PhanLopThucVat" EntityType="Self.PhanLopThucVat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="QuyCheCongTacSV" EntityType="Self.QuyCheCongTacSV" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SOPDaoTao" EntityType="Self.SOPDaoTao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TaiNguyen" EntityType="Self.TaiNguyen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThanhPhanHoaHoc" EntityType="Self.ThanhPhanHoaHoc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThongTinNoiBo" EntityType="Self.ThongTinNoiBo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThucVat" EntityType="Self.ThucVat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TinTuc" EntityType="Self.TinTuc" Schema="dbo" store:Type="Tables" />
@@ -390,6 +447,14 @@
           <AssociationSet Name="FK_ChiThucVat_HoThucVat" Association="Self.FK_ChiThucVat_HoThucVat">
             <End Role="HoThucVat" EntitySet="HoThucVat" />
             <End Role="ChiThucVat" EntitySet="ChiThucVat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChiTietCTHH_ThanhPhanHoaHoc" Association="Self.FK_ChiTietCTHH_ThanhPhanHoaHoc">
+            <End Role="ThanhPhanHoaHoc" EntitySet="ThanhPhanHoaHoc" />
+            <End Role="ChiTietCTHH" EntitySet="ChiTietCTHH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ChiTietCTHH_ThucVat" Association="Self.FK_ChiTietCTHH_ThucVat">
+            <End Role="ThucVat" EntitySet="ThucVat" />
+            <End Role="ChiTietCTHH" EntitySet="ChiTietCTHH" />
           </AssociationSet>
           <AssociationSet Name="FK_HoThucVat_BoThucVat" Association="Self.FK_HoThucVat_BoThucVat">
             <End Role="BoThucVat" EntitySet="BoThucVat" />
@@ -426,6 +491,7 @@
           <EntitySet Name="CacPhongThiNghiems" EntityType="NCKHVLUModel.CacPhongThiNghiem" />
           <EntitySet Name="CauLacboes" EntityType="NCKHVLUModel.CauLacbo" />
           <EntitySet Name="ChiThucVats" EntityType="NCKHVLUModel.ChiThucVat" />
+          <EntitySet Name="ChiTietCTHHs" EntityType="NCKHVLUModel.ChiTietCTHH" />
           <EntitySet Name="ChuongTrinhDaoTaos" EntityType="NCKHVLUModel.ChuongTrinhDaoTao" />
           <EntitySet Name="CoCauToChucs" EntityType="NCKHVLUModel.CoCauToChuc" />
           <EntitySet Name="DamBaoChatLuongs" EntityType="NCKHVLUModel.DamBaoChatLuong" />
@@ -433,16 +499,16 @@
           <EntitySet Name="DoanHois" EntityType="NCKHVLUModel.DoanHoi" />
           <EntitySet Name="HoatDongNgoaiKhoas" EntityType="NCKHVLUModel.HoatDongNgoaiKhoa" />
           <EntitySet Name="HoThucVats" EntityType="NCKHVLUModel.HoThucVat" />
-          <EntitySet Name="LoaiThucVats" EntityType="NCKHVLUModel.LoaiThucVat" />
           <EntitySet Name="LopThucVats" EntityType="NCKHVLUModel.LopThucVat" />
           <EntitySet Name="LyLichKHCuaGVs" EntityType="NCKHVLUModel.LyLichKHCuaGV" />
           <EntitySet Name="NganhThucVats" EntityType="NCKHVLUModel.NganhThucVat" />
           <EntitySet Name="PhanLopThucVats" EntityType="NCKHVLUModel.PhanLopThucVat" />
           <EntitySet Name="QuyCheCongTacSVs" EntityType="NCKHVLUModel.QuyCheCongTacSV" />
           <EntitySet Name="SOPDaoTaos" EntityType="NCKHVLUModel.SOPDaoTao" />
+          <EntitySet Name="sysdiagrams" EntityType="NCKHVLUModel.sysdiagram" />
           <EntitySet Name="TaiNguyens" EntityType="NCKHVLUModel.TaiNguyen" />
+          <EntitySet Name="ThanhPhanHoaHocs" EntityType="NCKHVLUModel.ThanhPhanHoaHoc" />
           <EntitySet Name="ThongTinNoiBoes" EntityType="NCKHVLUModel.ThongTinNoiBo" />
-          <EntitySet Name="ThucVats" EntityType="NCKHVLUModel.ThucVat" />
           <EntitySet Name="TinTucs" EntityType="NCKHVLUModel.TinTuc" />
           <EntitySet Name="TinTucSuKiens" EntityType="NCKHVLUModel.TinTucSuKien" />
           <EntitySet Name="TuyenDungs" EntityType="NCKHVLUModel.TuyenDung" />
@@ -458,13 +524,9 @@
             <End Role="HoThucVat" EntitySet="HoThucVats" />
             <End Role="ChiThucVat" EntitySet="ChiThucVats" />
           </AssociationSet>
-          <AssociationSet Name="FK_LoaiThucVat_ChiThucVat" Association="NCKHVLUModel.FK_LoaiThucVat_ChiThucVat">
-            <End Role="ChiThucVat" EntitySet="ChiThucVats" />
-            <End Role="LoaiThucVat" EntitySet="LoaiThucVats" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ThucVat_LoaiThucVat" Association="NCKHVLUModel.FK_ThucVat_LoaiThucVat">
-            <End Role="LoaiThucVat" EntitySet="LoaiThucVats" />
-            <End Role="ThucVat" EntitySet="ThucVats" />
+          <AssociationSet Name="FK_ChiTietCTHH_ThanhPhanHoaHoc" Association="NCKHVLUModel.FK_ChiTietCTHH_ThanhPhanHoaHoc">
+            <End Role="ThanhPhanHoaHoc" EntitySet="ThanhPhanHoaHocs" />
+            <End Role="ChiTietCTHH" EntitySet="ChiTietCTHHs" />
           </AssociationSet>
           <AssociationSet Name="FK_LopThucVat_NganhThucVat" Association="NCKHVLUModel.FK_LopThucVat_NganhThucVat">
             <End Role="NganhThucVat" EntitySet="NganhThucVats" />
@@ -473,6 +535,20 @@
           <AssociationSet Name="FK_PhanLopThucVat_LopThucVat" Association="NCKHVLUModel.FK_PhanLopThucVat_LopThucVat">
             <End Role="LopThucVat" EntitySet="LopThucVats" />
             <End Role="PhanLopThucVat" EntitySet="PhanLopThucVats" />
+          </AssociationSet>
+          <EntitySet Name="LoaiThucVats" EntityType="NCKHVLUModel.LoaiThucVat" />
+          <AssociationSet Name="FK_LoaiThucVat_ChiThucVat" Association="NCKHVLUModel.FK_LoaiThucVat_ChiThucVat">
+            <End Role="ChiThucVat" EntitySet="ChiThucVats" />
+            <End Role="LoaiThucVat" EntitySet="LoaiThucVats" />
+          </AssociationSet>
+          <EntitySet Name="ThucVats" EntityType="NCKHVLUModel.ThucVat" />
+          <AssociationSet Name="FK_ChiTietCTHH_ThucVat" Association="NCKHVLUModel.FK_ChiTietCTHH_ThucVat">
+            <End Role="ThucVat" EntitySet="ThucVats" />
+            <End Role="ChiTietCTHH" EntitySet="ChiTietCTHHs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThucVat_LoaiThucVat" Association="NCKHVLUModel.FK_ThucVat_LoaiThucVat">
+            <End Role="LoaiThucVat" EntitySet="LoaiThucVats" />
+            <End Role="ThucVat" EntitySet="ThucVats" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="admin">
@@ -559,6 +635,16 @@
           <NavigationProperty Name="HoThucVat" Relationship="NCKHVLUModel.FK_ChiThucVat_HoThucVat" FromRole="ChiThucVat" ToRole="HoThucVat" />
           <NavigationProperty Name="LoaiThucVats" Relationship="NCKHVLUModel.FK_LoaiThucVat_ChiThucVat" FromRole="ChiThucVat" ToRole="LoaiThucVat" />
         </EntityType>
+        <EntityType Name="ChiTietCTHH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ThucVat" Type="Int32" />
+          <Property Name="CongThucHoaHoc" Type="Int32" />
+          <NavigationProperty Name="ThanhPhanHoaHoc" Relationship="NCKHVLUModel.FK_ChiTietCTHH_ThanhPhanHoaHoc" FromRole="ChiTietCTHH" ToRole="ThanhPhanHoaHoc" />
+          <NavigationProperty Name="ThucVat1" Relationship="NCKHVLUModel.FK_ChiTietCTHH_ThucVat" FromRole="ChiTietCTHH" ToRole="ThucVat" />
+        </EntityType>
         <EntityType Name="ChuongTrinhDaoTao">
           <Key>
             <PropertyRef Name="MaChuongTrinhDaoTao" />
@@ -623,16 +709,6 @@
           <NavigationProperty Name="BoThucVat" Relationship="NCKHVLUModel.FK_HoThucVat_BoThucVat" FromRole="HoThucVat" ToRole="BoThucVat" />
           <NavigationProperty Name="ChiThucVats" Relationship="NCKHVLUModel.FK_ChiThucVat_HoThucVat" FromRole="HoThucVat" ToRole="ChiThucVat" />
         </EntityType>
-        <EntityType Name="LoaiThucVat">
-          <Key>
-            <PropertyRef Name="MaLoaiThucVat" />
-          </Key>
-          <Property Name="MaLoaiThucVat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenLoaiThucVat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MaChiThucVat" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ChiThucVat" Relationship="NCKHVLUModel.FK_LoaiThucVat_ChiThucVat" FromRole="LoaiThucVat" ToRole="ChiThucVat" />
-          <NavigationProperty Name="ThucVats" Relationship="NCKHVLUModel.FK_ThucVat_LoaiThucVat" FromRole="LoaiThucVat" ToRole="ThucVat" />
-        </EntityType>
         <EntityType Name="LopThucVat">
           <Key>
             <PropertyRef Name="MaLopThucVat" />
@@ -688,6 +764,16 @@
           <Property Name="NDTomTatSOPDaoTao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NDChiTietSOPDaoTao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="TaiNguyen">
           <Key>
             <PropertyRef Name="MaTaiNguyen" />
@@ -697,6 +783,19 @@
           <Property Name="NDTomTatTaiNguyen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NDChiTietTaiNguyen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="ThanhPhanHoaHoc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NhomChat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CongThucHoaHoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TenDanhPhap" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CongThucPhanTu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PubchemID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TaiLieuThamKhao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ChiTietCTHHs" Relationship="NCKHVLUModel.FK_ChiTietCTHH_ThanhPhanHoaHoc" FromRole="ThanhPhanHoaHoc" ToRole="ChiTietCTHH" />
+        </EntityType>
         <EntityType Name="ThongTinNoiBo">
           <Key>
             <PropertyRef Name="MaThongTinNoiBo" />
@@ -705,26 +804,6 @@
           <Property Name="TenThongTinNoiBo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NDTomTatThongTinNoiBo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NDChiTietThongTinNoiBo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="ThucVat">
-          <Key>
-            <PropertyRef Name="MaCay" />
-          </Key>
-          <Property Name="MaCay" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="TenVietNam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="TenKhoaHocDau" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="TenKhoaHocDuoi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="HoThucVat" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="BoPhanDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ThanhPhanHoaHoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="TacDungDuocLy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="LieuDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="TaiLieuThamKhao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="MaLoaiThucVat" Type="Int32" Nullable="false" />
-          <Property Name="TenKhac" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="LoaiThucVat" Relationship="NCKHVLUModel.FK_ThucVat_LoaiThucVat" FromRole="ThucVat" ToRole="LoaiThucVat" />
         </EntityType>
         <EntityType Name="TinTuc">
           <Key>
@@ -789,27 +868,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_LoaiThucVat_ChiThucVat">
-          <End Type="NCKHVLUModel.ChiThucVat" Role="ChiThucVat" Multiplicity="1" />
-          <End Type="NCKHVLUModel.LoaiThucVat" Role="LoaiThucVat" Multiplicity="*" />
+        <Association Name="FK_ChiTietCTHH_ThanhPhanHoaHoc">
+          <End Type="NCKHVLUModel.ThanhPhanHoaHoc" Role="ThanhPhanHoaHoc" Multiplicity="0..1" />
+          <End Type="NCKHVLUModel.ChiTietCTHH" Role="ChiTietCTHH" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="ChiThucVat">
-              <PropertyRef Name="MaChiThucVat" />
+            <Principal Role="ThanhPhanHoaHoc">
+              <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="LoaiThucVat">
-              <PropertyRef Name="MaChiThucVat" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ThucVat_LoaiThucVat">
-          <End Type="NCKHVLUModel.LoaiThucVat" Role="LoaiThucVat" Multiplicity="1" />
-          <End Type="NCKHVLUModel.ThucVat" Role="ThucVat" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="LoaiThucVat">
-              <PropertyRef Name="MaLoaiThucVat" />
-            </Principal>
-            <Dependent Role="ThucVat">
-              <PropertyRef Name="MaLoaiThucVat" />
+            <Dependent Role="ChiTietCTHH">
+              <PropertyRef Name="CongThucHoaHoc" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -834,6 +901,73 @@
             </Principal>
             <Dependent Role="PhanLopThucVat">
               <PropertyRef Name="MaLopThucVat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="LoaiThucVat">
+          <Key>
+            <PropertyRef Name="MaLoaiThucVat" />
+          </Key>
+          <Property Name="MaLoaiThucVat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenLoaiThucVatDau" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TenLoaiThucVatDuoi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaChiThucVat" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ChiThucVat" Relationship="NCKHVLUModel.FK_LoaiThucVat_ChiThucVat" FromRole="LoaiThucVat" ToRole="ChiThucVat" />
+          <NavigationProperty Name="ThucVats" Relationship="NCKHVLUModel.FK_ThucVat_LoaiThucVat" FromRole="LoaiThucVat" ToRole="ThucVat" />
+        </EntityType>
+        <Association Name="FK_LoaiThucVat_ChiThucVat">
+          <End Type="NCKHVLUModel.ChiThucVat" Role="ChiThucVat" Multiplicity="1" />
+          <End Type="NCKHVLUModel.LoaiThucVat" Role="LoaiThucVat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiThucVat">
+              <PropertyRef Name="MaChiThucVat" />
+            </Principal>
+            <Dependent Role="LoaiThucVat">
+              <PropertyRef Name="MaChiThucVat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ThucVat">
+          <Key>
+            <PropertyRef Name="MaCay" />
+          </Key>
+          <Property Name="MaCay" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TenVietNam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HoThucVat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BoPhanDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SoLuongThanhPhanHoaHoc" Type="Int32" />
+          <Property Name="TacDungDuocLy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LieuDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TaiLieuThamKhao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaLoaiThucVat" Type="Int32" />
+          <Property Name="TenKhac" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LinkMoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ChiTietCTHHs" Relationship="NCKHVLUModel.FK_ChiTietCTHH_ThucVat" FromRole="ThucVat" ToRole="ChiTietCTHH" />
+          <NavigationProperty Name="LoaiThucVat" Relationship="NCKHVLUModel.FK_ThucVat_LoaiThucVat" FromRole="ThucVat" ToRole="LoaiThucVat" />
+        </EntityType>
+        <Association Name="FK_ChiTietCTHH_ThucVat">
+          <End Type="NCKHVLUModel.ThucVat" Role="ThucVat" Multiplicity="0..1" />
+          <End Type="NCKHVLUModel.ChiTietCTHH" Role="ChiTietCTHH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ThucVat">
+              <PropertyRef Name="MaCay" />
+            </Principal>
+            <Dependent Role="ChiTietCTHH">
+              <PropertyRef Name="ThucVat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThucVat_LoaiThucVat">
+          <End Type="NCKHVLUModel.LoaiThucVat" Role="LoaiThucVat" Multiplicity="0..1" />
+          <End Type="NCKHVLUModel.ThucVat" Role="ThucVat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoaiThucVat">
+              <PropertyRef Name="MaLoaiThucVat" />
+            </Principal>
+            <Dependent Role="ThucVat">
+              <PropertyRef Name="MaLoaiThucVat" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -932,6 +1066,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ChiTietCTHHs">
+            <EntityTypeMapping TypeName="NCKHVLUModel.ChiTietCTHH">
+              <MappingFragment StoreEntitySet="ChiTietCTHH">
+                <ScalarProperty Name="CongThucHoaHoc" ColumnName="CongThucHoaHoc" />
+                <ScalarProperty Name="ThucVat" ColumnName="ThucVat" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ChuongTrinhDaoTaos">
             <EntityTypeMapping TypeName="NCKHVLUModel.ChuongTrinhDaoTao">
               <MappingFragment StoreEntitySet="ChuongTrinhDaoTao">
@@ -1001,15 +1144,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="LoaiThucVats">
-            <EntityTypeMapping TypeName="NCKHVLUModel.LoaiThucVat">
-              <MappingFragment StoreEntitySet="LoaiThucVat">
-                <ScalarProperty Name="MaChiThucVat" ColumnName="MaChiThucVat" />
-                <ScalarProperty Name="TenLoaiThucVat" ColumnName="TenLoaiThucVat" />
-                <ScalarProperty Name="MaLoaiThucVat" ColumnName="MaLoaiThucVat" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="LopThucVats">
             <EntityTypeMapping TypeName="NCKHVLUModel.LopThucVat">
               <MappingFragment StoreEntitySet="LopThucVat">
@@ -1066,6 +1200,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="NCKHVLUModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TaiNguyens">
             <EntityTypeMapping TypeName="NCKHVLUModel.TaiNguyen">
               <MappingFragment StoreEntitySet="TaiNguyen">
@@ -1076,6 +1221,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ThanhPhanHoaHocs">
+            <EntityTypeMapping TypeName="NCKHVLUModel.ThanhPhanHoaHoc">
+              <MappingFragment StoreEntitySet="ThanhPhanHoaHoc">
+                <ScalarProperty Name="TaiLieuThamKhao" ColumnName="TaiLieuThamKhao" />
+                <ScalarProperty Name="PubchemID" ColumnName="PubchemID" />
+                <ScalarProperty Name="CongThucPhanTu" ColumnName="CongThucPhanTu" />
+                <ScalarProperty Name="TenDanhPhap" ColumnName="TenDanhPhap" />
+                <ScalarProperty Name="CongThucHoaHoc" ColumnName="CongThucHoaHoc" />
+                <ScalarProperty Name="NhomChat" ColumnName="NhomChat" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ThongTinNoiBoes">
             <EntityTypeMapping TypeName="NCKHVLUModel.ThongTinNoiBo">
               <MappingFragment StoreEntitySet="ThongTinNoiBo">
@@ -1083,26 +1241,6 @@
                 <ScalarProperty Name="NDTomTatThongTinNoiBo" ColumnName="NDTomTatThongTinNoiBo" />
                 <ScalarProperty Name="TenThongTinNoiBo" ColumnName="TenThongTinNoiBo" />
                 <ScalarProperty Name="MaThongTinNoiBo" ColumnName="MaThongTinNoiBo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ThucVats">
-            <EntityTypeMapping TypeName="NCKHVLUModel.ThucVat">
-              <MappingFragment StoreEntitySet="ThucVat">
-                <ScalarProperty Name="TenKhac" ColumnName="TenKhac" />
-                <ScalarProperty Name="MaLoaiThucVat" ColumnName="MaLoaiThucVat" />
-                <ScalarProperty Name="TaiLieuThamKhao" ColumnName="TaiLieuThamKhao" />
-                <ScalarProperty Name="LieuDung" ColumnName="LieuDung" />
-                <ScalarProperty Name="TacDungDuocLy" ColumnName="TacDungDuocLy" />
-                <ScalarProperty Name="ThanhPhanHoaHoc" ColumnName="ThanhPhanHoaHoc" />
-                <ScalarProperty Name="BoPhanDung" ColumnName="BoPhanDung" />
-                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
-                <ScalarProperty Name="HoThucVat" ColumnName="HoThucVat" />
-                <ScalarProperty Name="TenKhoaHocDuoi" ColumnName="TenKhoaHocDuoi" />
-                <ScalarProperty Name="TenKhoaHocDau" ColumnName="TenKhoaHocDau" />
-                <ScalarProperty Name="TenVietNam" ColumnName="TenVietNam" />
-                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
-                <ScalarProperty Name="MaCay" ColumnName="MaCay" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1133,6 +1271,35 @@
                 <ScalarProperty Name="NDTomTatTuyenDung" ColumnName="NDTomTatTuyenDung" />
                 <ScalarProperty Name="TenTuyenDung" ColumnName="TenTuyenDung" />
                 <ScalarProperty Name="MaTuyenDung" ColumnName="MaTuyenDung" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoaiThucVats">
+            <EntityTypeMapping TypeName="NCKHVLUModel.LoaiThucVat">
+              <MappingFragment StoreEntitySet="LoaiThucVat">
+                <ScalarProperty Name="MaChiThucVat" ColumnName="MaChiThucVat" />
+                <ScalarProperty Name="TenLoaiThucVatDuoi" ColumnName="TenLoaiThucVatDuoi" />
+                <ScalarProperty Name="TenLoaiThucVatDau" ColumnName="TenLoaiThucVatDau" />
+                <ScalarProperty Name="MaLoaiThucVat" ColumnName="MaLoaiThucVat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThucVats">
+            <EntityTypeMapping TypeName="NCKHVLUModel.ThucVat">
+              <MappingFragment StoreEntitySet="ThucVat">
+                <ScalarProperty Name="LinkMoTa" ColumnName="LinkMoTa" />
+                <ScalarProperty Name="TenKhac" ColumnName="TenKhac" />
+                <ScalarProperty Name="MaLoaiThucVat" ColumnName="MaLoaiThucVat" />
+                <ScalarProperty Name="TaiLieuThamKhao" ColumnName="TaiLieuThamKhao" />
+                <ScalarProperty Name="LieuDung" ColumnName="LieuDung" />
+                <ScalarProperty Name="TacDungDuocLy" ColumnName="TacDungDuocLy" />
+                <ScalarProperty Name="SoLuongThanhPhanHoaHoc" ColumnName="SoLuongThanhPhanHoaHoc" />
+                <ScalarProperty Name="BoPhanDung" ColumnName="BoPhanDung" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="HoThucVat" ColumnName="HoThucVat" />
+                <ScalarProperty Name="TenVietNam" ColumnName="TenVietNam" />
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+                <ScalarProperty Name="MaCay" ColumnName="MaCay" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

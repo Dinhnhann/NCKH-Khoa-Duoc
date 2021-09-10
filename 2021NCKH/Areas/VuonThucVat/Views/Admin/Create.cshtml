@@ -26,33 +26,22 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TenVietNam, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Tên Việt Nam", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TenVietNam, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TenVietNam, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.TenKhac, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Tên khác", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TenKhac, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TenKhac, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="form-group">
-            @Html.Label("Tên Khoa học", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-5">
-                @Html.EditorFor(model => model.TenKhoaHocDau, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TenKhoaHocDau, "", new { @class = "text-danger" })
-            </div>
-            <div class="col-md-5">
-                @Html.EditorFor(model => model.TenKhoaHocDuoi, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TenKhoaHocDuoi, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.HoThucVat, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Họ thực vật", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.HoThucVat, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.HoThucVat, "", new { @class = "text-danger" })
@@ -60,15 +49,21 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MoTa, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Mô tả", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.MoTa, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.BoPhanDung, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Link Mô tả", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LinkMoTa, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LinkMoTa, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Bộ phận dùng", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.BoPhanDung, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BoPhanDung, "", new { @class = "text-danger" })
@@ -76,15 +71,15 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ThanhPhanHoaHoc, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ThanhPhanHoaHoc, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ThanhPhanHoaHoc, "", new { @class = "text-danger" })
+            @Html.Label("Số lượng thành phần hóa học", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.SoLuongThanhPhanHoaHoc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SoLuongThanhPhanHoaHoc, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TacDungDuocLy, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Tác dụng dược lý", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TacDungDuocLy, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TacDungDuocLy, "", new { @class = "text-danger" })
@@ -92,7 +87,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.LieuDung, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Liều dùng", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.LieuDung, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.LieuDung, "", new { @class = "text-danger" })
@@ -100,7 +95,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TaiLieuThamKhao, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Tài liệu tham khảo", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TaiLieuThamKhao, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TaiLieuThamKhao, "", new { @class = "text-danger" })
@@ -108,13 +103,12 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MaLoaiThucVat, "MaLoaiThucVat", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Loài thực vật", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("MaLoaiThucVat", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MaLoaiThucVat, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -139,4 +133,4 @@
             }
         }
     </script>
-}
+    }

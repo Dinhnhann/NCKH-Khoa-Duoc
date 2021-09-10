@@ -48,7 +48,7 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaLoaiThucVat,TenLoaiThucVat,MaChiThucVat")] LoaiThucVat loaiThucVat)
+        public ActionResult Create(LoaiThucVat loaiThucVat)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +56,7 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            else ModelState.AddModelError("", "Picture not found!");
 
             ViewBag.MaChiThucVat = new SelectList(db.ChiThucVats, "MaChiThucVat", "TenChiThucVat", loaiThucVat.MaChiThucVat);
             return View(loaiThucVat);
@@ -82,7 +83,7 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaLoaiThucVat,TenLoaiThucVat,MaChiThucVat")] LoaiThucVat loaiThucVat)
+        public ActionResult Edit(LoaiThucVat loaiThucVat)
         {
             if (ModelState.IsValid)
             {
@@ -90,6 +91,7 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            else ModelState.AddModelError("", "Picture not found!");
             ViewBag.MaChiThucVat = new SelectList(db.ChiThucVats, "MaChiThucVat", "TenChiThucVat", loaiThucVat.MaChiThucVat);
             return View(loaiThucVat);
         }

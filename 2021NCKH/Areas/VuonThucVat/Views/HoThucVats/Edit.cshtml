@@ -19,7 +19,7 @@
         @Html.HiddenFor(model => model.MaHoThucVat)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TenHoThucVat, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Tên Họ thực vật", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TenHoThucVat, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TenHoThucVat, "", new { @class = "text-danger" })
@@ -27,7 +27,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MaBoThucVat, "MaBoThucVat", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Bộ thực vật", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("MaBoThucVat", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MaBoThucVat, "", new { @class = "text-danger" })

@@ -6,13 +6,7 @@
     string ho = "";
     string chi = "";
     string loai = "";
-    int snganh = 0;
-    int slop = 0;
-    int sphanlop = 0;
-    int sbo = 0;
-    int sho = 0;
-    int schi = 0;
-    int sloai = 0; }
+     }
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,66 +59,59 @@
                     <ul class="nav" id="side-menu">
                         @foreach (var item in Model)
                         {
-                            snganh++;
-            <li>
-                @if (item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.NganhThucVat.TenNganhThucVat != nganh)
-                {
-                    nganh = @item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.NganhThucVat.TenNganhThucVat;
-<a href="#">@snganh. Ngành @nganh<span class="fa arrow"></span></a>
+                            <li>
+                        @if (item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.NganhThucVat.TenNganhThucVat != nganh)
+                        {
+                            nganh = @item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.NganhThucVat.TenNganhThucVat;
+                            <a href="#">Ngành @nganh</a>
                     <ul class="nav" id="side-menu">
                         @foreach (var item2 in Model)
                         {
-    <li>
-        @if (item2.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.NganhThucVat.TenNganhThucVat == nganh && item2.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.TenLopThucVat != lop)
-        {
-            slop++;
-            lop = @item2.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.TenLopThucVat;
-<a href="#">@snganh.@slop Lớp @lop</a>
+                            <li>
+                            @if (item2.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.NganhThucVat.TenNganhThucVat == nganh && item2.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.TenLopThucVat != lop)
+                            {
+                                lop = @item2.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.TenLopThucVat;
+                                <a href="#" style="padding-left:25px" >Lớp @lop</a>
                             <ul class="nav" id="side-menu">
                                 @foreach (var item3 in Model)
                                 {
     <li>
         @if (item3.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.TenLopThucVat == lop && item3.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.TenPhanLopThucVat != phanlop)
         {
-            sphanlop++;
             phanlop = @item3.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.TenPhanLopThucVat;
-<a href="#">@snganh.@slop.@sphanlop Phân lớp @phanlop</a>
+<a href="#" style="padding-left:50px" > Phân lớp @phanlop</a>
                                     <ul class="nav" id="side-menu">
                                         @foreach (var item4 in Model)
                                         {
     <li>
         @if (item4.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.TenPhanLopThucVat == phanlop && item4.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.TenBoThucVat != bo)
         {
-            sbo++;
             bo = @item4.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.TenBoThucVat;
-<a href="#">@snganh.@slop.@sphanlop.@sbo Bộ @bo</a>
+<a href="#" style="padding-left:75px" > Bộ @bo</a>
                                             <ul class="nav" id="side-menu">
                                                 @foreach (var item5 in Model)
                                                 {
     <li>
         @if (item5.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.TenBoThucVat == bo && item5.LoaiThucVat.ChiThucVat.HoThucVat.TenHoThucVat != ho)
         {
-            sho++;
             ho = @item5.LoaiThucVat.ChiThucVat.HoThucVat.TenHoThucVat;
-<a href="#">@snganh.@slop.@sphanlop.@sbo.@sho Họ @ho</a>
+<a href="#" style="padding-left:100px" > Họ @ho</a>
                                                     <ul class="nav" id="side-menu">
                                                         @foreach (var item6 in Model)
                                                         {
     <li>
         @if (item6.LoaiThucVat.ChiThucVat.HoThucVat.TenHoThucVat == ho && item6.LoaiThucVat.ChiThucVat.TenChiThucVat != chi)
         {
-            schi++;
             chi = @item6.LoaiThucVat.ChiThucVat.TenChiThucVat;
-<a href="#">@snganh.@slop.@sphanlop.@sbo.@sho.@schi Chi @chi</a>
+<a href="#" style="padding-left:125px" > Chi @chi</a>
                                                             <ul class="nav" id="side-menu">
                                                                 @foreach (var item7 in Model)
                                                                 {
     <li>
-        @if (item7.LoaiThucVat.ChiThucVat.TenChiThucVat == chi && item7.LoaiThucVat.TenLoaiThucVat != loai)
+        @if (item7.LoaiThucVat.ChiThucVat.TenChiThucVat == chi && item7.LoaiThucVat.TenLoaiThucVatDau != loai)
         {
-            sloai++;
-            loai = @item7.LoaiThucVat.TenLoaiThucVat;
-<a href="#">@snganh.@slop.@sphanlop.@sbo.@sho.@schi.@sloai Loài @loai</a>}
+            loai = @item7.LoaiThucVat.TenLoaiThucVatDau;
+<a href="#" style="padding-left:150px" > Loài <i>@loai</i> @item7.LoaiThucVat.TenLoaiThucVatDuoi</a>}
     </li>
 }
                                                             </ul>}

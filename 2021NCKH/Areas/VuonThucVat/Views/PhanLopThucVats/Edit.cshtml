@@ -11,7 +11,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>PhanLopThucVat</h4>
         <hr />
@@ -19,7 +19,7 @@
         @Html.HiddenFor(model => model.MaPhanLopThucVat)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TenPhanLopThucVat, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Phân lớp thực vật", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TenPhanLopThucVat, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TenPhanLopThucVat, "", new { @class = "text-danger" })
@@ -27,7 +27,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MaLopThucVat, "MaLopThucVat", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Lớp thực vật", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("MaLopThucVat", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.MaLopThucVat, "", new { @class = "text-danger" })

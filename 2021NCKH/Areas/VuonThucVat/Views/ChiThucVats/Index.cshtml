@@ -13,10 +13,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TenChiThucVat)
+            Tên chi thực vật
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HoThucVat.TenHoThucVat)
+            Tên họ thực vật
         </th>
         <th></th>
     </tr>
@@ -31,7 +31,6 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.MaChiThucVat }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaChiThucVat }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.MaChiThucVat })
         </td>
     </tr>

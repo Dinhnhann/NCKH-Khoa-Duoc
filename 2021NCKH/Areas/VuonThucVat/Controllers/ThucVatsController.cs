@@ -18,13 +18,6 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
         public ActionResult Index()
         {
             var thucVats = db.ThucVats.Include(t => t.LoaiThucVat);
-            ViewData["Nganh"] = db.NganhThucVats.ToList();
-            ViewData["Lop"] = db.LopThucVats.Include(t => t.NganhThucVat).ToList();
-            ViewData["PhanLop"] = db.PhanLopThucVats.Include(t => t.LopThucVat).ToList();
-            ViewData["Bo"] = db.BoThucVats.Include(t => t.PhanLopThucVat).ToList();
-            ViewData["Ho"] = db.HoThucVats.Include(t => t.BoThucVat).ToList();
-            ViewData["Chi"] = db.ChiThucVats.Include(t => t.HoThucVat).ToList();
-            ViewData["Loai"] = db.LoaiThucVats.Include(t => t.ChiThucVat).ToList();
             return View(thucVats.ToList());
         }
         // GET: VuonThucVat/ThucVats/Details/5
@@ -39,7 +32,27 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
             {
                 return HttpNotFound();
             }
+            ViewData["CTHH"] = db.ChiTietCTHHs.ToList();
             return View(thucVat);
+        }
+        public ActionResult Search(string keyword)
+        {
+            var model = db.ThucVats.ToList();
+            //model = model.Where(p => p.TenVietNam.ToLower().Contains(keyword.ToLower())).ToList();
+            model = (from s in model
+                     where s.TenVietNam.ToLower().Contains(keyword.ToLower())
+                     || s.TenKhac.ToLower().Contains(keyword.ToLower())
+                     || s.LoaiThucVat.TenLoaiThucVatDau.ToLower().Contains(keyword.ToLower())
+                     || s.LoaiThucVat.TenLoaiThucVatDuoi.ToLower().Contains(keyword.ToLower())
+                     || s.LoaiThucVat.ChiThucVat.TenChiThucVat.ToLower().Contains(keyword.ToLower())
+                     || s.LoaiThucVat.ChiThucVat.HoThucVat.TenHoThucVat.ToLower().Contains(keyword.ToLower())
+                     || s.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.TenBoThucVat.ToLower().Contains(keyword.ToLower())
+                     || s.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.TenPhanLopThucVat.ToLower().Contains(keyword.ToLower())
+                     || s.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.TenLopThucVat.ToLower().Contains(keyword.ToLower())
+                     || s.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.NganhThucVat.TenNganhThucVat.ToLower().Contains(keyword.ToLower())
+                     select s).ToList();
+            ViewBag.Keyword = keyword;
+            return View("Index", model);
         }
         public ActionResult Picture(int id)
         {

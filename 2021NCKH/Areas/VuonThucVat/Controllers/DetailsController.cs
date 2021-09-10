@@ -75,14 +75,5 @@ namespace _2021NCKH.Areas.VuonThucVat.Controllers
             var list = db.ThucVats.Where(p => p.LoaiThucVat.ChiThucVat.MaChiThucVat.ToString().Contains(id.ToString())).ToList();
             return View(list);
         }
-        public ActionResult Cay(int? id)
-        {
-            if (id == null)
-            {
-                return View(db.ThucVats.ToList());
-            }
-            var list = db.ThucVats.Where(p => p.LoaiThucVat.MaLoaiThucVat.ToString().Contains(id.ToString())).ToList();
-            return View(list);
-        }
     }
 }

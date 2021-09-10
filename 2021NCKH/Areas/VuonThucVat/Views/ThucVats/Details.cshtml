@@ -24,7 +24,7 @@
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
                             <img class="product__details__pic__item--large"
-                                 src="@Url.Action("Picture", "Admin", new { id = Model.MaCay })" height="400px" alt="hinh-anh">
+                                 src="@Url.Action("Picture", "Admin", new { id = Model.MaCay })" alt="hinh-anh">
                         </div>
                     </div>
                 </div>
@@ -32,9 +32,9 @@
                     <div class="product__details__text">
                         <h4>@Model.TenVietNam</h4>
                         <ul>
-                            <li><b>Tên Khoa học</b> <span>@Model.TenKhoaHocDau <i>@Model.TenKhoaHocDuoi</i></span></li>
+                            <li><b>Tên Khoa học</b> <span><i>@Model.LoaiThucVat.TenLoaiThucVatDau</i> @Model.LoaiThucVat.TenLoaiThucVatDuoi</span></li>
                             <li><b>Tên khác</b><span>@Model.TenKhac</span></li>
-                            <li><b>Họ Thực Vật</b><span>@Model.LoaiThucVat.TenLoaiThucVat</span></li>
+                            <li><b>Họ Thực Vật</b><span>@Model.LoaiThucVat.ChiThucVat.HoThucVat.TenHoThucVat</span></li>
                         </ul>
                     </div>
                 </div>
@@ -65,36 +65,42 @@
                                     </p>
                                     <h6>Thành phần hóa học</h6>
                                     <p>
-                                        @Model.ThanhPhanHoaHoc
-                                    </p>
-                                    <h6>Liều dùng</h6>
-                                    <p>
-                                        @Model.LieuDung
-                                    </p>
-                                    <h6>Tài liệu tham khảo</h6>
-                                    <p>
-                                        @Model.TaiLieuThamKhao
-                                    </p>
+                                        @foreach (var item1 in ViewData["CTHH"] as List<_2021NCKH.Models.ChiTietCTHH>)
+                                        {
+                                            if (item1.ThucVat1.MaCay == Model.MaCay)
+                                            {
+                                            <a href="@Url.Action("CTHH","ThanhPhanHoaHocs",new { id = item1.ThanhPhanHoaHoc.ID })">@item1.ThanhPhanHoaHoc.TenDanhPhap,</a>
+                                        }
+                                    }
+                                        </p>
+                                        <h6>Liều dùng</h6>
+                                        <p>
+                                            @Model.LieuDung
+                                        </p>
+                                        <h6>Tài liệu tham khảo</h6>
+                                        <p>
+                                            @Model.TaiLieuThamKhao
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="tab-pane" id="tabs-2" role="tabpanel">
-                                <div class="product__details__tab__desc">
-                                    <h6>Tác dụng dược lý</h6>
-                                    <p>@Model.TacDungDuocLy</p>
+                                <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                    <div class="product__details__tab__desc">
+                                        <h6>Tác dụng dược lý</h6>
+                                        <p>@Model.TacDungDuocLy</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="form-actions no-color">
-                                @Html.ActionLink("Danh mục cây thuốc", "Index")
+                                <div class="form-actions no-color">
+                                    @Html.ActionLink("Danh mục cây thuốc", "Index")
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </section>
-    <!-- Product Details Section End -->
-</body>
+        </section>
+        <!-- Product Details Section End -->
+    </body>
 
 </html>
 

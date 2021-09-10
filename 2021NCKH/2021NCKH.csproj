@@ -139,7 +139,7 @@
     <Compile Include="Areas\VuonThucVat\Controllers\LopThucVatsController.cs" />
     <Compile Include="Areas\VuonThucVat\Controllers\NganhThucVatsController.cs" />
     <Compile Include="Areas\VuonThucVat\Controllers\PhanLopThucVatsController.cs" />
-    <Compile Include="Areas\VuonThucVat\Controllers\ThucVatController.cs" />
+    <Compile Include="Areas\VuonThucVat\Controllers\ThanhPhanHoaHocsController.cs" />
     <Compile Include="Areas\VuonThucVat\Controllers\ThucVatsController.cs" />
     <Compile Include="Areas\VuonThucVat\VuonThucVatAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -171,6 +171,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiThucVat.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChiTietCTHH.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ChuongTrinhDaoTao.cs">
@@ -230,7 +233,13 @@
     <Compile Include="Models\SOPDaoTao.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\TaiNguyen.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ThanhPhanHoaHoc.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ThongTinNoiBo.cs">
@@ -256,41 +265,33 @@
     <Content Include="Areas\VuonThucVat\Views\Shared\AdminLayout.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\NganhThucVats\Create.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\NganhThucVats\Delete.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\NganhThucVats\Details.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\NganhThucVats\Edit.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\NganhThucVats\Index.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\LopThucVats\Create.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\LopThucVats\Delete.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\LopThucVats\Details.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\LopThucVats\Edit.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\LopThucVats\Index.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\PhanLopThucVats\Create.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\PhanLopThucVats\Delete.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\PhanLopThucVats\Details.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\PhanLopThucVats\Edit.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\PhanLopThucVats\Index.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\BoThucVats\Create.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\BoThucVats\Delete.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\BoThucVats\Details.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\BoThucVats\Edit.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\BoThucVats\Index.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\HoThucVats\Create.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\HoThucVats\Delete.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\HoThucVats\Details.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\HoThucVats\Edit.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\HoThucVats\Index.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\ChiThucVats\Create.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\ChiThucVats\Delete.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\ChiThucVats\Details.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\ChiThucVats\Edit.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\ChiThucVats\Index.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\LoaiThucVats\Create.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\LoaiThucVats\Delete.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\LoaiThucVats\Details.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\LoaiThucVats\Edit.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\LoaiThucVats\Index.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\Details\Lop.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\Details\Cay.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\Details\Nganh.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\Details\PhanLop.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\Details\Bo.cshtml" />
@@ -298,6 +299,7 @@
     <Content Include="Areas\VuonThucVat\Views\Details\Chi.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\Details\Loai.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\Shared\LayoutDetails.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\Admin\ThemCTHH.cshtml" />
     <None Include="Areas\VuonThucVat\Views\Shared\_LayoutUser.cshtml" />
     <Content Include="assets\css\bootstrap-social.css" />
     <Content Include="assets\css\bootstrap-theme.min.css" />
@@ -460,13 +462,6 @@
     <Content Include="Areas\VuonThucVat\Views\Admin\Edit.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\Admin\Index.cshtml" />
     <Content Include="Areas\VuonThucVat\Views\ThucVats\Index.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\ThucVat\Nganh.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\ThucVat\Lop.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\ThucVat\Loai.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\ThucVat\Chi.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\ThucVat\Ho.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\ThucVat\Bo.cshtml" />
-    <Content Include="Areas\VuonThucVat\Views\ThucVat\PhanLop.cshtml" />
     <Content Include="a\fonts\ElegantIcons.eot" />
     <Content Include="a\fonts\ElegantIcons.ttf" />
     <Content Include="a\fonts\ElegantIcons.woff" />
@@ -476,6 +471,13 @@
     <Content Include="a\fonts\fontawesome-webfont.woff2" />
     <Content Include="a\fonts\FontAwesome.otf" />
     <Content Include="Areas\VuonThucVat\Views\ThucVats\Details.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThanhPhanHoaHocs\Create.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThanhPhanHoaHocs\Delete.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThanhPhanHoaHocs\Details.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThanhPhanHoaHocs\Edit.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThanhPhanHoaHocs\Index.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThanhPhanHoaHocs\CTHH.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThanhPhanHoaHocs\Danhsach.cshtml" />
     <None Include="Dockerfile" />
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
@@ -524,6 +526,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\VuonThucVat\Data\" />
     <Folder Include="Areas\VuonThucVat\Views\TV\" />
+    <Folder Include="images\ThanhPhanHoaHoc\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
