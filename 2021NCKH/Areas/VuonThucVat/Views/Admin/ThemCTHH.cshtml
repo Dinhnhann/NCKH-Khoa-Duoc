@@ -1,0 +1,65 @@
+﻿@model IEnumerable<_2021NCKH.Models.ThanhPhanHoaHoc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/VuonThucVat/Views/Shared/AdminLayout.cshtml";
+    bool dk = false;
+}
+
+<h2>Danh sách CTHH</h2>
+<table class="table">
+    <tr>
+        <th>
+            Nhóm chất
+        </th>
+        <th>
+            Công thức hóa học
+        </th>
+        <th>
+            Tên danh pháp
+        </th>
+        <th>
+            Công thức phân tử
+        </th>
+        <th></th>
+    </tr>
+    <form method="post">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NhomChat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CongThucHoaHoc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenDanhPhap)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CongThucPhanTu)
+                </td>
+                <td>
+                    <input type="number" value="@int.Parse(ViewData["id"].ToString())" name="idtv" hidden />
+                    <input type="number" value="@item.ID" name="idhh" hidden />
+                    @foreach (var item1 in ViewData["CTHH"] as List<_2021NCKH.Models.ChiTietCTHH>)
+                    {
+                        if (item1.ThucVat1.MaCay == int.Parse(ViewData["id"].ToString()))
+                        {
+                            dk = true;
+                            break;
+                        }
+                    }
+                    @if (dk)
+                    {
+                        <input type="submit" value="Xóa" formaction="@Url.Action("XoaCTHH")" />
+                    }
+                    else
+                    {
+                        <input type="submit" value="Thêm" formaction="@Url.Action("ThemCTHH")" />
+                    }
+                </td>
+            </tr>
+        }
+    </form>
+</table>

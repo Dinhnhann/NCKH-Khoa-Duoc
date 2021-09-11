@@ -1,0 +1,106 @@
+﻿@model IEnumerable<_2021NCKH.Models.ThucVat>
+@{
+    string nganh = "";
+    string lop = "";
+    string phanlop = "";
+    string bo = "";
+    string ho = "";
+    string chi = "";
+    string loai = "";
+}
+<style>
+    th, td {
+        border: 1px dashed black;
+    }
+    table {
+        border: 1px solid black;
+    }
+    th {
+        align-content: center;
+    }
+</style>
+<div class="row">
+    <div class="col-lg-5">
+        <form action="@Url.Action("Search", "ThucVats")" method="get">
+            <div class="form-group input-group">
+                <input class="form-control" type="text" name="keyword" placeholder="Tìm kiếm" value="@ViewBag.Keyword">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+<table>
+    <tr>
+        <th>Ngành</th>
+        <th>Lớp</th>
+        <th>Phân lớp</th>
+        <th>Bộ</th>
+        <th>Họ</th>
+        <th>Chi</th>
+        <th>Loài</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            @if (item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.NganhThucVat.TenNganhThucVat != nganh)
+            {
+                nganh = item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.NganhThucVat.TenNganhThucVat;
+                <td><a href="@Url.Action("Lop","Details", new { id = item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.NganhThucVat.MaNganhThucVat })">@nganh</a></td>
+            }
+            else
+            {
+                <td></td>
+            }
+            @if (item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.TenLopThucVat != lop)
+            {
+                lop = item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.TenLopThucVat;
+                <td><a href="@Url.Action("PhanLop","Details", new { id = item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.LopThucVat.MaLopThucVat })">@lop</a></td>
+            }
+            else
+            {
+                <td></td>
+            }
+            @if (item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.TenPhanLopThucVat != phanlop)
+            {
+                phanlop = item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.PhanLopThucVat.TenPhanLopThucVat;
+                <td><a href="@Url.Action("Bo","Details", new { id = item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.MaBoThucVat })">@phanlop</a></td>
+            }
+            else
+            {
+                <td></td>
+            }
+            @if (item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.TenBoThucVat != bo)
+            {
+                bo = item.LoaiThucVat.ChiThucVat.HoThucVat.BoThucVat.TenBoThucVat;
+                <td><a href="@Url.Action("Ho","Details", new { id = item.LoaiThucVat.ChiThucVat.HoThucVat.MaHoThucVat })">@bo</a></td>
+            }
+            else
+            {
+                <td></td>
+            }
+            @if (item.LoaiThucVat.ChiThucVat.HoThucVat.TenHoThucVat != ho)
+            {
+                ho = item.LoaiThucVat.ChiThucVat.HoThucVat.TenHoThucVat;
+                <td><a href="@Url.Action("Chi","Details", new { id = item.LoaiThucVat.ChiThucVat.MaChiThucVat })">@ho</a></td>
+            }
+            else
+            {
+                <td></td>
+            }
+            @if (item.LoaiThucVat.ChiThucVat.TenChiThucVat != chi)
+            {
+                chi = item.LoaiThucVat.ChiThucVat.TenChiThucVat;
+                <td><a href="@Url.Action("Loai","Details", new { id = item.LoaiThucVat.MaLoaiThucVat })">@chi</a></td>
+            }
+            else
+            {
+                <td></td>
+            }
+            <td><a href="@Url.Action("Details","ThucVats", new { id = item.MaCay })"><i>@item.LoaiThucVat.TenLoaiThucVatDau</i> @item.LoaiThucVat.TenLoaiThucVatDuoi</a></td>
+        </tr>
+    }
+</table>

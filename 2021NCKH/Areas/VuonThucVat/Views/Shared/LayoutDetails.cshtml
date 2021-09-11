@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Admin Khoa Dược</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="@Url.Content("~/css/bootstrap.min.css")" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="@Url.Content("~/css/metisMenu.min.css")" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="@Url.Content("~/css/startmin.css")" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="@Url.Content("~/css/font-awesome.min.css")" rel="stylesheet" type="text/css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <link rel="stylesheet" href="@Url.Content("~/a/css/style.css")" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="@Url.Content("~/a/css/font-awesome.min.css")" type="text/css">
+    <link rel="stylesheet" href="@Url.Content("~/a/css/elegant-icons.css")" type="text/css">
+    <link rel="stylesheet" href="@Url.Content("~/a/css/nice-select.css")" type="text/css">
+    <link rel="stylesheet" href="@Url.Content("~/a/css/jquery-ui.min.css")" type="text/css">
+    <link rel="stylesheet" href="@Url.Content("~/a/css/owl.carousel.min.css")" type="text/css">
+    <link rel="stylesheet" href="@Url.Content("~/a/css/slicknav.min.css")" type="text/css">
+</head>
+<body>
+    @RenderBody()
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="@Url.Content("~/js/jquery.min.js")"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="@Url.Content("~/js/bootstrap.min.js")"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="@Url.Content("~/js/metisMenu.min.js")"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="@Url.Content("~/js/startmin.js")"></script>
+
+
+    <script src="@Url.Content("~/js/dataTables/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/js/dataTables/dataTables.bootstrap.min.js")"></script>
+    @RenderSection("scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').DataTable({
+                responsive: true
+            });
+        });
+        $('#alertBox').removeClass('hide');
+        $('#alertBox').delay(1000).slideUp(500);
+    </script>
+    <!-- Js Plugins -->
+    <script src="@Url.Content("~/a/js/jquery-3.3.1.min.js")"></script>
+    <script src="@Url.Content("~/a/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/a/js/jquery.nice-select.min.js")"></script>
+    <script src="@Url.Content("~/a/js/jquery-ui.min.js")"></script>
+    <script src="@Url.Content("~/a/js/jquery.slicknav.js")"></script>
+    <script src="@Url.Content("~/a/js/mixitup.min.js")"></script>
+    <script src="@Url.Content("~/a/js/owl.carousel.min.js")"></script>
+    <script src="@Url.Content("~/a/js/main.js")"></script>
+</body>
+</html>

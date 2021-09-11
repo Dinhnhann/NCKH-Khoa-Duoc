@@ -4,6 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
+<<<<<<< HEAD
       <Diagram DiagramId="fe81a5fe9c3a4441b7be7556beccc8be" Name="Diagram1">
         <EntityTypeShape EntityType="NCKHVLUModel.admin" Width="1.5" PointX="0.75" PointY="4.75" />
         <EntityTypeShape EntityType="NCKHVLUModel.BoThucVat" Width="1.5" PointX="7.5" PointY="1.625" />
@@ -43,6 +44,50 @@
         <AssociationConnector Association="NCKHVLUModel.FK_ThucVat_LoaiThucVat" />
         <AssociationConnector Association="NCKHVLUModel.FK_LopThucVat_NganhThucVat" />
         <AssociationConnector Association="NCKHVLUModel.FK_PhanLopThucVat_LopThucVat" />
+=======
+      <Diagram DiagramId="d06eb407e9004c2f9b910155202c27e7" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="NCKHVLUModel.admin" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.BoThucVat" Width="1.5" PointX="7.5" PointY="2.25" />
+        <EntityTypeShape EntityType="NCKHVLUModel.CacBoMon" Width="1.5" PointX="2.75" PointY="5.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.CacCoSoLienKetDaoTao" Width="1.5" PointX="4.75" PointY="5.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.CacDeTaiDangNCCuaGV" Width="1.5" PointX="6.75" PointY="5.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.CacDeTaiDangNCCuaSV" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.CacPhongThiNghiem" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.CauLacbo" Width="1.5" PointX="4.75" PointY="8.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.ChiThucVat" Width="1.5" PointX="12" PointY="2.25" />
+        <EntityTypeShape EntityType="NCKHVLUModel.ChiTietCTHH" Width="1.5" PointX="18.75" PointY="2.25" />
+        <EntityTypeShape EntityType="NCKHVLUModel.ChuongTrinhDaoTao" Width="1.5" PointX="8.75" PointY="5.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.CoCauToChuc" Width="1.5" PointX="6.75" PointY="8.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.DamBaoChatLuong" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.DaoTaoLienTucCPE" Width="1.5" PointX="10.75" PointY="5.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.DoanHoi" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.HoatDongNgoaiKhoa" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.HoThucVat" Width="1.5" PointX="9.75" PointY="2.25" />
+        <EntityTypeShape EntityType="NCKHVLUModel.LopThucVat" Width="1.5" PointX="3" PointY="2.25" />
+        <EntityTypeShape EntityType="NCKHVLUModel.LyLichKHCuaGV" Width="1.5" PointX="2.75" PointY="11.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.NganhThucVat" Width="1.5" PointX="0.75" PointY="2.375" />
+        <EntityTypeShape EntityType="NCKHVLUModel.PhanLopThucVat" Width="1.5" PointX="5.25" PointY="2.25" />
+        <EntityTypeShape EntityType="NCKHVLUModel.QuyCheCongTacSV" Width="1.5" PointX="4.75" PointY="11.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.SOPDaoTao" Width="1.5" PointX="6.75" PointY="11.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.sysdiagram" Width="1.5" PointX="8.75" PointY="11.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.TaiNguyen" Width="1.5" PointX="10.75" PointY="11.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.ThanhPhanHoaHoc" Width="1.5" PointX="16.5" PointY="6.875" />
+        <EntityTypeShape EntityType="NCKHVLUModel.ThongTinNoiBo" Width="1.5" PointX="12.75" PointY="5.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.TinTuc" Width="1.5" PointX="12.75" PointY="8.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.TinTucSuKien" Width="1.5" PointX="12.75" PointY="11.75" />
+        <EntityTypeShape EntityType="NCKHVLUModel.TuyenDung" Width="1.5" PointX="0.75" PointY="14.75" />
+        <AssociationConnector Association="NCKHVLUModel.FK_BoThucVat_PhanLopThucVat" />
+        <AssociationConnector Association="NCKHVLUModel.FK_HoThucVat_BoThucVat" />
+        <AssociationConnector Association="NCKHVLUModel.FK_ChiThucVat_HoThucVat" />
+        <AssociationConnector Association="NCKHVLUModel.FK_ChiTietCTHH_ThanhPhanHoaHoc" />
+        <AssociationConnector Association="NCKHVLUModel.FK_LopThucVat_NganhThucVat" />
+        <AssociationConnector Association="NCKHVLUModel.FK_PhanLopThucVat_LopThucVat" />
+        <EntityTypeShape EntityType="NCKHVLUModel.LoaiThucVat" Width="1.5" PointX="14.25" PointY="2.125" />
+        <AssociationConnector Association="NCKHVLUModel.FK_LoaiThucVat_ChiThucVat" />
+        <EntityTypeShape EntityType="NCKHVLUModel.ThucVat" Width="1.5" PointX="16.5" PointY="1.25" />
+        <AssociationConnector Association="NCKHVLUModel.FK_ChiTietCTHH_ThucVat" />
+        <AssociationConnector Association="NCKHVLUModel.FK_ThucVat_LoaiThucVat" />
+>>>>>>> Minhtam
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

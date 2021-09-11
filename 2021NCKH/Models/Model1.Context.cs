@@ -13,10 +13,17 @@ namespace _2021NCKH.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
+<<<<<<< HEAD
     public partial class NCKHVLUEntities : DbContext
     {
         public NCKHVLUEntities()
             : base("name=NCKHVLUEntities")
+=======
+    public partial class NCKHVLUEntities1 : DbContext
+    {
+        public NCKHVLUEntities1()
+            : base("name=NCKHVLUEntities1")
+>>>>>>> Minhtam
         {
         }
     
@@ -34,6 +41,10 @@ namespace _2021NCKH.Models
         public virtual DbSet<CacPhongThiNghiem> CacPhongThiNghiems { get; set; }
         public virtual DbSet<CauLacbo> CauLacboes { get; set; }
         public virtual DbSet<ChiThucVat> ChiThucVats { get; set; }
+<<<<<<< HEAD
+=======
+        public virtual DbSet<ChiTietCTHH> ChiTietCTHHs { get; set; }
+>>>>>>> Minhtam
         public virtual DbSet<ChuongTrinhDaoTao> ChuongTrinhDaoTaos { get; set; }
         public virtual DbSet<CoCauToChuc> CoCauToChucs { get; set; }
         public virtual DbSet<DamBaoChatLuong> DamBaoChatLuongs { get; set; }
@@ -41,7 +52,10 @@ namespace _2021NCKH.Models
         public virtual DbSet<DoanHoi> DoanHois { get; set; }
         public virtual DbSet<HoatDongNgoaiKhoa> HoatDongNgoaiKhoas { get; set; }
         public virtual DbSet<HoThucVat> HoThucVats { get; set; }
+<<<<<<< HEAD
         public virtual DbSet<LoaiThucVat> LoaiThucVats { get; set; }
+=======
+>>>>>>> Minhtam
         public virtual DbSet<LopThucVat> LopThucVats { get; set; }
         public virtual DbSet<LyLichKHCuaGV> LyLichKHCuaGVs { get; set; }
         public virtual DbSet<NganhThucVat> NganhThucVats { get; set; }
@@ -50,11 +64,21 @@ namespace _2021NCKH.Models
         public virtual DbSet<SOPDaoTao> SOPDaoTaos { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TaiNguyen> TaiNguyens { get; set; }
+<<<<<<< HEAD
         public virtual DbSet<TamNhinMTCL> TamNhinMTCLs { get; set; }
         public virtual DbSet<ThongTinNoiBo> ThongTinNoiBoes { get; set; }
         public virtual DbSet<ThucVat> ThucVats { get; set; }
         public virtual DbSet<TinTuc> TinTucs { get; set; }
         public virtual DbSet<TinTucSuKien> TinTucSuKiens { get; set; }
         public virtual DbSet<TuyenDung> TuyenDungs { get; set; }
+=======
+        public virtual DbSet<ThanhPhanHoaHoc> ThanhPhanHoaHocs { get; set; }
+        public virtual DbSet<ThongTinNoiBo> ThongTinNoiBoes { get; set; }
+        public virtual DbSet<TinTuc> TinTucs { get; set; }
+        public virtual DbSet<TinTucSuKien> TinTucSuKiens { get; set; }
+        public virtual DbSet<TuyenDung> TuyenDungs { get; set; }
+        public virtual DbSet<LoaiThucVat> LoaiThucVats { get; set; }
+        public virtual DbSet<ThucVat> ThucVats { get; set; }
+>>>>>>> Minhtam
     }
 }

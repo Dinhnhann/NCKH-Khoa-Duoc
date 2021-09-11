@@ -21,7 +21,12 @@ namespace _2021NCKH.Models
         }
     
         public int MaLoaiThucVat { get; set; }
+<<<<<<< HEAD
         public string TenLoaiThucVat { get; set; }
+=======
+        public string TenLoaiThucVatDau { get; set; }
+        public string TenLoaiThucVatDuoi { get; set; }
+>>>>>>> Minhtam
         public int MaChiThucVat { get; set; }
     
         public virtual ChiThucVat ChiThucVat { get; set; }

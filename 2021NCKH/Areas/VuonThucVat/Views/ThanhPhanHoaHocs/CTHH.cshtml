@@ -1,0 +1,82 @@
+﻿@model _2021NCKH.Models.ThanhPhanHoaHoc
+@{
+    Layout = "~/Areas/VuonThucVat/Views/Shared/LayoutDetails.cshtml";
+}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+    <!-- Breadcrumb Section End -->
+    <!-- Product Details Section Begin -->
+    <section class="product-details spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="product__details__pic">
+                        <div class="product__details__pic__item">
+                            <img class="product__details__pic__item--large"
+                                 src="@Url.Action("Picture", "Admin", new { id = Model.ID })" alt="hinh-anh">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="product__details__text">
+                        <h4>@Model.TenDanhPhap </h4>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="product__details__tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"
+                                   aria-selected="true">Nội dung</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                <div class="product__details__tab__desc">
+                                    <h6>Nhóm chất</h6>
+                                    <p>
+                                        @Model.NhomChat
+                                    </p>
+                                    <h6>Công thức hóa học</h6>
+                                    <p>
+                                        @Model.CongThucHoaHoc
+                                    </p>
+                                    <h6>Công thức phân tử</h6>
+                                    <p>
+                                        @Model.CongThucPhanTu
+                                    </p>
+                                    <h6>Pubchem ID</h6>
+                                    <p>
+                                        @Model.PubchemID 
+                                    </p>
+                                    <h6>Tài liệu tham khảo</h6>
+                                    <p>
+                                        @Model.TaiLieuThamKhao
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-actions no-color">
+                                @Html.ActionLink("Danh mục cây thuốc", "Index")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Product Details Section End -->
+</body>
+
+</html>
+

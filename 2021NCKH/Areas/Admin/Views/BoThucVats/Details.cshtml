@@ -1,0 +1,35 @@
+﻿@model _2021NCKH.Models.BoThucVat
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BoThucVat</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenBoThucVat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenBoThucVat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhanLopThucVat.TenPhanLopThucVat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhanLopThucVat.TenPhanLopThucVat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaBoThucVat }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

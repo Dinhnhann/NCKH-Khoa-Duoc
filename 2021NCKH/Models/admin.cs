@@ -11,11 +11,18 @@ namespace _2021NCKH.Models
 {
     using System;
     using System.Collections.Generic;
+<<<<<<< HEAD
 
     public partial class admin
     {
         public int admin_id { get; set; }
 
+=======
+    
+    public partial class admin
+    {
+        public int admin_id { get; set; }
+>>>>>>> Minhtam
         public string fullname { get; set; }
         public string username { get; set; }
         public string email { get; set; }

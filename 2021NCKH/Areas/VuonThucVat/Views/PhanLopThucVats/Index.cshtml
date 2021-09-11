@@ -1,0 +1,39 @@
+﻿@model IEnumerable<_2021NCKH.Models.PhanLopThucVat>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/VuonThucVat/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên Phân lớp thực vật
+        </th>
+        <th>
+            Tên Lớp thực vật
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenPhanLopThucVat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LopThucVat.TenLopThucVat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaPhanLopThucVat }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaPhanLopThucVat })
+        </td>
+    </tr>
+}
+
+</table>

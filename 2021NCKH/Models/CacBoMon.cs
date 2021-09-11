@@ -11,6 +11,7 @@ namespace _2021NCKH.Models
 {
     using System;
     using System.Collections.Generic;
+<<<<<<< HEAD
     using System.ComponentModel.DataAnnotations;
 
     public partial class CacBoMon
@@ -24,6 +25,14 @@ namespace _2021NCKH.Models
         public string NDTomTatCacBoMon { get; set; }
 
         [Required(ErrorMessage = "Chýa nhâòp thông tin")]
+=======
+    
+    public partial class CacBoMon
+    {
+        public int MaCacBoMon { get; set; }
+        public string TenCacBoMon { get; set; }
+        public string NDTomTatCacBoMon { get; set; }
+>>>>>>> Minhtam
         public string NDChiTietCacBoMon { get; set; }
     }
 }

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<_2021NCKH.Models.ThanhPhanHoaHoc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/VuonThucVat/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+<table class="table">
+    <tr>
+        <th>
+            Nhóm chất
+        </th>
+        <th>
+            Công thức hóa học
+        </th>
+        <th>
+            Tên danh pháp
+        </th>
+        <th>
+            Công thức phân tử
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhomChat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CongThucHoaHoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDanhPhap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CongThucPhanTu)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+</table>

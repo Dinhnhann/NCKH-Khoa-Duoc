@@ -1,0 +1,40 @@
+﻿@model IEnumerable<_2021NCKH.Models.NganhThucVat>
+
+@{
+    Layout = "~/Areas/VuonThucVat/Views/Shared/AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Tên Ngành thực vật
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenNganhThucVat)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.MaNganhThucVat }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.MaNganhThucVat })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿@model _2021NCKH.Models.NganhThucVat
+
+@{
+    Layout = "~/Areas/VuonThucVat/Views/Shared/AdminLayout.cshtml";
+}
+<h2>Xóa Ngành thực vật</h2>
+
+<h3>Bạn có chắc chắn muốn xóa không?</h3>
+<div>
+    <h4>@Model.TenNganhThucVat</h4>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<_2021NCKH.Models.BoThucVat>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên Bộ Thực Vật
+        </th>
+        <th>
+            Loại Phân lớp Thực Vật
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenBoThucVat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhanLopThucVat.TenPhanLopThucVat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaBoThucVat }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaBoThucVat }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaBoThucVat })
+        </td>
+    </tr>
+}
+
+</table>

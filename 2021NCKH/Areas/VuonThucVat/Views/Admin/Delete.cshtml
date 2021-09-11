@@ -1,0 +1,108 @@
+﻿@model _2021NCKH.Models.ThucVat
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/VuonThucVat/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có chắc chắn muốn xóa không?</h3>
+<div>
+    <h4>Thực vật</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dd>
+            @Html.DisplayFor(model => model.HinhAnh)
+        </dd>
+
+        <dt>
+            Tên Việt Nam
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenVietNam)
+        </dd>
+
+        <dt>
+            Tên khoa học
+        </dt>
+
+        <dd>
+            <i>@Model.LoaiThucVat.TenLoaiThucVatDau</i> @Model.LoaiThucVat.TenLoaiThucVatDuoi
+        </dd>
+
+        <dt>
+            Họ thực vật
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoThucVat)
+        </dd>
+
+        <dt>
+            Mô tả
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            Bộ phận dùng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoPhanDung)
+        </dd>
+
+        <dt>
+            Thành phần hóa học
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongThanhPhanHoaHoc)
+        </dd>
+
+        <dt>
+            Tác dụng dược lý
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TacDungDuocLy)
+        </dd>
+
+        <dt>
+            Liều dùng 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LieuDung)
+        </dd>
+
+        <dt>
+            Tài liệu tham khảo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaiLieuThamKhao)
+        </dd>
+
+        <dt>
+            Họ thực vật
+        </dt>
+
+        <dd>
+            <i>@Model.LoaiThucVat.ChiThucVat.HoThucVat.TenHoThucVat</i>
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

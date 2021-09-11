@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -25,6 +26,8 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerLaunchUrl>http://{ServiceIPAddress}</DockerLaunchUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,6 +52,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Reference Include="CKFinder, Version=2.6.0.2792, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Content\ckfinder\bin\Debug\CKFinder.dll</HintPath>
@@ -65,6 +69,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Content\ckfinder\bin\Debug\CKFinder_Watermark.dll</HintPath>
     </Reference>
+=======
+>>>>>>> Minhtam
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -147,6 +153,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+<<<<<<< HEAD
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
@@ -156,6 +163,20 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Controllers\CacBoMonController.cs" />
     <Compile Include="Controllers\CacDeTaiDangNCCuaSVController.cs" />
+=======
+    <Compile Include="Areas\VuonThucVat\Controllers\AdminController.cs" />
+    <Compile Include="Areas\VuonThucVat\Controllers\BoThucVatsController.cs" />
+    <Compile Include="Areas\VuonThucVat\Controllers\ChiThucVatsController.cs" />
+    <Compile Include="Areas\VuonThucVat\Controllers\DetailsController.cs" />
+    <Compile Include="Areas\VuonThucVat\Controllers\HoThucVatsController.cs" />
+    <Compile Include="Areas\VuonThucVat\Controllers\LoaiThucVatsController.cs" />
+    <Compile Include="Areas\VuonThucVat\Controllers\LopThucVatsController.cs" />
+    <Compile Include="Areas\VuonThucVat\Controllers\NganhThucVatsController.cs" />
+    <Compile Include="Areas\VuonThucVat\Controllers\PhanLopThucVatsController.cs" />
+    <Compile Include="Areas\VuonThucVat\Controllers\ThanhPhanHoaHocsController.cs" />
+    <Compile Include="Areas\VuonThucVat\Controllers\ThucVatsController.cs" />
+    <Compile Include="Areas\VuonThucVat\VuonThucVatAreaRegistration.cs" />
+>>>>>>> Minhtam
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -187,6 +208,12 @@
     <Compile Include="Models\ChiThucVat.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="Models\ChiTietCTHH.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+>>>>>>> Minhtam
     <Compile Include="Models\ChuongTrinhDaoTao.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -250,7 +277,11 @@
     <Compile Include="Models\TaiNguyen.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Models\TamNhinMTCL.cs">
+=======
+    <Compile Include="Models\ThanhPhanHoaHoc.cs">
+>>>>>>> Minhtam
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ThongTinNoiBo.cs">
@@ -272,6 +303,7 @@
     <Compile Include="Service\CommonService.cs" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Content Include="Areas\Admin\assets-login\css\bootstrap.min.css" />
     <Content Include="Areas\Admin\assets-login\css\bootstrap\mixins\_border-radius.css" />
     <Content Include="Areas\Admin\assets-login\css\bootstrap\mixins\_screen-reader.css" />
@@ -1985,6 +2017,172 @@
     <Content Include="assets\js\vendor\jquery-1.12.4.min.js" />
     <Content Include="assets\js\vendor\modernizr-3.5.0.min.js" />
     <Content Include="assets\js\wow.min.js" />
+=======
+    <Content Include="Areas\VuonThucVat\Views\Shared\Common\Footer.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\Shared\Common\Header.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\NganhThucVats\Create.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\NganhThucVats\Delete.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\NganhThucVats\Edit.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\NganhThucVats\Index.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\LopThucVats\Create.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\LopThucVats\Delete.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\LopThucVats\Edit.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\LopThucVats\Index.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\PhanLopThucVats\Create.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\PhanLopThucVats\Delete.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\PhanLopThucVats\Edit.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\PhanLopThucVats\Index.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\BoThucVats\Create.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\BoThucVats\Delete.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\BoThucVats\Edit.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\BoThucVats\Index.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\HoThucVats\Create.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\HoThucVats\Delete.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\HoThucVats\Edit.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\HoThucVats\Index.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ChiThucVats\Create.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ChiThucVats\Delete.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ChiThucVats\Edit.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ChiThucVats\Index.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\LoaiThucVats\Create.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\LoaiThucVats\Delete.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\LoaiThucVats\Edit.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\LoaiThucVats\Index.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\Details\Lop.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\Details\Nganh.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\Details\PhanLop.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\Details\Bo.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\Details\Ho.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\Details\Chi.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\Details\Loai.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\Shared\LayoutDetails.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\Admin\ThemCTHH.cshtml" />
+    <None Include="Areas\VuonThucVat\Views\Shared\_LayoutUser.cshtml" />
+    <Content Include="assets\css\bootstrap-social.css" />
+    <Content Include="assets\css\bootstrap-theme.min.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\dataTables\dataTables.bootstrap.css" />
+    <Content Include="assets\css\dataTables\dataTables.responsive.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\metisMenu.min.css" />
+    <Content Include="assets\css\morris.css" />
+    <Content Include="assets\css\startmin.css" />
+    <Content Include="assets\css\timeline.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\dataTables\dataTables.bootstrap.min.js" />
+    <Content Include="assets\js\dataTables\jquery.dataTables.min.js" />
+    <Content Include="assets\js\flot-data.js" />
+    <Content Include="assets\js\flot\excanvas.min.js" />
+    <Content Include="assets\js\flot\jquery.colorhelpers.js" />
+    <Content Include="assets\js\flot\jquery.flot.canvas.js" />
+    <Content Include="assets\js\flot\jquery.flot.categories.js" />
+    <Content Include="assets\js\flot\jquery.flot.crosshair.js" />
+    <Content Include="assets\js\flot\jquery.flot.errorbars.js" />
+    <Content Include="assets\js\flot\jquery.flot.fillbetween.js" />
+    <Content Include="assets\js\flot\jquery.flot.image.js" />
+    <Content Include="assets\js\flot\jquery.flot.js" />
+    <Content Include="assets\js\flot\jquery.flot.navigate.js" />
+    <Content Include="assets\js\flot\jquery.flot.pie.js" />
+    <Content Include="assets\js\flot\jquery.flot.resize.js" />
+    <Content Include="assets\js\flot\jquery.flot.selection.js" />
+    <Content Include="assets\js\flot\jquery.flot.stack.js" />
+    <Content Include="assets\js\flot\jquery.flot.symbol.js" />
+    <Content Include="assets\js\flot\jquery.flot.threshold.js" />
+    <Content Include="assets\js\flot\jquery.flot.time.js" />
+    <Content Include="assets\js\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\metisMenu.min.js" />
+    <Content Include="assets\js\morris-data.js" />
+    <Content Include="assets\js\morris.min.js" />
+    <Content Include="assets\js\raphael.min.js" />
+    <Content Include="assets\js\startmin.js" />
+    <Content Include="a\css\bootstrap.min.css" />
+    <Content Include="a\css\elegant-icons.css" />
+    <Content Include="a\css\font-awesome.min.css" />
+    <Content Include="a\css\jquery-ui.min.css" />
+    <Content Include="a\css\nice-select.css" />
+    <Content Include="a\css\owl.carousel.min.css" />
+    <Content Include="a\css\slicknav.min.css" />
+    <Content Include="a\css\style.css" />
+    <Content Include="a\fonts\ElegantIcons.svg" />
+    <Content Include="a\fonts\fontawesome-webfont.svg" />
+    <Content Include="a\img\banner\banner-1.jpg" />
+    <Content Include="a\img\banner\banner-2.jpg" />
+    <Content Include="a\img\blog\blog-1.jpg" />
+    <Content Include="a\img\blog\blog-2.jpg" />
+    <Content Include="a\img\blog\blog-3.jpg" />
+    <Content Include="a\img\blog\blog-4.jpg" />
+    <Content Include="a\img\blog\blog-5.jpg" />
+    <Content Include="a\img\blog\blog-6.jpg" />
+    <Content Include="a\img\blog\details\details-author.jpg" />
+    <Content Include="a\img\blog\details\details-hero.jpg" />
+    <Content Include="a\img\blog\details\details-pic.jpg" />
+    <Content Include="a\img\blog\sidebar\sr-1.jpg" />
+    <Content Include="a\img\blog\sidebar\sr-2.jpg" />
+    <Content Include="a\img\blog\sidebar\sr-3.jpg" />
+    <Content Include="a\img\breadcrumb.jpg" />
+    <Content Include="a\img\cart\cart-1.jpg" />
+    <Content Include="a\img\cart\cart-2.jpg" />
+    <Content Include="a\img\cart\cart-3.jpg" />
+    <Content Include="a\img\categories\cat-1.jpg" />
+    <Content Include="a\img\categories\cat-2.jpg" />
+    <Content Include="a\img\categories\cat-3.jpg" />
+    <Content Include="a\img\categories\cat-4.jpg" />
+    <Content Include="a\img\categories\cat-5.jpg" />
+    <Content Include="a\img\featured\feature-1.jpg" />
+    <Content Include="a\img\featured\feature-2.jpg" />
+    <Content Include="a\img\featured\feature-3.jpg" />
+    <Content Include="a\img\featured\feature-4.jpg" />
+    <Content Include="a\img\featured\feature-5.jpg" />
+    <Content Include="a\img\featured\feature-6.jpg" />
+    <Content Include="a\img\featured\feature-7.jpg" />
+    <Content Include="a\img\featured\feature-8.jpg" />
+    <Content Include="a\img\hero\banner.jpg" />
+    <Content Include="a\img\language.png" />
+    <Content Include="a\img\latest-product\lp-1.jpg" />
+    <Content Include="a\img\latest-product\lp-2.jpg" />
+    <Content Include="a\img\latest-product\lp-3.jpg" />
+    <Content Include="a\img\logo.png" />
+    <Content Include="a\img\payment-item.png" />
+    <Content Include="a\img\product\details\product-details-1.jpg" />
+    <Content Include="a\img\product\details\product-details-2.jpg" />
+    <Content Include="a\img\product\details\product-details-3.jpg" />
+    <Content Include="a\img\product\details\product-details-4.jpg" />
+    <Content Include="a\img\product\details\product-details-5.jpg" />
+    <Content Include="a\img\product\details\thumb-1.jpg" />
+    <Content Include="a\img\product\details\thumb-2.jpg" />
+    <Content Include="a\img\product\details\thumb-3.jpg" />
+    <Content Include="a\img\product\details\thumb-4.jpg" />
+    <Content Include="a\img\product\discount\pd-1.jpg" />
+    <Content Include="a\img\product\discount\pd-2.jpg" />
+    <Content Include="a\img\product\discount\pd-3.jpg" />
+    <Content Include="a\img\product\discount\pd-4.jpg" />
+    <Content Include="a\img\product\discount\pd-5.jpg" />
+    <Content Include="a\img\product\discount\pd-6.jpg" />
+    <Content Include="a\img\product\product-1.jpg" />
+    <Content Include="a\img\product\product-10.jpg" />
+    <Content Include="a\img\product\product-11.jpg" />
+    <Content Include="a\img\product\product-12.jpg" />
+    <Content Include="a\img\product\product-2.jpg" />
+    <Content Include="a\img\product\product-3.jpg" />
+    <Content Include="a\img\product\product-4.jpg" />
+    <Content Include="a\img\product\product-5.jpg" />
+    <Content Include="a\img\product\product-6.jpg" />
+    <Content Include="a\img\product\product-7.jpg" />
+    <Content Include="a\img\product\product-8.jpg" />
+    <Content Include="a\img\product\product-9.jpg" />
+    <Content Include="a\js\bootstrap.min.js" />
+    <Content Include="a\js\jquery-3.3.1.min.js" />
+    <Content Include="a\js\jquery-ui.min.js" />
+    <Content Include="a\js\jquery.nice-select.min.js" />
+    <Content Include="a\js\jquery.slicknav.js" />
+    <Content Include="a\js\main.js" />
+    <Content Include="a\js\mixitup.min.js" />
+    <Content Include="a\js\owl.carousel.min.js" />
+>>>>>>> Minhtam
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1994,6 +2192,7 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+<<<<<<< HEAD
     <Content Include="images\about_02.jpg" />
     <Content Include="images\about_03.jpg" />
     <Content Include="images\ajax-loader.gif" />
@@ -2194,6 +2393,59 @@
     <Content Include="Areas\Admin\assets-login\scss\bootstrap\_utilities.scss" />
     <Content Include="Areas\Admin\assets-login\scss\bootstrap\_variables.scss" />
     <Content Include="Areas\Admin\assets-login\scss\style.scss" />
+=======
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\VuonThucVat\Views\web.config" />
+    <Content Include="Areas\VuonThucVat\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\Shared\_Layout.cshtml" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\VuonThucVat\Views\Admin\Create.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\Admin\Delete.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\Admin\Details.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\Admin\Edit.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThucVats\Index.cshtml" />
+    <Content Include="a\fonts\ElegantIcons.eot" />
+    <Content Include="a\fonts\ElegantIcons.ttf" />
+    <Content Include="a\fonts\ElegantIcons.woff" />
+    <Content Include="a\fonts\fontawesome-webfont.eot" />
+    <Content Include="a\fonts\fontawesome-webfont.ttf" />
+    <Content Include="a\fonts\fontawesome-webfont.woff" />
+    <Content Include="a\fonts\fontawesome-webfont.woff2" />
+    <Content Include="a\fonts\FontAwesome.otf" />
+    <Content Include="Areas\VuonThucVat\Views\ThucVats\Details.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThanhPhanHoaHocs\Create.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThanhPhanHoaHocs\Delete.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThanhPhanHoaHocs\Details.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThanhPhanHoaHocs\Edit.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThanhPhanHoaHocs\Index.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThanhPhanHoaHocs\CTHH.cshtml" />
+    <Content Include="Areas\VuonThucVat\Views\ThanhPhanHoaHocs\Danhsach.cshtml" />
+    <None Include="Dockerfile" />
+    <None Include=".dockerignore">
+      <DependentUpon>Dockerfile</DependentUpon>
+    </None>
+>>>>>>> Minhtam
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -2201,6 +2453,7 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+<<<<<<< HEAD
     <Content Include="Areas\Admin\Views\CacBoMon\Index.cshtml" />
     <Content Include="Areas\Admin\Views\CacBoMon\Create.cshtml" />
     <Content Include="Areas\Admin\Views\CacBoMon\Edit.cshtml" />
@@ -2237,6 +2490,10 @@
     <Content Include="Areas\Admin\Views\CacDeTaiDangNCCuaSV\Create.cshtml" />
     <Content Include="Areas\Admin\Views\CacDeTaiDangNCCuaSV\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\CacDeTaiDangNCCuaSV\Delete.cshtml" />
+=======
+    <Content Include="images\ThucVat\7" />
+    <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
+>>>>>>> Minhtam
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2248,6 +2505,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="vendor\jquery\jquery.min.js" />
     <Content Include="Views\Shared\Common\Header.cshtml" />
     <Content Include="Views\Shared\Common\Footer.cshtml" />
     <Content Include="Web.config" />
@@ -2270,9 +2531,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+<<<<<<< HEAD
     <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Areas\Admin\Views\CoCauToChuc\" />
     <Folder Include="Uploads\ImageHome\" />
+=======
+    <Folder Include="Areas\VuonThucVat\Data\" />
+    <Folder Include="Areas\VuonThucVat\Views\TV\" />
+    <Folder Include="images\ThanhPhanHoaHoc\" />
+>>>>>>> Minhtam
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -2319,7 +2586,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets'))" />
   </Target>
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.13\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
