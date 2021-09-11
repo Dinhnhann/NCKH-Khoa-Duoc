@@ -1,6 +1,7 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <<<<<<< HEAD
+<<<<<<< HEAD
 <svg xmlns="http://www.w3.org/2000/svg">
 <metadata></metadata>
 <defs>
@@ -685,6 +686,8 @@
 </font>
 </defs></svg> 
 =======
+=======
+>>>>>>> 24b656a (merge)
 <svg>
 <metadata>
 Created by FontForge 20120731 at Mon Oct 24 17:37:40 2016
@@ -3354,4 +3357,7 @@ q14 3 26.5 -5t15.5 -23zM1691 1033q15 -22 10.5 -49t-26.5 -43q-22 -15 -49 -10t-42 
  />
   </font>
 </defs></svg>
+<<<<<<< HEAD
 >>>>>>> Minhtam
+=======
+>>>>>>> 24b656a (merge)
